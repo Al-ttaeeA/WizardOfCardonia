@@ -111,4 +111,24 @@ public class Commands {
     	
     	return num;
     }
+    
+    
+    
+    public static double skillMultiplier(double num, card.Type type) {
+    	double skillMultiplier;
+    	
+    	if(type == card.Type.PHYSICAL) {
+    		skillMultiplier = 1 + ((Main.testStrength-1) / 20.0);
+    	}
+    	else if(type == card.Type.MAGICAL) {
+    		skillMultiplier = 1 + ((Main.testIntelligence-1) / 20.0);
+    	}
+    	else {
+    		skillMultiplier = 1 + ((Main.testArcana-1) / 20.0);
+    	}
+
+		num = num * skillMultiplier;
+    	
+    	return num;
+    }
 }

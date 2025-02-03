@@ -4,10 +4,16 @@ public class DamageCard extends Card {
     private final int damage;
     private int newDamage;
 
-    public DamageCard(String name, Rarity rarity, int energyCost, Type type, int damage) {
-        super(name, rarity, energyCost, type);
+    public DamageCard(String name, Rarity rarity, int manaCost, Type type, int damage) {
+        super(name, rarity, manaCost, type);
         this.damage = damage;
         this.newDamage = damage;
+    }
+    
+    public DamageCard() {
+    	super();
+    	this.damage = 0;
+    	this.newDamage = 0;
     }
 
     public void use() {
@@ -19,10 +25,15 @@ public class DamageCard extends Card {
     public String toString() {
     	newDamage = game.Commands.skillMultiplier(damage, type);
     	
-    	return name + " (" + energyCost + " Energy), Deals " + newDamage + " damage";
+    	return name + " (" + manaCost + " Mana) [" + rarity + "]\n\tDeal " + newDamage + " damage\n";
     }
 
-    public int getDamage() {
-        return damage;
+    public int getDamage(int num) {
+        if(num == 0) {
+        	return damage;
+        }
+        else {
+        	return newDamage;
+        }
     }
 }
