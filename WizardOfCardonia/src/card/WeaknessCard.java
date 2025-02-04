@@ -9,7 +9,7 @@ public class WeaknessCard extends Card{
 		this.weakness = weakness;
 		this.newWeakness = weakness;
 	}
-	
+    
 	public WeaknessCard() {
 		super();
 		this.weakness = 0;

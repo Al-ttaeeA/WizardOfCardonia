@@ -4,6 +4,7 @@ import card.*;
 
 public class Main {
 	public static int testInt;
+	public static double testDouble;
 	public static int testIntelligence;
 	public static int testStrength;
 	public static int testArcana;
