@@ -94,6 +94,22 @@ public class Commands {
     
     
     
+    public static int getRandomInt(int num) {
+    	Random random = new Random();
+    	
+    	return random.nextInt(num) + 1;
+    }
+    
+    
+    
+    public static double getRandomChance() {
+    	Random random = new Random();
+    	
+    	return random.nextDouble();
+    }
+    
+    
+    
     public static int skillMultiplier(int num, card.Type type) {
     	double skillMultiplier;
     	

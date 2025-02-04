@@ -1,6 +1,7 @@
 package game;
 
 import card.*;
+import item.*;
 
 public class Main {
 	public static int testInt;
@@ -16,6 +17,9 @@ public class Main {
 		Card weaknessTest = new WeaknessCard();
 		Card manaTest = new ManaCard();
 		
+		Item damageTest = new DamageItem();
+		Item blckTest = new BlockItem();
+		
 		System.out.println("Hello World");
 		
 		Commands.inputInt(1, 2);
@@ -29,6 +33,11 @@ public class Main {
 		System.out.println(blockTest);
 		System.out.println(weaknessTest);
 		System.out.println(manaTest);
+		
+		Commands.pressEnter();
+		
+		System.out.println(damageTest);
+		System.out.println(blckTest);
 		
 		Commands.pressEnter();
 	}

@@ -1,7 +1,7 @@
 package card;
 
 public enum Type {
-	PHYSICAL(0, "Physicsl"),
+	PHYSICAL(0, "Physical"),
 	MAGICAL(1, "Magical"),
 	CURSED(2, "Cursed");
 	
