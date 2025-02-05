@@ -3,7 +3,7 @@ package card;
 public enum Type {
 	PHYSICAL(0, "Physical"),
 	MAGICAL(1, "Magical"),
-	CURSED(2, "Cursed");
+	CORRUPT(2, "Corrupt");
 	
 	private final int index;
 	private final String name;

@@ -9,6 +9,7 @@ public class Main {
 	public static int testIntelligence;
 	public static int testStrength;
 	public static int testArcana;
+	public static int testCorruptness;
 	
 	public static void main(String[] args) {
 		Card dmgTest = new DamageCard();
