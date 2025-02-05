@@ -25,7 +25,7 @@ public class DamageCard extends Card {
     public String toString() {
     	newDamage = game.Commands.skillMultiplier(damage, type);
     	
-    	return name + " (" + manaCost + " Mana) [" + rarity + "]\n\tDeal " + newDamage + " damage\n";
+    	return name + " (" + manaCost + " Mana) [" + rarity + "] {" + type + "}\n\tDeal " + newDamage + " damage\n";
     }
 
     public int getDamage(int num) {

@@ -25,7 +25,7 @@ public class HealCard extends Card {
     public String toString() {
     	newHeal = game.Commands.skillMultiplier(heal, type);
     	
-    	return name + " (" + manaCost + " Mana) [" + rarity + "]\n\tHeal " + newHeal + " HP\n"; 
+    	return name + " (" + manaCost + " Mana) [" + rarity + "] {" + type + "}\n\tHeal " + newHeal + " HP\n"; 
     }
 
     public int getHeal(int num) {

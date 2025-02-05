@@ -1,5 +1,6 @@
 package game;
 
+import data.*;
 import card.*;
 import item.*;
 
@@ -12,34 +13,29 @@ public class Main {
 	public static int testCorruptness;
 	
 	public static void main(String[] args) {
-		Card dmgTest = new DamageCard();
-		Card healTest = new HealCard();
-		Card blockTest = new BlockCard();
-		Card weaknessTest = new WeaknessCard();
-		Card manaTest = new ManaCard();
+		Card test;
+		int common=0, uncommon=0, rare=0, epic=0, legendary=0;
 		
-		Item damageTest = new DamageItem();
-		Item blckTest = new BlockItem();
+		for(int i = 0; i < 10000; i++) {
+			test = Data.getRandomCard();
+			
+			if(test.getRarity() == Rarity.COMMON) {
+				common++;
+			}
+			else if(test.getRarity() == Rarity.UNCOMMON) {
+				uncommon++;
+			}
+			else if(test.getRarity() == Rarity.RARE) {
+				rare++;
+			}
+			else if(test.getRarity() == Rarity.EPIC) {
+				epic++;
+			}
+			else {
+				legendary++;
+			}
+		}
 		
-		System.out.println("Hello World");
-		
-		Commands.inputInt(1, 2);
-		
-		System.out.println("Hello World 2");
-		
-		Commands.pressEnter();
-		
-		System.out.println(dmgTest);
-		System.out.println(healTest);
-		System.out.println(blockTest);
-		System.out.println(weaknessTest);
-		System.out.println(manaTest);
-		
-		Commands.pressEnter();
-		
-		System.out.println(damageTest);
-		System.out.println(blckTest);
-		
-		Commands.pressEnter();
+		System.out.println(common + "   " + uncommon + "   " + rare + "   " + epic + "   " + legendary);
 	}
 }

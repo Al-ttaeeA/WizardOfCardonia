@@ -25,7 +25,7 @@ public class BlockCard extends Card{
     public String toString() {
     	newBlock = game.Commands.skillMultiplier(block, type);
     	
-    	return name + " (" + manaCost + " Mana) [" + rarity + "]\n\tGain " + newBlock + " block\n";
+    	return name + " (" + manaCost + " Mana) [" + rarity + "] {" + type + "}\n\tGain " + newBlock + " block\n";
     }
 
     public int getHeal(int num) {

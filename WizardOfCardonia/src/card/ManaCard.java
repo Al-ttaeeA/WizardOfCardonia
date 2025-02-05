@@ -18,6 +18,6 @@ public class ManaCard extends Card{
 	}
 	
 	public String toString() {
-		return name + " (" + manaCost + " Mana) [" + rarity + "]\n\tGain " + mana + " mana\n";
+		return name + " (" + manaCost + " Mana) [" + rarity + "] {" + type + "}\n\tGain " + mana + " mana\n";
 	}
 }

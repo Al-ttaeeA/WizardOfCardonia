@@ -25,7 +25,7 @@ public class WeaknessCard extends Card{
 	public String toString() {
 		newWeakness = game.Commands.skillMultiplier(weakness, type);
 		
-		return name + " (" + manaCost + " Mana) [" + rarity + "]\n\tWeaken the enemy's damage by " + 100*(1-newWeakness) + "%\n";
+		return name + " (" + manaCost + " Mana) [" + rarity + "] {" + type + "}\n\tWeaken the enemy's damage by " + 100*(1-newWeakness) + "%\n";
 	}
 	
 	public double getDmgDebuff(int num) {
