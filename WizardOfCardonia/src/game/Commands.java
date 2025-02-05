@@ -112,16 +112,21 @@ public class Commands {
     
     public static int skillMultiplier(int num, card.Type type) {
     	double skillMultiplier;
+    	int skills;
     	
     	if(type == card.Type.PHYSICAL) {
-    		skillMultiplier = 1 + ((Main.testStrength-1) / 20.0);
+    		skills = Main.testStrength - 1 - Main.testCorruptness + Main.testArcana;
     	}
     	else if(type == card.Type.MAGICAL) {
-    		skillMultiplier = 1 + ((Main.testIntelligence-1) / 20.0);
+    		skills = Main.testIntelligence - 1 - Main.testCorruptness + Main.testArcana;
     	}
     	else {
-    		skillMultiplier = 1 + ((Main.testArcana-1) / 20.0);
+    		skills = Main.testCorruptness - Main.testArcana;
     	}
+    	
+    	if(skills < 0) skills = 0;
+    	
+    	skillMultiplier = 1 + (skills / 20.0);
 
 		num = (int) Math.ceil(num * skillMultiplier);
     	
@@ -132,16 +137,21 @@ public class Commands {
     
     public static double skillMultiplier(double num, card.Type type) {
     	double skillMultiplier;
+    	int skills;
     	
     	if(type == card.Type.PHYSICAL) {
-    		skillMultiplier = 1 + ((Main.testStrength-1) / 20.0);
+    		skills = Main.testStrength - 1 - Main.testCorruptness + Main.testArcana;
     	}
     	else if(type == card.Type.MAGICAL) {
-    		skillMultiplier = 1 + ((Main.testIntelligence-1) / 20.0);
+    		skills = Main.testIntelligence - 1 - Main.testCorruptness + Main.testArcana;
     	}
     	else {
-    		skillMultiplier = 1 + ((Main.testArcana-1) / 20.0);
+    		skills = Main.testCorruptness - Main.testArcana;
     	}
+    	
+    	if(skills < 0) skills = 0;
+    	
+    	skillMultiplier = 1 + (skills / 20.0);
 
 		num = num * skillMultiplier;
     	
