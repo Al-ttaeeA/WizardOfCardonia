@@ -1,11 +1,70 @@
 package data;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import card.*;
 import enemy.*;
 import item.*;
 import game.*;
 
 public class Data {
+	public static void displayCards() {
+		int choice;
+		
+		List<Card> cardList = new ArrayList<>();
+        for (Card[] rarityGroup : cards) {
+            Collections.addAll(cardList, rarityGroup);
+        }
+        
+        final int PAGE_SIZE = 10;
+        int currentPage = 0;
+        int totalPages = (int) Math.ceil((double) (cardList.size()) / PAGE_SIZE);
+        
+        while(true) {
+        	System.out.println("********************************************************************************");
+            System.out.println("*                                  CARD LIST                                   *");
+            System.out.println("*****                                                                      *****\n");
+            
+            int start = currentPage * PAGE_SIZE;
+            int end = Math.min(start + PAGE_SIZE, cardList.size());
+
+            for (int i = start; i < end; i++) {
+                System.out.println((i + 1) + ". " + cardList.get(i));
+            }
+            
+            System.out.println("\nEnter 1 for next page | 2 for previous page | 3 To exit");
+            choice = Commands.inputInt(1, 3);
+            
+            switch(choice) {
+        	case 1:{
+        		if(currentPage == totalPages-1) {
+        			System.out.println("Page limit reached, invalid input!");
+        			Commands.pressEnter();
+        			break;
+        		}
+        		
+        		currentPage++;
+        		break;
+        	}
+        	case 2:{
+        		if(currentPage == 0) {
+        			System.out.println("This is the first page, cannot go to a previous page!");
+        			Commands.pressEnter();
+        			break;
+        		}
+        		
+        		currentPage--;
+        		break;
+        	}
+        	case 3:{
+        		return;
+        	}
+            }
+        }
+	}
+	
 	public static Card getRandomCard() {
 		double chance = Commands.getRandomChance();
 		
@@ -51,6 +110,61 @@ public class Data {
 	
 	
 	
+	public static void displayEnemies() {
+		int choice;
+		
+		List<Enemy> enemyList = new ArrayList<>();
+        for (Enemy[] locationGroup : enemies) {
+            Collections.addAll(enemyList, locationGroup);
+        }
+        
+        final int PAGE_SIZE = 10;
+        int currentPage = 0;
+        int totalPages = (int) Math.ceil((double) (enemyList.size()) / PAGE_SIZE);
+        
+        while(true) {
+        	System.out.println("********************************************************************************");
+            System.out.println("*                                  ENEMY LIST                                  *");
+            System.out.println("*****                                                                      *****\n");
+            
+            int start = currentPage * PAGE_SIZE;
+            int end = Math.min(start + PAGE_SIZE, enemyList.size());
+
+            for (int i = start; i < end; i++) {
+                System.out.println((i + 1) + ". " + enemyList.get(i));
+            }
+            
+            System.out.println("\nEnter 1 for next page | 2 for previous page | 3 To exit");
+            choice = Commands.inputInt(1, 3);
+            
+            switch(choice) {
+        	case 1:{
+        		if(currentPage == totalPages-1) {
+        			System.out.println("Page limit reached, invalid input!");
+        			Commands.pressEnter();
+        			break;
+        		}
+        		
+        		currentPage++;
+        		break;
+        	}
+        	case 2:{
+        		if(currentPage == 0) {
+        			System.out.println("This is the first page, cannot go to a previous page!");
+        			Commands.pressEnter();
+        			break;
+        		}
+        		
+        		currentPage--;
+        		break;
+        	}
+        	case 3:{
+        		return;
+        	}
+            }
+        }
+	}
+	
 	public static Enemy getEnemy() {
 		return enemies[Main.location-1][Commands.getRandomInt(enemies[Main.location-1].length) - 1];
 	}
@@ -74,6 +188,61 @@ public class Data {
 	};
 	
 	
+	
+	public static void displayItems() {
+		int choice;
+		
+		List<Item> itemList = new ArrayList<>();
+        for (Item[] rarityGroup : items) {
+            Collections.addAll(itemList, rarityGroup);
+        }
+        
+        final int PAGE_SIZE = 10;
+        int currentPage = 0;
+        int totalPages = (int) Math.ceil((double) (itemList.size()) / PAGE_SIZE);
+        
+        while(true) {
+        	System.out.println("********************************************************************************");
+            System.out.println("*                                  ITEM LIST                                   *");
+            System.out.println("*****                                                                      *****\n");
+            
+            int start = currentPage * PAGE_SIZE;
+            int end = Math.min(start + PAGE_SIZE, itemList.size());
+
+            for (int i = start; i < end; i++) {
+                System.out.println((i + 1) + ". " + itemList.get(i));
+            }
+            
+            System.out.println("\nEnter 1 for next page | 2 for previous page | 3 To exit");
+            choice = Commands.inputInt(1, 3);
+            
+            switch(choice) {
+        	case 1:{
+        		if(currentPage == totalPages-1) {
+        			System.out.println("Page limit reached, invalid input!");
+        			Commands.pressEnter();
+        			break;
+        		}
+        		
+        		currentPage++;
+        		break;
+        	}
+        	case 2:{
+        		if(currentPage == 0) {
+        			System.out.println("This is the first page, cannot go to a previous page!");
+        			Commands.pressEnter();
+        			break;
+        		}
+        		
+        		currentPage--;
+        		break;
+        	}
+        	case 3:{
+        		return;
+        	}
+            }
+        }
+	}
 	
 	public static Item getItem() {
 		double chance = Commands.getRandomChance();

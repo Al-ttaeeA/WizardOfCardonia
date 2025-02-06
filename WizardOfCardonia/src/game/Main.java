@@ -4,6 +4,7 @@ import data.*;
 import card.*;
 import item.*;
 import enemy.*;
+import java.util.*;
 
 public class Main {
 	public static int testInt;
@@ -16,6 +17,23 @@ public class Main {
 	public static int location;
 	
 	public static void main(String[] args) {
+		int choice;
+		
+		System.out.println("1 for cards, 2 for enemies, 3 for items");
+		choice = Commands.inputInt(1, 3);
+		
+		switch(choice) {
+		case 1:{
+			Data.displayCards();
+		}
+		case 2:{
+			Data.displayEnemies();
+		}
+		case 3:{
+			Data.displayItems();
+		}
+		}
 		
 	}
 }
+
