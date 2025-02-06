@@ -13,6 +13,8 @@ public class Main {
 	public static int testArcana;
 	public static int testCorruptness;
 	
+	public static int location;
+	
 	public static void main(String[] args) {
 		
 	}

@@ -7,7 +7,7 @@ public class MagicalEnemy extends Enemy{
 	public MagicalEnemy(String name, int health, int block, int blockAmount, int damageConstant, int damageVariable, double specialChance, double increaseMult) {
 		super(name, health, block, blockAmount, damageConstant, damageVariable, specialChance);
 		this.increaseMult = increaseMult;
-		this.currentMult = 2;
+		this.currentMult = 1;
 	}
 	
 	public MagicalEnemy() {

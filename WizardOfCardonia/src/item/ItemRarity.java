@@ -2,10 +2,8 @@ package item;
 
 public enum ItemRarity {
     COMMON(0, "Common"),
-    UNCOMMON(1, "Uncommon"),
-    RARE(2, "Rare"),
-    EPIC(3, "Epic"),
-    LEGENDARY(4, "Legendary");
+    RARE(1, "Rare"),
+    EPIC(3, "Epic");
 
     private final int index;
     private final String name;

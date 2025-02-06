@@ -3,15 +3,18 @@ package item;
 public abstract class Item {
 	protected final String name;
 	protected final ItemRarity rarity;
+	protected final int price;
 	
-	public Item(String name, ItemRarity rarity) {
+	public Item(String name, ItemRarity rarity, int price) {
 		this.name = name;
 		this.rarity = rarity;
+		this.price = price;
 	}
 	
 	public Item() {
 		this.name = "Empty item";
 		this.rarity = ItemRarity.COMMON;
+		this.price = 0;
 	}
 	
 	public abstract void use();
@@ -24,5 +27,9 @@ public abstract class Item {
 	
 	public ItemRarity getRarity() {
 		return rarity;
+	}
+	
+	public int getPrice() {
+		return price;
 	}
 }
