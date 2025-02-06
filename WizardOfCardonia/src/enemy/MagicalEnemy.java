@@ -28,6 +28,16 @@ public class MagicalEnemy extends Enemy{
 		}
 	}
 	
+	public String toString() {
+		String str = name + 
+				"\nBase Max Health: " + maxHealth + " HP" +
+				"\nStarting block:  " + block + " Damage" + 
+				"\nBase Damage:     " + getMinDamage() + " - " + getMaxDamage() + " Damage" + 
+				"\nHas a " + String.format("%2.0f", specialChance*100) + "% chance to increase damage and gained block by " + String.format("%2.0f", increaseMult*100) + "%\n";
+		
+		return str;
+	}
+	
 	public int getMinDamage() {
     	return (int) ((damageConstant+1) * currentMult);
     }

@@ -34,6 +34,8 @@ public abstract class Enemy {
 
     public abstract void attack();
     
+    public abstract String toString();
+    
     public String printStats() {
     	String str = name + 
     			"\n\nHealth: " + health + " HP/ " + maxHealth + " HP" +

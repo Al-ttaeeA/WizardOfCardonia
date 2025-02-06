@@ -17,6 +17,8 @@ public class Main {
 	public static int location;
 	
 	public static void main(String[] args) {
+		Commands.clearScreen();
+		
 		int choice;
 		
 		System.out.println("1 for cards, 2 for enemies, 3 for items");
@@ -25,12 +27,15 @@ public class Main {
 		switch(choice) {
 		case 1:{
 			Data.displayCards();
+			break;
 		}
 		case 2:{
 			Data.displayEnemies();
+			break;
 		}
 		case 3:{
 			Data.displayItems();
+			break;
 		}
 		}
 		

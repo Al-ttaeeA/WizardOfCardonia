@@ -18,7 +18,7 @@ public class BlockItem extends Item{
 	}
 	
 	public String toString() {
-		return name + " [" + price + " G]\n\tBoosts ALL gained block by " + (blockBuff-1) + "% until the end of the battle";
+		return name + " [" + price + " G]\n\tBoosts ALL gained block by " + String.format("%2.0f", 100*(blockBuff-1)) + "% until the end of the battle\n";
 	}
 	
 	public double getBlockBuff() {

@@ -18,7 +18,7 @@ public class DamageItem extends Item{
 	}
 	
 	public String toString() {
-		return name + " [" + price + " G]\n\tBoost ALL damage by " + (dmgBuff-1) + "% until the end of the battle";
+		return name + " [" + price + " G]\n\tBoosts ALL damage by " + String.format("%2.0f", 100*(dmgBuff-1)) + "% until the end of the battle\n";
 	}
 	
 	public double getDmgBuff() {

@@ -118,7 +118,7 @@ public class Data {
             Collections.addAll(enemyList, locationGroup);
         }
         
-        final int PAGE_SIZE = 10;
+        final int PAGE_SIZE = 5;
         int currentPage = 0;
         int totalPages = (int) Math.ceil((double) (enemyList.size()) / PAGE_SIZE);
         
@@ -259,16 +259,16 @@ public class Data {
 	}
 	
 	static Item[][] items = {{
-		new BlockItem("Block Flask", 				ItemRarity.COMMON, 20, 0.10),
-		new DamageItem("Damage Flask", 				ItemRarity.COMMON, 20, 0.10),
+		new BlockItem("Block Flask", 				ItemRarity.COMMON, 20, 1.10),
+		new DamageItem("Damage Flask", 				ItemRarity.COMMON, 20, 1.10),
 		new ManaItem("Mana Flask", 					ItemRarity.COMMON, 25, 1)
 	},{
-		new BlockItem("Block Potion", 				ItemRarity.RARE,   40, 0.20),
-		new DamageItem("Damage Potion", 			ItemRarity.RARE,   40, 0.20),
+		new BlockItem("Block Potion", 				ItemRarity.RARE,   40, 1.20),
+		new DamageItem("Damage Potion", 			ItemRarity.RARE,   40, 1.20),
 		new ManaItem("Mana Potion", 				ItemRarity.RARE,   50, 2)
 	},{
-		new BlockItem("Potent Elixir Of Blocking", 	ItemRarity.EPIC,   80, 0.40),
-		new DamageItem("Potent Elixir Of Damage",  	ItemRarity.EPIC,   80, 0.40),
+		new BlockItem("Potent Elixir Of Blocking", 	ItemRarity.EPIC,   80, 1.40),
+		new DamageItem("Potent Elixir Of Damage",  	ItemRarity.EPIC,   80, 1.40),
 		new ManaItem("Potent Elixir Of Mana", 	    ItemRarity.EPIC,  100, 3)	
 	}
 	};

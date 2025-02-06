@@ -24,4 +24,14 @@ public class UndeadEnemy extends Enemy{
 			block += blockAmount;
 		}
 	}
+	
+	public String toString() {
+		String str = name + 
+				"\nBase Max Health: " + maxHealth + " HP" +
+				"\nStarting block:  " + block + " Damage" + 
+				"\nBase Damage:     " + getMinDamage() + " - " + getMaxDamage() + " Damage" + 
+				"\nHas a " + String.format("%2.0f", specialChance*100) + "% chance to heal " + healAmount + " HP\n";
+		
+		return str;
+	}
 }

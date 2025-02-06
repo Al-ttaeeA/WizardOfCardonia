@@ -18,7 +18,7 @@ public class ManaItem extends Item{
 	}
 	
 	public String toString() {
-		return name + " [" + price + " G]\n\tIncreases max mana by " + mana + " MP until the end of the battle";
+		return name + " [" + price + " G]\n\tIncreases max mana by " + mana + " MP until the end of the battle\n";
 	}
 	
 	public int getMana() {
