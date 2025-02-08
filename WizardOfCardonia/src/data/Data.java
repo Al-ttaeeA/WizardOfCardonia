@@ -87,6 +87,7 @@ public class Data {
 	
 	static Card[][] cards = {{
 		new DamageCard("Stab", 				Rarity.COMMON, 1, Type.PHYSICAL, 10),
+		new DamageCard("Jab", 				Rarity.COMMON, 2, Type.PHYSICAL, 18),			
 		new DamageCard("Fireball", 			Rarity.COMMON, 1, Type.MAGICAL, 12),
 		new DamageCard("Dark Shroud", 		Rarity.COMMON, 1, Type.CORRUPT, 15),
 		new BlockCard("Shield", 			Rarity.COMMON, 1, Type.PHYSICAL, 5),
@@ -103,8 +104,8 @@ public class Data {
 		new ManaCard("Mana Replenish", 		Rarity.EPIC, 0, Type.MAGICAL, 1),
 		new ManaCard("Shadow Power", 		Rarity.EPIC, 0, Type.MAGICAL, 2)
 	},{
-		new WeaknessCard("PhysicalWeakness",Rarity.LEGENDARY, 1, Type.PHYSICAL, 0.70),
-		new WeaknessCard("MagicalWeakness", Rarity.LEGENDARY, 1, Type.MAGICAL, 0.65)
+		new WeaknessCard("Bone Breaker", 	Rarity.LEGENDARY, 1, Type.PHYSICAL, 0.80),
+		new WeaknessCard("Blinding Spell", 	Rarity.LEGENDARY, 1, Type.MAGICAL, 0.75)
 	}
 	};
 	

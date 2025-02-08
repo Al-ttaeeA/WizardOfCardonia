@@ -27,10 +27,10 @@ public class UndeadEnemy extends Enemy{
 	
 	public String toString() {
 		String str = name + 
-				"\nBase Max Health: " + maxHealth + " HP" +
-				"\nStarting block:  " + block + " Damage" + 
-				"\nBase Damage:     " + getMinDamage() + " - " + getMaxDamage() + " Damage" + 
-				"\nHas a " + String.format("%2.0f", specialChance*100) + "% chance to heal " + healAmount + " HP\n";
+				"\n   Base Max Health: " + maxHealth + " HP" +
+				"\n   Starting block:  " + block + " Damage" + 
+				"\n   Base Damage:     " + getMinDamage() + " - " + getMaxDamage() + " Damage" + 
+				"\n   Has a " + String.format("%2.0f", specialChance*100) + "% chance to heal " + healAmount + " HP\n";
 		
 		return str;
 	}
