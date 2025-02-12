@@ -1,5 +1,7 @@
 package enemy;
 
+import game.Main;
+
 public class HumanEnemy extends Enemy{
 	public HumanEnemy(String name, int health, int block, int blockAmount, int damageConstant, int damageVariable, double specialChance) {
 		super(name, health, block, blockAmount, damageConstant, damageVariable, specialChance);
@@ -7,6 +9,19 @@ public class HumanEnemy extends Enemy{
 	
 	public HumanEnemy() {
 		super();
+	}
+	
+	public Enemy copy() {
+		return new HumanEnemy(name, health, block, blockAmount, damageConstant, damageVariable, specialChance);
+	}
+	
+	public void initialize() {
+		maxHealth *= Main.testDiffMult;
+		health *= Main.testDiffMult;
+		block *= Main.testDiffMult;
+		blockAmount *= Main.testDiffMult;
+		damageConstant  *= Main.testDiffMult;
+		damageVariable *= Main.testDiffMult;
 	}
 	
 	public void attack() {

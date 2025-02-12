@@ -2,10 +2,10 @@ package enemy;
 
 public abstract class Enemy {
     protected final String name;
-    protected final int maxHealth;
+    protected int maxHealth;
     protected int health;
     protected int block;
-    protected final int blockAmount;
+    protected int blockAmount;
     protected int damageConstant;
     protected int damageVariable;
     protected final double specialChance;
@@ -31,6 +31,10 @@ public abstract class Enemy {
     	this.damageVariable = 0;
     	this.specialChance = 0;
     }
+    
+    public abstract Enemy copy();
+    
+    public abstract void initialize();
 
     public abstract void attack();
     

@@ -9,6 +9,8 @@ import java.util.*;
 public class Main {
 	public static int testInt;
 	public static double testDouble;
+	public static double testDiffMult;
+	
 	public static int testIntelligence;
 	public static int testStrength;
 	public static int testArcana;
@@ -58,6 +60,18 @@ public class Main {
 			
 			switch(mainMenuChoice) {
 			case 1:{
+				
+				for(int i = 0; i < 10; i++) {
+					Enemy testEnemy = Data.getEnemy();
+					
+					testDiffMult = Commands.getRandomInt(5) + Commands.getRandomChance();
+					
+					testEnemy.initialize();
+					
+					System.out.println("Diff: " + testDiffMult);
+					System.out.println(testEnemy + "\n\n\n\n");
+				}
+				
 				break;
 			}
 			
@@ -78,7 +92,7 @@ public class Main {
 				System.exit(0);
 			}
 			}
-		} while(mainMenuChoice != 1 && mainMenuChoice != 2);
+		} while(mainMenuChoice != 0 && mainMenuChoice != 2);
 		
 		
 	}

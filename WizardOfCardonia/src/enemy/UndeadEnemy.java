@@ -1,7 +1,9 @@
 package enemy;
 
+import game.Main;
+
 public class UndeadEnemy extends Enemy{
-	private final int healAmount;
+	private int healAmount;
 	
 	public UndeadEnemy(String name, int health, int block, int blockAmount, int damageConstant, int damageVariable, double specialChance, int healAmount) {
 		super(name, health, block, blockAmount, damageConstant, damageVariable, specialChance);
@@ -11,6 +13,20 @@ public class UndeadEnemy extends Enemy{
 	public UndeadEnemy() {
 		super();
 		this.healAmount = 0;
+	}
+	
+	public Enemy copy() {
+		return new UndeadEnemy(name, health, block, blockAmount, damageConstant, damageVariable, specialChance, healAmount);
+	}
+	
+	public void initialize() {
+		maxHealth *= Main.testDiffMult;
+		health *= Main.testDiffMult;
+		block *= Main.testDiffMult;
+		blockAmount *= Main.testDiffMult;
+		damageConstant  *= Main.testDiffMult;
+		damageVariable *= Main.testDiffMult;
+		healAmount *= Main.testDiffMult;
 	}
 	
 	public void attack() {

@@ -1,5 +1,7 @@
 package enemy;
 
+import game.Main;
+
 public class MagicalEnemy extends Enemy{
 	private double currentMult;
 	private final double increaseMult;
@@ -14,6 +16,19 @@ public class MagicalEnemy extends Enemy{
 		super();
 		this.increaseMult = 0;
 		this.currentMult = 1;
+	}
+	
+	public Enemy copy() {
+		return new MagicalEnemy(name, health, block, blockAmount, damageConstant, damageVariable, specialChance, increaseMult);
+	}
+	
+	public void initialize() {
+		maxHealth *= Main.testDiffMult;
+		health *= Main.testDiffMult;
+		block *= Main.testDiffMult;
+		blockAmount *= Main.testDiffMult;
+		damageConstant  *= Main.testDiffMult;
+		damageVariable *= Main.testDiffMult;
 	}
 	
 	public void attack() {

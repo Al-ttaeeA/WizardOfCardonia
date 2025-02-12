@@ -167,10 +167,22 @@ public class Data {
 	}
 	
 	public static Enemy getEnemy() {
-		return enemies[Main.location-1][Commands.getRandomInt(enemies[Main.location-1].length) - 1];
+		Enemy enemy = new UndeadEnemy();
+		
+		if(Commands.getRandomChance() < 0.3333) {
+			enemy = enemies[0][Commands.getRandomInt(enemies[0].length) - 1].copy();
+		}
+		else if(Commands.getRandomChance() < 0.5) {
+			enemy = enemies[1][Commands.getRandomInt(enemies[1].length) - 1].copy();
+		}
+		else {
+			enemy = enemies[2][Commands.getRandomInt(enemies[2].length) - 1].copy();
+		}
+		
+		return enemy;
 	}
 	
-	static Enemy[][] enemies = {{
+	private static final Enemy[][] enemies = {{
 		new HumanEnemy("Elite Guard", 	  80,  0,  3,  8,  5, 0.25),
 		new HumanEnemy("Royal Guard", 	  90,  0,  4,  6,  8, 0.30),
 		new HumanEnemy("Royal Archer", 	  60,  0,  2, 10,  8, 0.40),
