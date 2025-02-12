@@ -98,7 +98,7 @@ public class Main {
 	 * codex
 	 * This method allows the user to view all cards,
 	 * items, and enemies
-	 */
+	 ******************/
 	static void codex() {
 		while(true) {
 			System.out.println("""
@@ -136,6 +136,17 @@ public class Main {
 			}
 			}
 		}
+	}
+	
+	
+	
+	/********************
+	 * credits
+	 * Prints the credits for the game (a lil bit narcissistic if u ask me)
+	 ********************/
+	static void credits() {
+		System.out.println("Credits goes here");
+		Commands.pressEnter();
 	}
 	
 	
