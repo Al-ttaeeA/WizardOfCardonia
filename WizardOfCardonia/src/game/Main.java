@@ -62,11 +62,9 @@ public class Main {
 			case 1:{
 				
 				for(int i = 0; i < 10; i++) {
-					Enemy testEnemy = Data.getEnemy();
-					
 					testDiffMult = Commands.getRandomInt(5) + Commands.getRandomChance();
 					
-					testEnemy.initialize();
+					Enemy testEnemy = Data.getEnemy();
 					
 					System.out.println("Diff: " + testDiffMult);
 					System.out.println(testEnemy + "\n\n\n\n");

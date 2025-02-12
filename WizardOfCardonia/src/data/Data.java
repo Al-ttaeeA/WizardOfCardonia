@@ -179,6 +179,8 @@ public class Data {
 			enemy = enemies[2][Commands.getRandomInt(enemies[2].length) - 1].copy();
 		}
 		
+		enemy.initialize();
+		
 		return enemy;
 	}
 	
