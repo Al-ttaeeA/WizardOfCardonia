@@ -82,6 +82,7 @@ public class Main {
 			}
 			
 			case 4:{
+				credits();
 				break;
 			}
 			
