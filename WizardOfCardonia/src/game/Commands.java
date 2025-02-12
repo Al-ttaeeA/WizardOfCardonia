@@ -94,6 +94,12 @@ public class Commands {
     
     
     
+    /**************************************
+     * getRandomInt
+     * Gets a random integer between 1 and num inclusive of both
+     * @param num - Maximum integer
+     * @return - returns a random int
+     **************************************/
     public static int getRandomInt(int num) {
     	Random random = new Random();
     	
@@ -102,6 +108,10 @@ public class Commands {
     
     
     
+    /*************************************
+     * getRandomChance
+     * @return - returns a random chance value between 0 and 1
+     *************************************/
     public static double getRandomChance() {
     	Random random = new Random();
     	
@@ -110,6 +120,13 @@ public class Commands {
     
     
     
+    /*********************************************************
+     * skillMultiplier
+     * This is used to multiply a value of a card by the respective skill
+     * @param num - the value that is to be multiplied
+     * @param type - the type of the card
+     * @return - returns the multiplier value
+     *********************************************************/
     public static int skillMultiplier(int num, card.Type type) {
     	double skillMultiplier;
     	int skills;
@@ -132,8 +149,6 @@ public class Commands {
     	
     	return num;
     }
-    
-    
     
     public static double skillMultiplier(double num, card.Type type) {
     	double skillMultiplier;

@@ -7,6 +7,7 @@ import enemy.*;
 import java.util.*;
 
 public class Main {
+	//Currently, these are all for testing
 	public static int testInt;
 	public static double testDouble;
 	public static double testDiffMult;
@@ -60,20 +61,18 @@ public class Main {
 			
 			switch(mainMenuChoice) {
 			case 1:{
+				Savegame.newGame();
 				
-				for(int i = 0; i < 10; i++) {
-					testDiffMult = Commands.getRandomInt(5) + Commands.getRandomChance();
-					
-					Enemy testEnemy = Data.getEnemy();
-					
-					System.out.println("Diff: " + testDiffMult);
-					System.out.println(testEnemy + "\n\n\n\n");
-				}
+				campsite();
 				
 				break;
 			}
 			
 			case 2:{
+				Savegame.loadGame();
+				
+				campsite();
+				
 				break;
 			}
 			
@@ -90,13 +89,16 @@ public class Main {
 				System.exit(0);
 			}
 			}
-		} while(mainMenuChoice != 0 && mainMenuChoice != 2);
-		
-		
-	}
+		} while(mainMenuChoice != 5); //Ends ONLY when the user exits
+	} //End of main
+
 	
 	
-	
+	/******************
+	 * codex
+	 * This method allows the user to view all cards,
+	 * items, and enemies
+	 */
 	static void codex() {
 		while(true) {
 			System.out.println("""
@@ -134,6 +136,25 @@ public class Main {
 			}
 			}
 		}
+	}
+	
+	
+	
+	/*********************
+	 * campsite
+	 * This method is basically the menu of the game
+	 * Here the user can access their cards and stats
+	 *********************/
+	static void campsite() {
+		int campChoice;
+		
+		do {
+			System.out.println("Currently in campsite\n");
+			System.out.println("1-4 for nothing\n");
+			System.out.println("5 to exit to main menu");
+			campChoice = Commands.inputInt(1, 5);
+			
+		} while(campChoice != 5);
 	}
 }
 

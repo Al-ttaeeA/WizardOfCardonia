@@ -10,6 +10,10 @@ import item.*;
 import game.*;
 
 public class Data {
+	/********************************
+	 * displayCards
+	 * This method displays all cards in pages of 10 cards
+	 ********************************/
 	public static void displayCards() {
 		int choice;
 		
@@ -65,6 +69,10 @@ public class Data {
         }
 	}
 	
+	/*********************************
+	 * getRandomCard
+	 * @return - returns a random card based on rarity
+	 *********************************/
 	public static Card getRandomCard() {
 		double chance = Commands.getRandomChance();
 		
@@ -85,6 +93,9 @@ public class Data {
 		}
 	}
 	
+	/*************************
+	 * The array of all cards, each row is a different rarity
+	 *************************/
 	static Card[][] cards = {{
 		new DamageCard("Stab", 				Rarity.COMMON, 1, Type.PHYSICAL, 10),
 		new DamageCard("Jab", 				Rarity.COMMON, 2, Type.PHYSICAL, 18),			
@@ -111,6 +122,10 @@ public class Data {
 	
 	
 	
+	/**********************************
+	 * displayEnemies
+	 * This method displays all enemies in pages of 5 enemies
+	 **********************************/
 	public static void displayEnemies() {
 		int choice;
 		
@@ -166,6 +181,10 @@ public class Data {
         }
 	}
 	
+	/*****************************
+	 * getEnemy
+	 * @return - returns a random enemy
+	 ****************************/
 	public static Enemy getEnemy() {
 		Enemy enemy = new UndeadEnemy();
 		
@@ -184,6 +203,9 @@ public class Data {
 		return enemy;
 	}
 	
+	/******************************************
+	 * The array of all enemies, each row is a different type of enemy
+	 ******************************************/
 	private static final Enemy[][] enemies = {{
 		new HumanEnemy("Elite Guard", 	  80,  0,  3,  8,  5, 0.25),
 		new HumanEnemy("Royal Guard", 	  90,  0,  4,  6,  8, 0.30),
@@ -204,6 +226,10 @@ public class Data {
 	
 	
 	
+	/********************************
+	 * displayItems
+	 * This method displays all items in pages of 10 items
+	 ********************************/
 	public static void displayItems() {
 		int choice;
 		
@@ -259,6 +285,10 @@ public class Data {
         }
 	}
 	
+	/***************************
+	 * getItem
+	 * @return - returns a random item based on rarity
+	 ***************************/
 	public static Item getItem() {
 		double chance = Commands.getRandomChance();
 		
@@ -273,6 +303,9 @@ public class Data {
 		}
 	}
 	
+	/*************************
+	 * The array of all items
+	 *************************/
 	static Item[][] items = {{
 		new BlockItem("Block Flask", 				ItemRarity.COMMON, 20, 1.10),
 		new DamageItem("Damage Flask", 				ItemRarity.COMMON, 20, 1.10),
