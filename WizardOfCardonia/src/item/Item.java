@@ -17,6 +17,8 @@ public abstract class Item {
 		this.price = 0;
 	}
 	
+	public abstract Item copy();
+	
 	public abstract void use();
 	
 	public abstract String toString();

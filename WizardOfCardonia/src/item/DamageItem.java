@@ -13,6 +13,10 @@ public class DamageItem extends Item{
 		this.dmgBuff = 1;
 	}
 	
+	public Item copy() {
+		return new DamageItem(name, rarity, price, dmgBuff);
+	}
+	
 	public void use() {
 		game.Main.testDouble *= dmgBuff;
 	}

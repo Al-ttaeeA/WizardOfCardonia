@@ -13,6 +13,10 @@ public class ManaItem extends Item{
 		this.mana = 0;
 	}
 	
+	public Item copy() {
+		return new ManaItem(name, rarity, price, mana);
+	}
+	
 	public void use() {
 		game.Main.testInt += mana;
 	}

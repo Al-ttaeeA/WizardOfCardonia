@@ -293,13 +293,13 @@ public class Data {
 		double chance = Commands.getRandomChance();
 		
 		if(chance < 0.60) {
-			return items[0][Commands.getRandomInt(items[0].length) - 1];
+			return items[0][Commands.getRandomInt(items[0].length) - 1].copy();
 		}
 		else if(chance < 0.90) {
-			return items[1][Commands.getRandomInt(items[1].length) - 1];
+			return items[1][Commands.getRandomInt(items[1].length) - 1].copy();
 		}
 		else {
-			return items[2][Commands.getRandomInt(items[2].length) - 1];
+			return items[2][Commands.getRandomInt(items[2].length) - 1].copy();
 		}
 	}
 	

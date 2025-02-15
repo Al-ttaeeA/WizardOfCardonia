@@ -13,6 +13,10 @@ public class BlockItem extends Item{
 		this.blockBuff = 1;
 	}
 	
+	public Item copy() {
+		return new BlockItem(name, rarity, price, blockBuff);
+	}
+	
 	public void use() {
 		game.Main.testDouble *= blockBuff;
 	}
