@@ -77,19 +77,19 @@ public class Data {
 		double chance = Commands.getRandomChance();
 		
 		if(chance < 0.49) {
-			return cards[0][Commands.getRandomInt(cards[0].length) - 1];
+			return cards[0][Commands.getRandomInt(cards[0].length) - 1].copy();
 		}
 		else if(chance < 0.79) {
-			return cards[1][Commands.getRandomInt(cards[1].length) - 1];
+			return cards[1][Commands.getRandomInt(cards[1].length) - 1].copy();
 		}
 		else if(chance < 0.94) {
-			return cards[2][Commands.getRandomInt(cards[2].length) - 1];
+			return cards[2][Commands.getRandomInt(cards[2].length) - 1].copy();
 		}
 		else if(chance < 0.99) {
-			return cards[3][Commands.getRandomInt(cards[3].length) - 1];
+			return cards[3][Commands.getRandomInt(cards[3].length) - 1].copy();
 		}
 		else {
-			return cards[4][Commands.getRandomInt(cards[4].length) - 1];
+			return cards[4][Commands.getRandomInt(cards[4].length) - 1].copy();
 		}
 	}
 	

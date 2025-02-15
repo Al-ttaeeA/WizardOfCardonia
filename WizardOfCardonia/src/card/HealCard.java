@@ -15,6 +15,10 @@ public class HealCard extends Card {
     	this.heal = 0;
     	this.newHeal = 0;
     }
+    
+    public Card copy() {
+    	return new HealCard(name, rarity, manaCost, type, heal);
+    }
 
     public void use() {
     	newHeal = game.Commands.skillMultiplier(heal, type);

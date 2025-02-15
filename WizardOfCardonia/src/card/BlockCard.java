@@ -15,6 +15,10 @@ public class BlockCard extends Card{
     	this.block = 0;
     	this.newBlock = 0;
     }
+    
+    public Card copy() {
+    	return new BlockCard(name, rarity, manaCost, type, block);
+    }
 
     public void use() {
     	newBlock = game.Commands.skillMultiplier(block, type);

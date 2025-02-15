@@ -19,6 +19,8 @@ public abstract class Card {
     	this.manaCost = 0;
     	this.type = Type.PHYSICAL;
     }
+    
+    public abstract Card copy();
 
     public abstract void use();
     

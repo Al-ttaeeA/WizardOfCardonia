@@ -13,6 +13,10 @@ public class ManaCard extends Card{
 		this.mana = 0;
 	}
 	
+	public Card copy() {
+		return new ManaCard(name, rarity, manaCost, type, mana);
+	}
+	
 	public void use() {
 		game.Main.testInt += mana;
 	}

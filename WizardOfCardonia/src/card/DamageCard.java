@@ -15,6 +15,10 @@ public class DamageCard extends Card {
     	this.damage = 0;
     	this.newDamage = 0;
     }
+    
+    public Card copy() {
+    	return new DamageCard(name, rarity, manaCost, type, damage);
+    }
 
     public void use() {
     	newDamage = game.Commands.skillMultiplier(damage, type);

@@ -16,6 +16,10 @@ public class WeaknessCard extends Card{
 		this.newWeakness = 0;
 	}
 	
+	public Card copy() {
+		return new WeaknessCard(name, rarity, manaCost, type, weakness);
+	}
+	
 	public void use() {
 		newWeakness = game.Commands.skillMultiplier(weakness, type);
 		
