@@ -132,13 +132,13 @@ public class Commands {
     	int skills;
     	
     	if(type == card.Type.PHYSICAL) {
-    		skills = Main.strength - 1 - Main.corruptness + Main.arcana;
+    		skills = Main.strength - 1 - Main.corruptedness + Main.arcana;
     	}
     	else if(type == card.Type.MAGICAL) {
-    		skills = Main.intelligence - 1 - Main.corruptness + Main.arcana;
+    		skills = Main.intelligence - 1 - Main.corruptedness + Main.arcana;
     	}
     	else {
-    		skills = Main.corruptness - Main.arcana;
+    		skills = Main.corruptedness - Main.arcana;
     	}
     	
     	if(skills < 0) skills = 0;
@@ -155,13 +155,13 @@ public class Commands {
     	int skills;
     	
     	if(type == card.Type.PHYSICAL) {
-    		skills = Main.strength - 1 - Main.corruptness + Main.arcana;
+    		skills = Main.strength - 1 - Main.corruptedness + Main.arcana;
     	}
     	else if(type == card.Type.MAGICAL) {
-    		skills = Main.intelligence - 1 - Main.corruptness + Main.arcana;
+    		skills = Main.intelligence - 1 - Main.corruptedness + Main.arcana;
     	}
     	else {
-    		skills = Main.corruptness - Main.arcana;
+    		skills = Main.corruptedness - Main.arcana;
     	}
     	
     	if(skills < 0) skills = 0;

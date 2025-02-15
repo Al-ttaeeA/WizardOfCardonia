@@ -15,13 +15,18 @@ public class Main {
 	public static ArrayList<Card> deck = new ArrayList();
 	
 	public static String playName;
-	public static int playMaxHealth = 100;
-	public static int playCurrentHealth = 100;
+	public static int playMaxHP = 100;
+	public static int playCurrentHP = 100;
+	
+	public static int xpLevel = 1;
+	public static int currentXp = 0;
+	public static int maxXp = 100;
+	public static int skillpoints = 0;
 	
 	public static int intelligence = 1;
 	public static int strength = 1;
 	public static int arcana = 1;
-	public static int corruptness = 1;
+	public static int corruptedness = 0;
 	
 	public static int location;
 	
@@ -40,7 +45,7 @@ public class Main {
 				*                                                                              *
 				********************************************************************************
 				
-				Welcome fellow wizard! You have a great adventure ahead of you!
+				Welcome fellow wizard! The land of Cardonia awaits you!
 				""");
 		Commands.pressEnter();
 		
@@ -168,21 +173,144 @@ public class Main {
 		int campChoice;
 		
 		do {
-			System.out.println("Currently in campsite\n");
-			System.out.println("1 to view deck\n");
-			System.out.println("2-4 to do nothing\n");
-			System.out.println("5 to exit to main menu");
+			System.out.println("""
+					********************************************************************************
+					*                                   CAMPSITE                                   *
+					*****                                                                      *****
+					""");
+			
+			if(skillpoints > 0) {
+				System.out.println("   # You have " + skillpoints + " unspent skillpoints!\n");
+			}
+			
+			System.out.println("""
+					1. View Personal Stats
+					
+					2. View Deck
+					
+					3. Add a skillpoints (testing)
+					
+					4.
+					
+					5. Exit to main menu
+					""");
 			campChoice = Commands.inputInt(1, 5);
 			
 			switch(campChoice) {
 			case 1:{
+				viewStats();
+				break;
+			}
+			case 2:{
 				viewDeck();
+				break;
+			}
+			case 3:{
+				skillpoints++;
 				break;
 			}
 			}
 		} while(campChoice != 5);
 	}
 	
+	/**********************
+	 * viewStats
+	 * Lets the player view their stats
+	 **********************/
+	static void viewStats() {
+		int choice;
+		
+		while(true) {
+			System.out.println("""
+					********************************************************************************
+					*                                     STATS                                    *
+					*****                                                                      *****
+					""");
+			System.out.println(playName + "\n");
+			System.out.println("Health: " + playCurrentHP + " HP/ " + playMaxHP + " HP\n");
+			System.out.println("Experience (Level " + xpLevel + "): " + currentXp + " XP/ " + maxXp + " XP\n");
+			if(skillpoints > 0) {
+				System.out.println("You have " + skillpoints + " unspent skillpoint(s)!\n");
+			}
+			System.out.println("Strength: " + strength);
+			System.out.println("\nIntelligence: " + intelligence);
+			System.out.println("\nArcana: " + arcana);
+			System.out.println("\nCorruptedness: " + corruptedness);
+			System.out.println("""
+					\n********************************************************************************
+					What would you like to do?
+					
+					1. Level up
+					
+					2. Return to campsite
+					""");
+			choice = Commands.inputInt(1, 2);
+			
+			if(choice == 2) {
+				return;
+			}
+			
+			if(skillpoints == 0) {
+				System.out.println("You do not have any skillpoint to level up with!");
+				Commands.pressEnter();
+				continue;
+			}
+			
+			levelUp();
+		}
+	}
+	
+	/********************
+	 * levelUp
+	 * Lets the player level up their skills
+	 ********************/
+	static void levelUp() {
+		int choice;
+		
+		while(true) {
+			System.out.println("What would you like to level up?");
+			System.out.println("\n1. Strength: " + strength);
+			System.out.println("\n2. Intelligence: " + intelligence);
+			System.out.println("\n3. Arcana: " + arcana + "  (Corruptedness: " + corruptedness + ")");
+			choice = Commands.inputInt(1, 3);
+			
+			switch(choice) {
+			case 1:{
+				strength += 1;
+				skillpoints -= 1;
+				System.out.println("You level up you strength to " + strength);
+				System.out.println("\nYou now have " + skillpoints + " skillpoints remaining!");
+				Commands.pressEnter();
+				break;
+			}
+			case 2:{
+				intelligence += 1;
+				skillpoints--;
+				System.out.println("You level up you intelligence to " + intelligence);
+				System.out.println("\nYou now have " + skillpoints + " skillpoints remaining!");
+				Commands.pressEnter();
+				break;
+			}
+			case 3:{
+				arcana += 1;
+				skillpoints--;
+				System.out.println("You level up you arcana to " + arcana);
+				System.out.println("\nYou now have " + skillpoints + " skillpoints remaining!");
+				Commands.pressEnter();
+				break;
+			}
+			}
+			
+			if(skillpoints == 0) {
+				return;
+			}
+		}
+	}
+	
+	/*********************
+	 * viewDeck
+	 * Allows the player to view their deck and remove cards if they wish
+	 *********************/
 	static void viewDeck() {
 		int choice;
 		int discardChoice;
