@@ -12,15 +12,22 @@ public class Main {
 	public static double testDouble;
 	public static double testDiffMult;
 	
-	public static int testIntelligence;
-	public static int testStrength;
-	public static int testArcana;
-	public static int testCorruptness;
+	public static ArrayList<Card> deck = new ArrayList();
+	
+	public static String playName;
+	public static int playMaxHealth = 100;
+	public static int playCurrentHealth = 100;
+	
+	public static int intelligence = 1;
+	public static int strength = 1;
+	public static int arcana = 1;
+	public static int corruptness = 1;
 	
 	public static int location;
 	
 	public static void main(String[] args) {
 		Commands.clearScreen();
+		Data.initiateDeck();
 		
 		int mainMenuChoice;
 		
@@ -162,11 +169,100 @@ public class Main {
 		
 		do {
 			System.out.println("Currently in campsite\n");
-			System.out.println("1-4 for nothing\n");
+			System.out.println("1 to view deck\n");
+			System.out.println("2-4 to do nothing\n");
 			System.out.println("5 to exit to main menu");
 			campChoice = Commands.inputInt(1, 5);
 			
+			switch(campChoice) {
+			case 1:{
+				viewDeck();
+				break;
+			}
+			}
 		} while(campChoice != 5);
+	}
+	
+	static void viewDeck() {
+		int choice;
+		int discardChoice;
+		int pageSize = 10;
+		int currentPage = 0; 
+		int totalPages;
+		
+		while(true) {
+			totalPages = (int) Math.ceil((double) (deck.size()) / pageSize);
+			
+			System.out.println("""
+					********************************************************************************
+					*                                     DECK                                     *
+					*****                                                                      *****
+					""");
+			
+			int start = currentPage * pageSize;
+			int end = Math.min(start + pageSize, deck.size());
+			
+			for(int i = start; i < end; i++) {
+				System.out.println((i+1) + ". " + deck.get(i));
+			}
+			
+			System.out.println("\nEnter -1 for next page | -2 for previous page | Card number to discard | Or 0 to exit");
+			choice = Commands.inputInt(-2, end);
+			
+			if(choice == -2) {
+				if(currentPage == 0) {
+        			System.out.println("This is the first page, cannot go to a previous page!");
+        			Commands.pressEnter();
+        			continue;
+        		}
+        		
+        		currentPage--;
+			}
+			else if(choice == -1) {
+				if(currentPage == totalPages-1) {
+        			System.out.println("Page limit reached, invalid input!");
+        			Commands.pressEnter();
+        			continue;
+        		}
+        		
+        		currentPage++;
+			}
+			else if(choice == 0) {
+				return;
+			}
+			else {
+				if(choice <= start) {
+					System.out.println("Invalid input, please try again!");
+					Commands.pressEnter();
+					continue;
+				}
+				
+				System.out.println(deck.get(choice-1));
+				System.out.println("""
+						********************************************************************************
+						What would you like to do?
+						
+						1. Return
+						
+						2. Remove Card
+						""");
+				discardChoice = Commands.inputInt(1, 2);
+				
+				if(discardChoice == 1) continue;
+				
+				if(deck.size() <= 10) {
+					System.out.println("Your deck is too small! You need to have a minimum of 10 cards at all times!");
+					System.out.println("\nYou cannot remove " + deck.get(choice-1).getName() + "!");
+					Commands.pressEnter();
+					continue;
+				}
+				
+				System.out.println(deck.get(choice-1).getName() + " has been removed from your deck!");
+				Commands.pressEnter();
+				
+				deck.remove(choice-1);
+			}
+		}
 	}
 }
 

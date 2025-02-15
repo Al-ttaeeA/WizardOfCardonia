@@ -93,6 +93,21 @@ public class Data {
 		}
 	}
 	
+	/********************************
+	 * initiateDeck
+	 * This method runs at the start of the game and inializes the deck with a damage card
+	 * of each type and 7 random cards
+	 ********************************/
+	public static void initiateDeck() {
+		Main.deck.add(cards[0][0].copy());
+		Main.deck.add(cards[0][2].copy());
+		Main.deck.add(cards[0][3].copy());
+		
+		for(int i = 0; i < 12; i++) {
+			Main.deck.add(getRandomCard());
+		}
+	}
+	
 	/*************************
 	 * The array of all cards, each row is a different rarity
 	 *************************/
