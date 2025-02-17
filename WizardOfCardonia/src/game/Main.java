@@ -432,7 +432,7 @@ public class Main {
             int end = Math.min(start + PAGE_SIZE, inventory.size());
 
             if(inventory.size() == 0) {
-            	System.out.println("\nYour inventory is currently empty!");
+            	System.out.println("Your inventory is currently empty!");
             	Commands.pressEnter();
             	return;
             }
@@ -474,6 +474,7 @@ public class Main {
 	
 	static void merchant() {
 		System.out.println("Merchant runs");
+		Commands.pressEnter();
 	}
 }
 
