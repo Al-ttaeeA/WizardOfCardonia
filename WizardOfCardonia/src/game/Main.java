@@ -214,7 +214,7 @@ public class Main {
 				break;
 			}
 			case 4:{
-				if(Commands.getRandomChance() < 0.33 || merchantCount == 3) {
+				if(merchantCount != 0 && (Commands.getRandomChance() < 0.33 || merchantCount == 3)) {
 					merchantCount = 0;
 					
 					merchant();
@@ -412,7 +412,59 @@ public class Main {
 	}
 	
 	static void viewInventory() {
-		System.out.println("View inventory runs");
+		int choice;
+        
+        final int PAGE_SIZE = 10;
+        int currentPage = 0;
+        int totalPages = (int) Math.ceil((double) (inventory.size()) / PAGE_SIZE);
+        
+        while(true) {
+        	System.out.println("********************************************************************************");
+            System.out.println("*                                  INVENTORY                                   *");
+            System.out.println("*****                                                                      *****\n");
+            
+            int start = currentPage * PAGE_SIZE;
+            int end = Math.min(start + PAGE_SIZE, inventory.size());
+
+            if(inventory.size() == 0) {
+            	System.out.println("\nYour inventory is currently empty!");
+            	Commands.pressEnter();
+            	return;
+            }
+            
+            for (int i = start; i < end; i++) {
+                System.out.println((i + 1) + ". " + inventory.get(i));
+            }
+            
+            System.out.println("\nEnter 1 for next page | 2 for previous page | 3 To exit");
+            choice = Commands.inputInt(1, 3);
+            
+            switch(choice) {
+        	case 1:{
+        		if(currentPage == totalPages-1) {
+        			System.out.println("Page limit reached, invalid input!");
+        			Commands.pressEnter();
+        			break;
+        		}
+        		
+        		currentPage++;
+        		break;
+        	}
+        	case 2:{
+        		if(currentPage == 0) {
+        			System.out.println("This is the first page, cannot go to a previous page!");
+        			Commands.pressEnter();
+        			break;
+        		}
+        		
+        		currentPage--;
+        		break;
+        	}
+        	case 3:{
+        		return;
+        	}
+            }
+        }
 	}
 	
 	static void merchant() {
