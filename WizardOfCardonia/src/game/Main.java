@@ -13,6 +13,7 @@ public class Main {
 	public static double testDiffMult;
 	
 	public static ArrayList<Card> deck = new ArrayList();
+	public static ArrayList<Item> inventory = new ArrayList();
 	
 	public static String playName;
 	public static int playMaxHP = 100;
@@ -171,6 +172,7 @@ public class Main {
 	 *********************/
 	static void campsite() {
 		int campChoice;
+		int merchantCount = 0;
 		
 		do {
 			System.out.println("""
@@ -185,15 +187,17 @@ public class Main {
 			
 			System.out.println("""
 					1. View Personal Stats
+					""");
+			System.out.println("2. View Deck (" + deck.size() + " Cards)");
+			System.out.println("\n3. View inventory (" + inventory.size() + " Items)");		
 					
-					2. View Deck
+			System.out.println("""
 					
-					3. Add a skillpoints (testing)
-					
-					4.
+					4. Proceed
 					
 					5. Exit to main menu
-					""");
+					""");		
+					
 			campChoice = Commands.inputInt(1, 5);
 			
 			switch(campChoice) {
@@ -206,7 +210,21 @@ public class Main {
 				break;
 			}
 			case 3:{
-				skillpoints++;
+				viewInventory();
+				break;
+			}
+			case 4:{
+				if(Commands.getRandomChance() < 0.33 || merchantCount == 3) {
+					merchantCount = 0;
+					
+					merchant();
+					
+					break;
+				}
+				
+				merchantCount++;
+				
+				Battle.Battle();
 				break;
 			}
 			}
@@ -391,6 +409,14 @@ public class Main {
 				deck.remove(choice-1);
 			}
 		}
+	}
+	
+	static void viewInventory() {
+		System.out.println("View inventory runs");
+	}
+	
+	static void merchant() {
+		System.out.println("Merchant runs");
 	}
 }
 
