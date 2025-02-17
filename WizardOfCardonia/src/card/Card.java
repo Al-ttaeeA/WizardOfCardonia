@@ -1,5 +1,7 @@
 package card;
 
+import game.Commands;
+
 public abstract class Card {
     protected final String name;
     protected final Rarity rarity;
@@ -40,5 +42,40 @@ public abstract class Card {
 
     public Type getType() {
         return type;
+    }
+    
+    public int getPrice() {
+    	int constant = 0;
+    	int variable = 0;
+    	
+    	switch(rarity) {
+    	case COMMON:{
+    		constant = 10;
+    		variable = 15;
+    		break;
+    	}
+    	case UNCOMMON:{
+    		constant = 25;
+    		variable = 15;
+    		break;
+    	}
+    	case RARE:{
+    		constant = 40;
+    		variable = 30;
+    		break;
+    	}
+    	case EPIC:{
+    		constant = 70;
+    		variable = 30;
+    		break;
+    	}
+    	case LEGENDARY:{
+    		constant = 100;
+    		variable = 50;
+    		break;
+    	}
+    	}
+    	
+    	return constant + Commands.getRandomInt(variable);
     }
 }

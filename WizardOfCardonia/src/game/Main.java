@@ -18,6 +18,7 @@ public class Main {
 	public static String playName;
 	public static int playMaxHP = 100;
 	public static int playCurrentHP = 100;
+	public static int gold;
 	
 	public static int xpLevel = 1;
 	public static int currentXp = 0;
@@ -411,6 +412,10 @@ public class Main {
 		}
 	}
 	
+	/**************************
+	 * viewInventory
+	 * Allows the player to view all the items in their inventory
+	 **************************/
 	static void viewInventory() {
 		int choice;
         
