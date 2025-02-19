@@ -18,7 +18,7 @@ public class Main {
 	public static String playName;
 	public static int playMaxHP = 100;
 	public static int playCurrentHP = 100;
-	public static int gold;
+	public static int gold = 1000;
 	
 	public static int xpLevel = 1;
 	public static int currentXp = 0;
@@ -113,6 +113,7 @@ public class Main {
 			}
 		} while(mainMenuChoice != 6); //Ends ONLY when the user exits
 	} //End of main
+	
 	
 	
 	/*********************
@@ -216,7 +217,7 @@ public class Main {
 					5. Exit to main menu
 					""");		
 					
-			campChoice = Commands.inputInt(1, 5);
+			campChoice = Commands.inputInt(1, 6);
 			
 			switch(campChoice) {
 			case 1:{
@@ -490,8 +491,174 @@ public class Main {
 	}
 	
 	static void merchant() {
-		System.out.println("Merchant runs");
+		Card[] shopCards = new Card[5];
+		int[] shopCardPrices = new int[5];
+		Item[] shopItems = new Item[2];
+		int[] shopItemPrices = new int[2];
+		
+		int shopChoice;
+		int buyChoice;
+		
+		for (int i = 0; i < 5; i++) {
+			shopCards[i] = Data.getRandomCard();
+			shopCardPrices[i] = shopCards[i].getPrice();
+		}
+		for (int i = 0; i < 2; i++) {
+			shopItems[i] = Data.getItem();
+			shopItemPrices[i] = shopItems[i].getPrice();
+		}
+		
+		System.out.println("You stumble accross a merchant!");
 		Commands.pressEnter();
+		
+		do {
+			System.out.println("""
+					********************************************************************************
+					*                                   MERCHANT                                   *
+					*****                                                                      *****
+					""");
+			
+			System.out.println(" # You have " + gold + " Gold!\n");
+			
+			System.out.println("   Merchant Card Offerings:\n");
+			
+			for (int i = 0; i < 5; i++) {
+				if(shopCards[i] == null) {
+					System.out.println((i+1) + ". CARD HAS BEEN SOLD");
+				}
+				
+				System.out.println((i+1) + ". " + shopCards[i].getName() + " [" + shopCards[i].getRarity() + "] (" + shopCardPrices[i] + " Gold)\n");
+			}
+			
+			System.out.println("\n   Merchant Item Offerings:\n");
+			
+			for (int i = 0; i < 2; i++) {
+				if(shopCards[i] == null) {
+					System.out.println((i+1) + ". ITEM HAS BEEN SOLD");
+				}
+				
+				System.out.println((i+6) + ". " + shopItems[i].getName() + " [" + shopItems[i].getRarity() + "] (" + shopItemPrices[i] + " Gold)\n");
+			}
+			
+			System.out.println("8. Reroll the cards (50 Gold)");
+			
+			System.out.println("Which offering would you like to view? (Enter 0 to exit)");
+			shopChoice = Commands.inputInt(0, 8);
+			
+			switch(shopChoice) {
+			case 1:
+			case 2:
+			case 3:
+			case 4:
+			case 5:{
+				shopChoice -= 1;
+				
+				System.out.println(shopCards[shopChoice]);
+				System.out.println("""
+						********************************************************************************
+						What would you like to do?
+						
+						1. Buy
+						
+						2. Return 
+						
+						""");
+				buyChoice = Commands.inputInt(1, 2);
+				
+				if(buyChoice == 2) {
+					break;
+				}
+				
+				if(!buy(shopCardPrices[shopChoice])) {
+					System.out.println("You do not have enough gold to buy " + shopCards[shopChoice].getName());
+					break;
+				}
+				
+				gold -= shopCardPrices[shopChoice];
+				
+				deck.add(shopCards[shopChoice].copy());
+				
+				System.out.println("You add " + shopCards[shopChoice].getName() + " to your deck!");
+				System.out.println("\nYou now have " + gold + " Gold left!");
+				Commands.pressEnter();
+				
+				shopCards[shopChoice] = null;
+				
+				break;
+			}
+			
+			case 6:
+			case 7:{
+				shopChoice -= 6;
+				
+				System.out.println(shopItems[shopChoice]);
+				System.out.println("""
+						********************************************************************************
+						What would you like to do?
+						
+						1. Buy
+						
+						2. Return 
+						
+						""");
+				buyChoice = Commands.inputInt(1, 2);
+				
+				if(buyChoice == 2) {
+					break;
+				}
+				
+				if(!buy(shopItemPrices[shopChoice])) {
+					System.out.println("You do not have enough gold to buy " + shopItems[shopChoice].getName());
+					break;
+				}
+				
+				gold -= shopItemPrices[shopChoice];
+				
+				inventory.add(shopItems[shopChoice].copy());
+				
+				System.out.println("You add " + shopItems[shopChoice].getName() + " to your inventory!");
+				System.out.println("\nYou now have " + gold + " Gold left!");
+				Commands.pressEnter();
+				
+				shopItems[shopChoice] = null;
+				
+				break;
+			}
+			
+			case 8:{
+				if(!buy(50)) {
+					System.out.println("You do not have enough gold to reroll!");
+					Commands.pressEnter();
+					
+					break;
+				}
+				
+				gold -= 50;
+				
+				for (int i = 0; i < 5; i++) {
+					shopCards[i] = Data.getRandomCard();
+					shopCardPrices[i] = shopCards[i].getPrice();
+				}
+				break;
+			}
+			}
+		} while (shopChoice != 0);
 	}
+	
+	/**********************************
+     * buy
+     * This method checks if the user is able to buy an item 
+     * @param cost - The cost of the item
+     * @return - True if the user can buy, false if the user cannot buy
+     **********************************/
+    public static boolean buy(int cost){
+        if(cost <= gold){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 }
 
+ 

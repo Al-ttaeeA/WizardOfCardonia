@@ -103,7 +103,7 @@ public class Data {
 		Main.deck.add(cards[0][2].copy());
 		Main.deck.add(cards[0][3].copy());
 		
-		for(int i = 0; i < 12; i++) {
+		for(int i = 0; i < 7; i++) {
 			Main.deck.add(getRandomCard());
 		}
 	}
