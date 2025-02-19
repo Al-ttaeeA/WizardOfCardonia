@@ -73,7 +73,7 @@ public class Main {
 					6. Exit (REALLY?)
 					""");
 			
-			mainMenuChoice = Commands.inputInt(1, 5);
+			mainMenuChoice = Commands.inputInt(1, 6);
 			
 			switch(mainMenuChoice) {
 			case 1:{
@@ -217,7 +217,7 @@ public class Main {
 					5. Exit to main menu
 					""");		
 					
-			campChoice = Commands.inputInt(1, 6);
+			campChoice = Commands.inputInt(1, 5);
 			
 			switch(campChoice) {
 			case 1:{
