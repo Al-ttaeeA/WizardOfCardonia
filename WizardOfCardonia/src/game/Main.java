@@ -64,11 +64,13 @@ public class Main {
 					
 					2. Load previous game (WIP)
 					
-					3. View Codex (Name could change)
+					3. Tutorial
 					
-					4. Credits (WIP)
+					4. View Codex (Name could change)
 					
-					5. Exit (REALLY?)
+					5. Credits (WIP)
+					
+					6. Exit (REALLY?)
 					""");
 			
 			mainMenuChoice = Commands.inputInt(1, 5);
@@ -91,22 +93,37 @@ public class Main {
 			}
 			
 			case 3:{
-				codex();
+				tutorial();
 				break;
 			}
 			
 			case 4:{
-				credits();
+				codex();
 				break;
 			}
 			
 			case 5:{
+				credits();
+				break;
+			}
+			
+			case 6:{
 				System.exit(0);
 			}
 			}
-		} while(mainMenuChoice != 5); //Ends ONLY when the user exits
+		} while(mainMenuChoice != 6); //Ends ONLY when the user exits
 	} //End of main
-
+	
+	
+	/*********************
+	 * tutorial
+	 * This method allows the user to view the tutorial
+	 *********************/
+	static void tutorial() {
+		System.out.println("Tutorial plays");
+		Commands.pressEnter();
+	}
+	
 	
 	
 	/******************
