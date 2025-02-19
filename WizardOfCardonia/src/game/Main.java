@@ -498,6 +498,7 @@ public class Main {
 		
 		int shopChoice;
 		int buyChoice;
+		int index;
 		
 		for (int i = 0; i < 5; i++) {
 			shopCards[i] = Data.getRandomCard();
@@ -524,7 +525,8 @@ public class Main {
 			
 			for (int i = 0; i < 5; i++) {
 				if(shopCards[i] == null) {
-					System.out.println((i+1) + ". CARD HAS BEEN SOLD");
+					System.out.println((i+1) + ". CARD HAS BEEN SOLD\n");
+					continue;
 				}
 				
 				System.out.println((i+1) + ". " + shopCards[i].getName() + " [" + shopCards[i].getRarity() + "] (" + shopCardPrices[i] + " Gold)\n");
@@ -533,14 +535,15 @@ public class Main {
 			System.out.println("\n   Merchant Item Offerings:\n");
 			
 			for (int i = 0; i < 2; i++) {
-				if(shopCards[i] == null) {
-					System.out.println((i+1) + ". ITEM HAS BEEN SOLD");
+				if(shopItems[i] == null) {
+					System.out.println((i+6) + ". ITEM HAS BEEN SOLD\n");
+					continue;
 				}
 				
 				System.out.println((i+6) + ". " + shopItems[i].getName() + " [" + shopItems[i].getRarity() + "] (" + shopItemPrices[i] + " Gold)\n");
 			}
 			
-			System.out.println("8. Reroll the cards (50 Gold)");
+			System.out.println("\n8. Reroll the cards (50 Gold)\n");
 			
 			System.out.println("Which offering would you like to view? (Enter 0 to exit)");
 			shopChoice = Commands.inputInt(0, 8);
@@ -551,9 +554,15 @@ public class Main {
 			case 3:
 			case 4:
 			case 5:{
-				shopChoice -= 1;
+				index = shopChoice - 1;
 				
-				System.out.println(shopCards[shopChoice]);
+				if(shopCards[index] == null) {
+					System.out.println("This Card has been sold!");
+					Commands.pressEnter();
+					break;
+				}
+				
+				System.out.println(shopCards[index]);
 				System.out.println("""
 						********************************************************************************
 						What would you like to do?
@@ -561,7 +570,6 @@ public class Main {
 						1. Buy
 						
 						2. Return 
-						
 						""");
 				buyChoice = Commands.inputInt(1, 2);
 				
@@ -569,37 +577,42 @@ public class Main {
 					break;
 				}
 				
-				if(!buy(shopCardPrices[shopChoice])) {
+				if(!buy(shopCardPrices[index])) {
 					System.out.println("You do not have enough gold to buy " + shopCards[shopChoice].getName());
 					break;
 				}
 				
-				gold -= shopCardPrices[shopChoice];
+				gold -= shopCardPrices[index];
 				
-				deck.add(shopCards[shopChoice].copy());
+				deck.add(shopCards[index].copy());
 				
-				System.out.println("You add " + shopCards[shopChoice].getName() + " to your deck!");
+				System.out.println("You add " + shopCards[index].getName() + " to your deck!");
 				System.out.println("\nYou now have " + gold + " Gold left!");
 				Commands.pressEnter();
 				
-				shopCards[shopChoice] = null;
+				shopCards[index] = null;
 				
 				break;
 			}
 			
 			case 6:
 			case 7:{
-				shopChoice -= 6;
+				index = shopChoice - 6;
 				
-				System.out.println(shopItems[shopChoice]);
+				if(shopItems[index] == null) {
+					System.out.println("This Item has been sold!");
+					Commands.pressEnter();
+					break;
+				}
+				
+				System.out.println(shopItems[index]);
 				System.out.println("""
 						********************************************************************************
 						What would you like to do?
 						
 						1. Buy
 						
-						2. Return 
-						
+						2. Return
 						""");
 				buyChoice = Commands.inputInt(1, 2);
 				
@@ -607,20 +620,20 @@ public class Main {
 					break;
 				}
 				
-				if(!buy(shopItemPrices[shopChoice])) {
+				if(!buy(shopItemPrices[index])) {
 					System.out.println("You do not have enough gold to buy " + shopItems[shopChoice].getName());
 					break;
 				}
 				
-				gold -= shopItemPrices[shopChoice];
+				gold -= shopItemPrices[index];
 				
-				inventory.add(shopItems[shopChoice].copy());
+				inventory.add(shopItems[index].copy());
 				
-				System.out.println("You add " + shopItems[shopChoice].getName() + " to your inventory!");
+				System.out.println("You add " + shopItems[index].getName() + " to your inventory!");
 				System.out.println("\nYou now have " + gold + " Gold left!");
 				Commands.pressEnter();
 				
-				shopItems[shopChoice] = null;
+				shopItems[index] = null;
 				
 				break;
 			}
