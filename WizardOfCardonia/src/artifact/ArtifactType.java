@@ -1,14 +1,13 @@
-package item;
+package artifact;
 
-public enum ItemRarity {
-    COMMON(0, "Common"),
-    RARE(1, "Rare"),
-    EPIC(2, "Epic");
+public enum ArtifactType {
+	COMMON(0, "Common"),
+    ANCIENT(1, "Ancient");
 
     private final int index;
     private final String name;
 
-    ItemRarity(int index, String name) {
+    ArtifactType(int index, String name) {
         this.index = index;
         this.name = name;
     }
