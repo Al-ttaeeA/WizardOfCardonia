@@ -30,6 +30,12 @@ public class Main {
 	public static int arcana = 1;
 	public static int corruptedness = 0;
 	
+	public static double permMult = 1.00;
+	public static double permIntMult = 1.00;
+	public static double permStrMult = 1.00;
+	public static double permCorMult = 1.00;
+	public static double permShopSale = 1.00;
+	
 	public static int location;
 	
 	public static void main(String[] args) {

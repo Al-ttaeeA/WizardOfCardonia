@@ -129,21 +129,29 @@ public class Commands {
      *********************************************************/
     public static int skillMultiplier(int num, card.Type type) {
     	double skillMultiplier;
+    	double permMult;
     	int skills;
     	
     	if(type == card.Type.PHYSICAL) {
     		skills = Main.strength - 1 - Main.corruptedness + Main.arcana;
+    		permMult = Main.permStrMult;
     	}
     	else if(type == card.Type.MAGICAL) {
     		skills = Main.intelligence - 1 - Main.corruptedness + Main.arcana;
+    		permMult = Main.permIntMult;
     	}
     	else {
     		skills = Main.corruptedness - Main.arcana;
+    		permMult = Main.permCorMult;
     	}
     	
     	if(skills < 0) skills = 0;
     	
-    	skillMultiplier = 1 + (skills / 20.0);
+    	skillMultiplier = 1 + (skills / 10.0);
+    	
+    	skillMultiplier *= Main.permMult;
+    	
+    	skillMultiplier *= permMult;
 
 		num = (int) Math.ceil(num * skillMultiplier);
     	
@@ -152,21 +160,29 @@ public class Commands {
     
     public static double skillMultiplier(double num, card.Type type) {
     	double skillMultiplier;
+    	double permMult;
     	int skills;
     	
     	if(type == card.Type.PHYSICAL) {
     		skills = Main.strength - 1 - Main.corruptedness + Main.arcana;
+    		permMult = Main.permStrMult;
     	}
     	else if(type == card.Type.MAGICAL) {
     		skills = Main.intelligence - 1 - Main.corruptedness + Main.arcana;
+    		permMult = Main.permIntMult;
     	}
     	else {
     		skills = Main.corruptedness - Main.arcana;
+    		permMult = Main.permCorMult;
     	}
     	
     	if(skills < 0) skills = 0;
     	
-    	skillMultiplier = 1 + (skills / 20.0);
+    	skillMultiplier = 1 + (skills / 10.0);
+    	
+    	skillMultiplier *= Main.permMult;
+    	
+    	skillMultiplier *= permMult;
 
 		num = num * skillMultiplier;
     	

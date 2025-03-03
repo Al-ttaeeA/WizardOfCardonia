@@ -9,6 +9,11 @@ public abstract class Artifact {
 		this.type = type;
 	}
 	
+	public Artifact() {
+		this.name = "Empty Artifact";
+		this.type = ArtifactType.COMMON;
+	}
+	
 	public abstract Artifact copy();
 	
 	public abstract void use();
