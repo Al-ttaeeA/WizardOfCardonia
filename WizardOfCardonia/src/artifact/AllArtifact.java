@@ -22,7 +22,7 @@ public class AllArtifact extends Artifact{
 	}
 	
 	public String toString() {
-		return name + " [" + type + "]\n\tBoosts ALL card effects by " + String.format("%2.0f", 100*(1-mult)) + "% permanently";
+		return name + " [" + type + "]\n\tBoosts ALL card effects by " + String.format("%2.0f", 100*(mult-1)) + "% permanently\n";
 	}
 	
 	public double getMult() {

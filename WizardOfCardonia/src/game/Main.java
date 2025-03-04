@@ -3,6 +3,7 @@ package game;
 import data.*;
 import card.*;
 import item.*;
+import artifact.*;
 import enemy.*;
 import java.util.*;
 
@@ -14,6 +15,7 @@ public class Main {
 	
 	public static ArrayList<Card> deck = new ArrayList();
 	public static ArrayList<Item> inventory = new ArrayList();
+	public static ArrayList<Artifact> artifacts = new ArrayList();
 	
 	public static String playName;
 	public static int playMaxHP = 100;
@@ -41,6 +43,7 @@ public class Main {
 	public static void main(String[] args) {
 		Commands.clearScreen();
 		Data.initiateDeck();
+		Data.initiateArtifactList();
 		
 		int mainMenuChoice;
 		
@@ -153,9 +156,11 @@ public class Main {
 					
 					3. View Items
 					
-					4. Exit
+					4. View Artifacts
+					
+					5. Exit
 					""");
-			int choice = Commands.inputInt(1, 4);
+			int choice = Commands.inputInt(1, 5);
 			
 			switch(choice) {
 			case 1:{
@@ -171,6 +176,10 @@ public class Main {
 				break;
 			}
 			case 4:{
+				Data.displayArtifacts();
+				break;
+			}
+			case 5:{
 				return;
 			}
 			}
@@ -499,8 +508,23 @@ public class Main {
 	static void merchant() {
 		Card[] shopCards = new Card[5];
 		int[] shopCardPrices = new int[5];
+		
 		Item[] shopItems = new Item[2];
 		int[] shopItemPrices = new int[2];
+		
+		Artifact shopArtifact;
+		int shopArtifactPrice;
+		
+		if(artifacts.size() == 0) {
+			shopArtifact = null;
+			shopArtifactPrice = 0;
+		}
+		else {
+			int randomArtifactIndex = Commands.getRandomInt(artifacts.size()-1);
+			shopArtifact = artifacts.get(randomArtifactIndex);
+			artifacts.remove(randomArtifactIndex);
+			shopArtifactPrice = shopArtifact.getPrice();
+		}
 		
 		int shopChoice;
 		int buyChoice;
@@ -549,10 +573,19 @@ public class Main {
 				System.out.println((i+6) + ". " + shopItems[i].getName() + " [" + shopItems[i].getRarity() + "] (" + shopItemPrices[i] + " Gold)\n");
 			}
 			
-			System.out.println("\n8. Reroll the cards (50 Gold)\n");
+			System.out.println("\n   Merchant Artifact Offering:\n");
+			
+			if(shopArtifact == null) {
+				System.out.println("8. NO ARTIFACT OFFERING CURRENTLY\n");
+			}
+			else {
+				System.out.println("8. " + shopArtifact.getName() + " [" + shopArtifact.getType() + "] (" + shopArtifact.getPrice() + " Gold)\n");
+			}
+			
+			System.out.println("\n9. Reroll the cards (50 Gold)\n");
 			
 			System.out.println("Which offering would you like to view? (Enter 0 to exit)");
-			shopChoice = Commands.inputInt(0, 8);
+			shopChoice = Commands.inputInt(0, 9);
 			
 			switch(shopChoice) {
 			case 1:
@@ -592,7 +625,7 @@ public class Main {
 				
 				deck.add(shopCards[index].copy());
 				
-				System.out.println("You add " + shopCards[index].getName() + " to your deck!");
+				System.out.println("You add a " + shopCards[index].getName() + " to your deck!");
 				System.out.println("\nYou now have " + gold + " Gold left!");
 				Commands.pressEnter();
 				
@@ -635,7 +668,7 @@ public class Main {
 				
 				inventory.add(shopItems[index].copy());
 				
-				System.out.println("You add " + shopItems[index].getName() + " to your inventory!");
+				System.out.println("You add a " + shopItems[index].getName() + " to your inventory!");
 				System.out.println("\nYou now have " + gold + " Gold left!");
 				Commands.pressEnter();
 				
@@ -645,6 +678,46 @@ public class Main {
 			}
 			
 			case 8:{
+				if(shopArtifact == null) {
+					System.out.println("This artifact has been sold!");
+					Commands.pressEnter();
+					break;
+				}
+				
+				System.out.println(shopArtifact);
+				System.out.println("""
+						********************************************************************************
+						What would you like to do?
+						
+						1. Buy
+						
+						2. Return
+						""");
+				buyChoice = Commands.inputInt(1, 2);
+				
+				if(buyChoice == 2) {
+					break;
+				}
+				
+				if(!buy(shopArtifactPrice)) {
+					System.out.println("You do not have enough gold to buy " + shopItems[shopChoice].getName());
+					break;
+				}
+				
+				gold -= shopArtifactPrice;
+				
+				shopArtifact.use();
+				
+				System.out.println("You bought and used the " + shopArtifact.getName() + "!");
+				System.out.println("\nYou now have " + gold + " Gold left!");
+				Commands.pressEnter();
+				
+				shopArtifact = null;
+				
+				break;
+			}
+			
+			case 9:{
 				if(!buy(50)) {
 					System.out.println("You do not have enough gold to reroll!");
 					Commands.pressEnter();

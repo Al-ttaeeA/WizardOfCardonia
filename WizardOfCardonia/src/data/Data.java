@@ -7,6 +7,7 @@ import java.util.List;
 import card.*;
 import enemy.*;
 import item.*;
+import artifact.*;
 import game.*;
 
 public class Data {
@@ -334,5 +335,83 @@ public class Data {
 		new DamageItem("Potent Elixir Of Damage",  	ItemRarity.EPIC,   80, 1.40),
 		new ManaItem("Potent Elixir Of Mana", 	    ItemRarity.EPIC,  100, 3)	
 	}
+	};
+	
+	
+	
+	/********************************
+	 * displayArtifacts
+	 * This method displays all items in pages of 10 items
+	 ********************************/
+	public static void displayArtifacts() {
+		int choice;
+		
+		List<Artifact> artifactList = new ArrayList<>();
+        for (Artifact a : artifacts) {
+            artifactList.add(a);
+        }
+        
+        final int PAGE_SIZE = 10;
+        int currentPage = 0;
+        int totalPages = (int) Math.ceil((double) (artifactList.size()) / PAGE_SIZE);
+        
+        while(true) {
+        	System.out.println("********************************************************************************");
+            System.out.println("*                                ARTIFACT LIST                                 *");
+            System.out.println("*****                                                                      *****\n");
+            
+            int start = currentPage * PAGE_SIZE;
+            int end = Math.min(start + PAGE_SIZE, artifactList.size());
+
+            for (int i = start; i < end; i++) {
+                System.out.println((i + 1) + ". " + artifactList.get(i));
+            }
+            
+            System.out.println("\nEnter 1 for next page | 2 for previous page | 3 To exit");
+            choice = Commands.inputInt(1, 3);
+            
+            switch(choice) {
+        	case 1:{
+        		if(currentPage == totalPages-1) {
+        			System.out.println("Page limit reached, invalid input!");
+        			Commands.pressEnter();
+        			break;
+        		}
+        		
+        		currentPage++;
+        		break;
+        	}
+        	case 2:{
+        		if(currentPage == 0) {
+        			System.out.println("This is the first page, cannot go to a previous page!");
+        			Commands.pressEnter();
+        			break;
+        		}
+        		
+        		currentPage--;
+        		break;
+        	}
+        	case 3:{
+        		return;
+        	}
+            }
+        }
+	}
+	
+	public static void initiateArtifactList() {
+		for(int i = 0; i < 10; i++) {
+			Main.artifacts.add(getArtifact());
+		}
+	}
+	
+	public static Artifact getArtifact() {
+		return artifacts[Commands.getRandomInt(artifacts.length) - 1].copy();
+	}
+	
+	static Artifact[] artifacts = {
+		new SaleArtifact("Gold Necklace", ArtifactType.COMMON, 0.9),
+		new SaleArtifact("Crimson Amulet", ArtifactType.ANCIENT, 0.8),
+		new AllArtifact("Soul Crystal", ArtifactType.COMMON, 1.2),
+		new AllArtifact("Gold Spirit Essence", ArtifactType.ANCIENT, 1.4)
 	};
 }

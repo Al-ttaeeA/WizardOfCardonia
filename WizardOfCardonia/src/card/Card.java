@@ -1,6 +1,7 @@
 package card;
 
 import game.Commands;
+import game.Main;
 
 public abstract class Card {
     protected final String name;
@@ -76,6 +77,6 @@ public abstract class Card {
     	}
     	}
     	
-    	return constant + Commands.getRandomInt(variable);
+    	return (int) ((constant + Commands.getRandomInt(variable)) * Main.permShopSale);
     }
 }

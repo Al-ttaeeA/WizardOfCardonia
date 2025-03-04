@@ -1,5 +1,7 @@
 package item;
 
+import game.*;
+
 public abstract class Item {
 	protected final String name;
 	protected final ItemRarity rarity;
@@ -32,6 +34,6 @@ public abstract class Item {
 	}
 	
 	public int getPrice() {
-		return price;
+		return (int) (price * Main.permShopSale);
 	}
 }
