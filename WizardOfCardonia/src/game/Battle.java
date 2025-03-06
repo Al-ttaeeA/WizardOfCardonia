@@ -13,6 +13,7 @@ public class Battle {
 	
 	public static double battleDifficulty;
 	private static int battleGold;
+	private static int battleXp;
 	private static int battleCardCount;
 	
 	private static ArrayList<Card> tempDeck = new ArrayList<>();
@@ -62,14 +63,52 @@ public class Battle {
 		}
 		}
 		battleGold = (int) (battleDifficulty * 100);
+		battleXp = (int) (battleGold / 2);
 		
 		currentEnemy = Data.getEnemy();
 		currentEnemy.initialize();
 		
-		System.out.println("Battle runs");
-		
-		Main.playCurrentHP = 0;
-		
+		System.out.println("You stumble across a hostile " + currentEnemy.getName() + " in your adventure!");
+		System.out.println("\nBattle No: " + Main.battleCount + " starts!");
 		Commands.pressEnter();
+		
+		do {
+			
+		} while(true);
+	}
+	
+	static void playerTurn() {
+		
+	}
+	
+	static void enemyTurn() {
+		
+	}
+	
+	static void enemIsDead() {
+		Main.battleCount++;
+		Main.gold += battleGold;
+		Main.currentXp += battleXp;
+		
+		System.out.println("You");
+	}
+	
+	static void levelUp() {
+		int gainedSkillPoints;
+		
+		Main.currentXp -= Main.maxXp;
+		
+		Main.maxXp = (int) Math.pow(1.20, Main.battleCount - 1);
+		
+		Main.xpLevel += 1;
+		Main.playMaxHP += 5;
+		
+		if(Commands.getRandomChance() < 0.4) gainedSkillPoints = 2;
+		else if(Commands.getRandomChance() < 0.6) gainedSkillPoints = 3;
+		else gainedSkillPoints = 4;
+	}
+	
+	static void playIsDead() {
+		
 	}
 }

@@ -20,10 +20,11 @@ public class Main {
 	public static int playMaxHP = 100;
 	public static int playCurrentHP = 100;
 	public static int gold = 1000;
+	public static int battleCount = 1;
 	
 	public static int xpLevel = 1;
 	public static int currentXp = 0;
-	public static int maxXp = 100;
+	public static int maxXp = 50;
 	public static int skillpoints = 0;
 	
 	public static int intelligence = 1;
