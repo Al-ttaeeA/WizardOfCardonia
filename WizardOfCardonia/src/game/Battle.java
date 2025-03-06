@@ -73,7 +73,19 @@ public class Battle {
 		Commands.pressEnter();
 		
 		do {
+			playerTurn();
 			
+			if(currentEnemy.getHealth() <= 0) {
+				enemIsDead();
+				return;
+			}
+			
+			enemyTurn();
+			
+			if(Main.playCurrentHP <= 0) {
+				playIsDead();
+				return;
+			}
 		} while(true);
 	}
 	

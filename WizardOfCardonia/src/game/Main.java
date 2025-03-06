@@ -17,37 +17,34 @@ public class Main {
 	public static ArrayList<Artifact> artifacts = new ArrayList();
 	
 	public static String playName;
-	public static int playMaxHP = 100;
-	public static int playCurrentHP = 100;
-	public static int gold = 1000;
-	public static int battleCount = 1;
+	public static int playMaxHP;
+	public static int playCurrentHP;
+	public static int gold;
+	public static int battleCount;
+	public static boolean playIsDead;
 	
-	public static int xpLevel = 1;
-	public static int currentXp = 0;
-	public static int maxXp = 50;
-	public static int skillpoints = 0;
+	public static int xpLevel;
+	public static int currentXp;
+	public static int maxXp;
+	public static int skillpoints;
 	
-	public static int intelligence = 1;
-	public static int strength = 1;
-	public static int arcana = 1;
-	public static int corruptedness = 0;
+	public static int intelligence;
+	public static int strength;
+	public static int arcana;
+	public static int corruptedness;
 	
-	public static double permMult = 1.00;
-	public static double permIntMult = 1.00;
-	public static double permStrMult = 1.00;
-	public static double permCorMult = 1.00;
-	public static double permShopSale = 1.00;
+	public static double permMult;
+	public static double permIntMult;
+	public static double permStrMult;
+	public static double permCorMult;
+	public static double permShopSale;
 	
-	public static int location = 1;
+	public static int location;
 	
 	public static void main(String[] args) {
 		Commands.clearScreen();
-		Data.initiateDeck();
-		Data.initiateArtifactList();
 		
 		int mainMenuChoice;
-		
-		
 		
 		System.out.println("""
 				********************************************************************************
@@ -69,13 +66,13 @@ public class Main {
 					
 					What would you like to do?
 					
-					1. New game (WIP) 
+					1. New game 
 					
-					2. Load previous game (WIP)
+					2. Load previous game (WIP Starts a new game)
 					
-					3. Tutorial
+					3. Tutorial (WIP)
 					
-					4. View Codex (Name could change)
+					4. View Codex 
 					
 					5. Credits (WIP)
 					
@@ -209,6 +206,10 @@ public class Main {
 		int merchantCount = 0;
 		
 		do {
+			if(playIsDead) {
+				return;
+			}
+			
 			System.out.println("""
 					********************************************************************************
 					*                                   CAMPSITE                                   *
@@ -244,7 +245,7 @@ public class Main {
 					
 					5. Proceed with your adventure
 					
-					6. Exit to main menu
+					6. Exit to main menu (Your data will be deleted do not exit to main menu)
 					""");		
 					
 			campChoice = Commands.inputInt(1, 6);
@@ -279,6 +280,16 @@ public class Main {
 				
 				Battle.Battle();
 				break;
+			}
+			case 6:{
+				System.out.println("Are you sure you want to exit to the main menu?");
+				System.out.println("\nYou data will be completely wiped!");
+				System.out.println("1. Exit\n\n2. Go back DONT EXIT");
+				int exitChoice = Commands.inputInt(1, 2);
+				
+				if(exitChoice == 2) {
+					campChoice = 0;
+				}
 			}
 			}
 		} while(campChoice != 6);
