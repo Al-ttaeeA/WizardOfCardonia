@@ -86,11 +86,52 @@ public class Battle {
 	}
 	
 	static void enemIsDead() {
+		Card gainedCard;
+		int keepChoice;
+		
 		Main.battleCount++;
 		Main.gold += battleGold;
 		Main.currentXp += battleXp;
 		
-		System.out.println("You");
+		System.out.println("You have SUCCESSFULLY defeated " + currentEnemy.getName() + " and gained: ");
+		System.out.println("-" + battleGold + " Gold for a total of " + Main.gold + " Gold!");
+		System.out.println("-" + battleXp + " XP, you now have " + Main.currentXp + " XP/ " + Main.maxXp + " XP to level up!");
+		System.out.println("-" + battleCardCount + " brand new cards that you can add to your deck!");
+		Commands.pressEnter();
+		
+		while(Main.currentXp >= Main.maxXp) {
+			levelUp();
+		}
+		
+		for(int i = 0; i < battleCardCount; i++) {
+			gainedCard = Data.getRandomCard();
+			
+			System.out.println("You have gained a card from this battle:");
+			System.out.println("\n" + gainedCard);
+			System.out.println("""
+					********************************************************************************
+					What would you like to do?
+					
+					1. Keep
+					
+					2. Discard 
+					""");
+			keepChoice = Commands.inputInt(1, 2);
+			
+			if(keepChoice == 2) {
+				System.out.println("You choose to discard " + gainedCard.getName());
+				Commands.pressEnter();
+				continue;
+			}
+			
+			Main.deck.add(gainedCard);
+			
+			System.out.println("You add " + gainedCard.getName() + " to your deck!");
+			Commands.pressEnter();
+		}
+		
+		System.out.println("You return back to your campsite after a successful battle!");
+		Commands.pressEnter();
 	}
 	
 	static void levelUp() {
@@ -104,8 +145,16 @@ public class Battle {
 		Main.playMaxHP += 5;
 		
 		if(Commands.getRandomChance() < 0.4) gainedSkillPoints = 2;
-		else if(Commands.getRandomChance() < 0.6) gainedSkillPoints = 3;
+		else if(Commands.getRandomChance() < 0.8) gainedSkillPoints = 3;
 		else gainedSkillPoints = 4;
+		
+		Main.skillpoints += gainedSkillPoints;
+		
+		System.out.println("CONGRATULATIONS! You have leveled up to level " + Main.xpLevel + "!");
+		System.out.println("\nYou now have " + Main.currentXp + " XP/ " + Main.maxXp + " XP for your next level up!");
+		System.out.println("\nYou have gained 5 HP to your maximum HP for a total of " + Main.playMaxHP + " HP!");
+		System.out.println("\nYou have also gained " + gainedSkillPoints + " skillpoints, You now have " + Main.skillpoints + " skillpoints to spend!");
+		Commands.pressEnter();
 	}
 	
 	static void playIsDead() {
