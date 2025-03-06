@@ -11,7 +11,6 @@ public class Main {
 	//Currently, these are all for testing
 	public static int testInt;
 	public static double testDouble;
-	public static double testDiffMult;
 	
 	public static ArrayList<Card> deck = new ArrayList();
 	public static ArrayList<Item> inventory = new ArrayList();
@@ -38,7 +37,7 @@ public class Main {
 	public static double permCorMult = 1.00;
 	public static double permShopSale = 1.00;
 	
-	public static int location;
+	public static int location = 1;
 	
 	public static void main(String[] args) {
 		Commands.clearScreen();
@@ -223,16 +222,31 @@ public class Main {
 					1. View Personal Stats
 					""");
 			System.out.println("2. View Deck (" + deck.size() + " Cards)");
-			System.out.println("\n3. View inventory (" + inventory.size() + " Items)");		
+			System.out.println("\n3. View inventory (" + inventory.size() + " Items)");	
+			
+			switch(location) {
+			case 1:{
+				System.out.println("\n4. View Map (Current location is the Outskirts)");
+				break;
+			}
+			case 2:{
+				System.out.println("\n4. View Map (Current location is the Forest)");
+				break;
+			}
+			case 3:{
+				System.out.println("\n4. View Map (Current location is the Mountains)");
+				break;
+			}
+			}
 					
 			System.out.println("""
 					
-					4. Proceed
+					5. Proceed with your adventure
 					
-					5. Exit to main menu
+					6. Exit to main menu
 					""");		
 					
-			campChoice = Commands.inputInt(1, 5);
+			campChoice = Commands.inputInt(1, 6);
 			
 			switch(campChoice) {
 			case 1:{
@@ -248,6 +262,10 @@ public class Main {
 				break;
 			}
 			case 4:{
+				travel();
+				break;
+			}
+			case 5:{
 				if(merchantCount != 0 && (Commands.getRandomChance() < 0.33 || merchantCount == 3)) {
 					merchantCount = 0;
 					
@@ -262,7 +280,7 @@ public class Main {
 				break;
 			}
 			}
-		} while(campChoice != 5);
+		} while(campChoice != 6);
 	}
 	
 	/**********************
@@ -503,6 +521,37 @@ public class Main {
         	}
             }
         }
+	}
+	
+	static void travel() {
+		int choice;
+		
+		do {
+			System.out.println("""
+					********************************************************************************
+					*                                     MAP                                      *
+					*****                                                                      *****
+					
+					Where would you like to travel? (Enter 0 to go back)
+					
+					1. City of Arden's outskirts (Easy Difficulty)
+					
+					2. Deep Dark Forest of Morodia (Medium Difficulty)
+					
+					3. Northern Mystical Mountains (Hard Difficulty)
+					""");
+			
+			choice = Commands.inputInt(0, 3);
+			
+			if(choice == location) {
+				System.out.println("You are already at this location!");
+				Commands.pressEnter();
+			}
+			else if(choice != 0) {
+				location = choice;
+				choice = 0;
+			}
+		} while (choice != 0);
 	}
 	
 	static void merchant() {

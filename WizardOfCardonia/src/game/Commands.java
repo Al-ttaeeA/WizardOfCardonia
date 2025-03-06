@@ -108,6 +108,20 @@ public class Commands {
     
     
     
+    /***********************************************************
+     * getRandomDouble
+     * This method gets a random double value between min and max parameters
+     * @param min - The minimum value
+     * @param max - The maximum value
+     * @return - returns the random double
+     ***********************************************************/
+    public static double getRandomDouble(double min, double max){
+        double num = min + (Math.random() * (max - min));
+        return num;
+    }
+    
+    
+    
     /*************************************
      * getRandomChance
      * @return - returns a random chance value between 0 and 1

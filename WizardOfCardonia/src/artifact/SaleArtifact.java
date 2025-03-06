@@ -22,7 +22,7 @@ public class SaleArtifact extends Artifact{
 	}
 	
 	public String toString() {
-		return name + " [" + type + "]\n\tCards and Items the merchant offers become " + String.format("%2.0f", 100*(1-mult)) + "% cheaper after this merchant\n";
+		return name + " [" + type + "]\n\tCards and Items the merchants offer become " + String.format("%2.0f", 100*(1-mult)) + "% cheaper after this merchant\n";
 	}
 	
 	public double getMult() {

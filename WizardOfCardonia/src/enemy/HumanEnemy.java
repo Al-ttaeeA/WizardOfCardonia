@@ -1,6 +1,7 @@
 package enemy;
 
 import game.Main;
+import game.Battle;
 
 public class HumanEnemy extends Enemy{
 	public HumanEnemy(String name, int health, int block, int blockAmount, int damageConstant, int damageVariable, double specialChance) {
@@ -16,12 +17,12 @@ public class HumanEnemy extends Enemy{
 	}
 	
 	public void initialize() {
-		maxHealth *= Main.testDiffMult;
-		health *= Main.testDiffMult;
-		block *= Main.testDiffMult;
-		blockAmount *= Main.testDiffMult;
-		damageConstant  *= Main.testDiffMult;
-		damageVariable *= Main.testDiffMult;
+		maxHealth *= Battle.battleDifficulty;
+		health *= Battle.battleDifficulty;
+		block *= Battle.battleDifficulty;
+		blockAmount *= Battle.battleDifficulty;
+		damageConstant  *= Battle.battleDifficulty;
+		damageVariable *= Battle.battleDifficulty;
 	}
 	
 	public void attack() {
