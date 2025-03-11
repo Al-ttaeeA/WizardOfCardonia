@@ -18,7 +18,7 @@ public class DamageItem extends Item{
 	}
 	
 	public void use() {
-		game.Main.testDouble *= dmgBuff;
+		game.Battle.attackMult *= dmgBuff;
 	}
 	
 	public String toString() {

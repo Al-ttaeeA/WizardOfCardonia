@@ -18,7 +18,7 @@ public class BlockItem extends Item{
 	}
 	
 	public void use() {
-		game.Main.testDouble *= blockBuff;
+		game.Battle.blockMult *= blockBuff;
 	}
 	
 	public String toString() {

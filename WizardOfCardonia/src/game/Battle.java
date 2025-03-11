@@ -7,9 +7,11 @@ import enemy.*;
 import java.util.*;
 
 public class Battle {
-	private static int currentMana, maxMana;
+	public static int currentMana, maxMana;
 	
-	private static double battleMult;
+	public static double battleMult;
+	public static double attackMult = 1;
+	public static double blockMult = 1;
 	
 	public static double battleDifficulty;
 	private static int battleGold;

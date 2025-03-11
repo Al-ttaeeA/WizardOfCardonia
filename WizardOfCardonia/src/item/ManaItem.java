@@ -18,7 +18,7 @@ public class ManaItem extends Item{
 	}
 	
 	public void use() {
-		game.Main.testInt += mana;
+		game.Battle.maxMana += mana;
 	}
 	
 	public String toString() {
