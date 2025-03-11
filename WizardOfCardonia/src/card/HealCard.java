@@ -20,10 +20,15 @@ public class HealCard extends Card {
     	return new HealCard(name, rarity, manaCost, type, heal);
     }
 
-    public void use() {
+    public boolean use() {
     	newHeal = game.Commands.skillMultiplier(heal, type);
     	
-        game.Main.playCurrentHP += newHeal;
+    	if(doMana()) {
+    		game.Main.playCurrentHP += newHeal;
+    		return true;
+    	}
+    	
+    	return false;
     }
     
     public String toString() {

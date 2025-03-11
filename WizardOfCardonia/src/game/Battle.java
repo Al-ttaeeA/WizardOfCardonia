@@ -22,8 +22,9 @@ public class Battle {
 	public static int currentBlock = 0;
 	
 	private static ArrayList<Card> tempDeck = new ArrayList<>();
+	private static ArrayList<Card> hand = new ArrayList<>();
 	
-	public static Enemy currentEnemy;
+	public static Enemy currentEnemy = Data.getEnemy();
 	
 	private static void iniateTempDeck() {
 		for(int i = 0; i < Main.deck.size(); i++) {
@@ -95,6 +96,75 @@ public class Battle {
 	}
 	
 	static void playerTurn() {
+		int choice;
+		int innerChoice;
+		Card currentCard;
+		
+		currentBlock = 0;
+		
+		for(int i = 0; i < 5; i++) {
+			int random = Commands.getRandomInt(tempDeck.size()-1);
+			hand.add(tempDeck.get(random));
+			tempDeck.remove(random);
+		}
+		
+		while(true) {
+			battleBanner();
+			System.out.println("""
+					
+					 What would you like to do?
+					
+					1. View Hand and/or play a card
+					
+					2. View inventory and/or use an item
+					
+					3. End turn
+					""");
+			
+			choice = Commands.inputInt(1, 3);
+			
+			switch(choice) {
+			case 1:{
+				if(hand.size() == 0) {
+					System.out.println("Your hand is empty!");
+					Commands.pressEnter();
+					break;
+				}
+				
+				System.out.println("You have " + hand.size() + " Cards in your hand: \n");
+				
+				for(int i = 1; i < hand.size()+1; i++) {
+					System.out.println(i + ". " + hand.get(i-1));
+				}
+				
+				System.out.println("********************************************************************************");
+				System.out.println("Enter the number of the card you wish to play or 0 to exit");
+				innerChoice = Commands.inputInt(0, hand.size());
+				
+				if(innerChoice == 0) {
+					break;
+				}
+				
+				
+				currentCard = hand.get(innerChoice - 1).copy();
+				
+				if(currentCard.use()) {
+					tempDeck.add(hand.get(innerChoice - 1).copy());
+					hand.remove(innerChoice - 1);
+				}
+				
+				break;
+			}
+			case 2:{
+				
+				break;
+			}
+			case 3:{
+				return;
+			}
+			}
+		}
+		
 		
 	}
 	
@@ -176,5 +246,29 @@ public class Battle {
 	
 	static void playIsDead() {
 		
+	}
+	
+	static void battleBanner() {
+		String playHealth = "Health: " + Main.playCurrentHP + " HP / " + Main.playMaxHP + " HP";
+		String enemyHealth = "Health: " + currentEnemy.getHealth() + " HP / " + currentEnemy.getMaxHealth() + " HP";
+		String playBlock = "Block: " + currentBlock + " Damage";
+		String enemyBlock = "Block: " + currentEnemy.getBlock() + " Damage";
+		String playMana = "Mana: " + currentMana + " MP / " + maxMana + " MP";
+		String enemyDamage = "Damage: " + currentEnemy.getMinDamage() + " - " + currentEnemy.getMaxDamage() + " Damage";
+		String playCards = "Cards in hand: " + hand.size();
+		String empty = " ";
+		
+		
+		System.out.println("********************************************************************************");
+		System.out.println(String.format("*   %-36s*   %-35s*", Main.playName, currentEnemy.getName()));
+		System.out.println("*                                       *                                      *");
+		System.out.println(String.format("* %-38s* %-37s*", playHealth, enemyHealth));
+		System.out.println("*                                       *                                      *");
+		System.out.println(String.format("* %-38s* %-37s*", playBlock, enemyBlock));
+		System.out.println("*                                       *                                      *");
+		System.out.println(String.format("* %-38s* %-37s*", playMana, enemyDamage));
+		System.out.println("*                                       *                                      *");
+		System.out.println(String.format("* %-38s* %-37s*", playCards, empty));
+		System.out.println("********************************************************************************");
 	}
 }

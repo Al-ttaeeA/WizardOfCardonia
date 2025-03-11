@@ -17,8 +17,13 @@ public class WeaknessCard extends Card{
 		return new WeaknessCard(name, rarity, manaCost, type, weakness);
 	}
 	
-	public void use() {
-		game.Battle.enemyDamageMult *= weakness;
+	public boolean use() {
+		if(doMana()) {
+			game.Battle.enemyDamageMult *= weakness;
+    		return true;
+    	}
+    	
+    	return false;
 	}
 	
 	public String toString() {

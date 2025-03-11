@@ -20,10 +20,15 @@ public class DamageCard extends Card {
     	return new DamageCard(name, rarity, manaCost, type, damage);
     }
 
-    public void use() {
+    public boolean use() {
     	newDamage = game.Commands.skillMultiplier(damage, type);
     	
-        game.Battle.currentEnemy.takeDamage(newDamage);
+    	if(doMana()) {
+    		game.Battle.currentEnemy.takeDamage(newDamage);
+    		return true;
+    	}
+    	
+    	return false;
     }
     
     public String toString() {

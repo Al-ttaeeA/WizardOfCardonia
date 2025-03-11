@@ -1,5 +1,6 @@
 package card;
 
+import game.Battle;
 import game.Commands;
 import game.Main;
 
@@ -25,9 +26,21 @@ public abstract class Card {
     
     public abstract Card copy();
 
-    public abstract void use();
+    public abstract boolean use();
     
     public abstract String toString();
+    
+    protected boolean doMana() {
+    	if(Battle.currentMana < manaCost) {
+    		System.out.println("You do not have enough Mana to play this card!");
+    		Commands.pressEnter();
+    		return false;
+    	}
+    	
+    	Battle.currentMana -= manaCost;
+    	
+    	return true;
+    }
 
     public String getName() {
         return name;

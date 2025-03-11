@@ -20,10 +20,15 @@ public class BlockCard extends Card{
     	return new BlockCard(name, rarity, manaCost, type, block);
     }
 
-    public void use() {
+    public boolean use() {
     	newBlock = game.Commands.skillMultiplier(block, type);
     	
-        game.Battle.currentBlock += newBlock;
+    	if(doMana()) {
+    		game.Battle.currentBlock += newBlock;
+    		return true;
+    	}
+    	
+    	return false;
     }
     
     public String toString() {

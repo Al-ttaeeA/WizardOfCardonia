@@ -17,8 +17,13 @@ public class ManaCard extends Card{
 		return new ManaCard(name, rarity, manaCost, type, mana);
 	}
 	
-	public void use() {
-		game.Battle.currentMana += mana;
+	public boolean use() {
+		if(doMana()) {
+			game.Battle.currentMana += mana;
+    		return true;
+    	}
+    	
+    	return false;
 	}
 	
 	public String toString() {

@@ -163,7 +163,7 @@ public class Data {
             int end = Math.min(start + PAGE_SIZE, enemyList.size());
 
             for (int i = start; i < end; i++) {
-                System.out.println((i + 1) + ". " + enemyList.get(i));
+                System.out.println((i + 1) + ". " + enemyList.get(i).copy());
             }
             
             System.out.println("\nEnter 1 for next page | 2 for previous page | 3 To exit");
@@ -213,8 +213,6 @@ public class Data {
 		else {
 			enemy = enemies[2][Commands.getRandomInt(enemies[2].length) - 1].copy();
 		}
-		
-		enemy.initialize();
 		
 		return enemy;
 	}
