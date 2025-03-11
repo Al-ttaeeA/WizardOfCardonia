@@ -101,6 +101,7 @@ public class Battle {
 		Card currentCard;
 		
 		currentBlock = 0;
+		currentMana = maxMana;
 		
 		for(int i = 0; i < 5; i++) {
 			int random = Commands.getRandomInt(tempDeck.size()-1);
@@ -160,6 +161,13 @@ public class Battle {
 				break;
 			}
 			case 3:{
+				int num = hand.size();
+				
+				for(int i = 0; i < num; i++) {
+					tempDeck.add(hand.get(0).copy());
+					hand.remove(0);
+				}
+				
 				return;
 			}
 			}
@@ -181,9 +189,9 @@ public class Battle {
 		Main.currentXp += battleXp;
 		
 		System.out.println("You have SUCCESSFULLY defeated " + currentEnemy.getName() + " and gained: ");
-		System.out.println("-" + battleGold + " Gold for a total of " + Main.gold + " Gold!");
-		System.out.println("-" + battleXp + " XP, you now have " + Main.currentXp + " XP/ " + Main.maxXp + " XP to level up!");
-		System.out.println("-" + battleCardCount + " brand new cards that you can add to your deck!");
+		System.out.println("\n-" + battleGold + " Gold for a total of " + Main.gold + " Gold!");
+		System.out.println("\n-" + battleXp + " XP, you now have " + Main.currentXp + " XP/ " + Main.maxXp + " XP to level up!");
+		System.out.println("\n-" + battleCardCount + " brand new cards that you can add to your deck!");
 		Commands.pressEnter();
 		
 		while(Main.currentXp >= Main.maxXp) {
@@ -226,7 +234,7 @@ public class Battle {
 		
 		Main.currentXp -= Main.maxXp;
 		
-		Main.maxXp = (int) Math.pow(1.20, Main.battleCount - 1);
+		Main.maxXp = (int) (50 * Math.pow(1.20, Main.battleCount - 1));
 		
 		Main.xpLevel += 1;
 		Main.playMaxHP += 5;
