@@ -12,15 +12,18 @@ public class Battle {
 	public static double battleMult;
 	public static double attackMult = 1;
 	public static double blockMult = 1;
+	public static double enemyDamageMult = 1;
 	
 	public static double battleDifficulty;
 	private static int battleGold;
 	private static int battleXp;
 	private static int battleCardCount;
 	
+	public static int currentBlock = 0;
+	
 	private static ArrayList<Card> tempDeck = new ArrayList<>();
 	
-	private static Enemy currentEnemy;
+	public static Enemy currentEnemy;
 	
 	private static void iniateTempDeck() {
 		for(int i = 0; i < Main.deck.size(); i++) {

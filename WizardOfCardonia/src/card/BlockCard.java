@@ -23,7 +23,7 @@ public class BlockCard extends Card{
     public void use() {
     	newBlock = game.Commands.skillMultiplier(block, type);
     	
-        game.Main.testInt += newBlock;
+        game.Battle.currentBlock += newBlock;
     }
     
     public String toString() {

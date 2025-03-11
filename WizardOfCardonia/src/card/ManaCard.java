@@ -18,7 +18,7 @@ public class ManaCard extends Card{
 	}
 	
 	public void use() {
-		game.Main.testInt += mana;
+		game.Battle.currentMana += mana;
 	}
 	
 	public String toString() {

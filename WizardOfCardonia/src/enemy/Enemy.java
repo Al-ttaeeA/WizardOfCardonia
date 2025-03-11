@@ -50,7 +50,7 @@ public abstract class Enemy {
     }
     
     public int getDamage() {
-    	return (int) ((damageConstant + game.Commands.getRandomInt(damageVariable)));
+    	return (int) ((damageConstant + game.Commands.getRandomInt(damageVariable)) * game.Battle.enemyDamageMult);
     }
     
     public int getMinDamage() {

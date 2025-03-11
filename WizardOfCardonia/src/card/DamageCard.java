@@ -23,7 +23,7 @@ public class DamageCard extends Card {
     public void use() {
     	newDamage = game.Commands.skillMultiplier(damage, type);
     	
-        game.Main.testInt -= newDamage;
+        game.Battle.currentEnemy.takeDamage(newDamage);
     }
     
     public String toString() {

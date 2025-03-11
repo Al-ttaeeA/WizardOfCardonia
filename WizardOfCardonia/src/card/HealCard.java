@@ -23,7 +23,7 @@ public class HealCard extends Card {
     public void use() {
     	newHeal = game.Commands.skillMultiplier(heal, type);
     	
-        game.Main.testInt += newHeal;
+        game.Main.playCurrentHP += newHeal;
     }
     
     public String toString() {
