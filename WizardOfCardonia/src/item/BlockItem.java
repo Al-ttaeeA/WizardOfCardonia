@@ -19,6 +19,7 @@ public class BlockItem extends Item{
 	
 	public void use() {
 		game.Battle.blockMult *= blockBuff;
+		System.out.println("You increase ALL gained block by " + String.format("%2.0f", 100*(blockBuff-1)) + "% until the end of the battle!");
 	}
 	
 	public String toString() {

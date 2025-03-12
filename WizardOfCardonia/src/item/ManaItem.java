@@ -19,6 +19,7 @@ public class ManaItem extends Item{
 	
 	public void use() {
 		game.Battle.maxMana += mana;
+		System.out.println("You increase your max mana by " + mana + " MP until the end of the battle!");
 	}
 	
 	public String toString() {

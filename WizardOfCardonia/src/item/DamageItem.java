@@ -19,6 +19,7 @@ public class DamageItem extends Item{
 	
 	public void use() {
 		game.Battle.attackMult *= dmgBuff;
+		System.out.println("You boost ALL damage by " + String.format("%2.0f", 100*(dmgBuff-1)) + "% until the end of the battle!");
 	}
 	
 	public String toString() {

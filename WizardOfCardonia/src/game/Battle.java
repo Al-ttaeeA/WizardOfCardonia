@@ -250,9 +250,8 @@ public class Battle {
 				
 				if(useChoice == 2) continue;
 				
+				System.out.println("You use " + Main.inventory.get(choice-1).getName() + "!\n");
 				Main.inventory.get(choice-1).copy().use();
-				
-				System.out.println("You use " + Main.inventory.get(choice-1).getName() + "!");
 				Commands.pressEnter();
 				
 				Main.inventory.remove(choice-1);
