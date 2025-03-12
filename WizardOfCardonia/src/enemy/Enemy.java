@@ -71,6 +71,10 @@ public abstract class Enemy {
     	else {
     		this.block = diff;
     	}
+    	
+    	if(this.health < 0) {
+    		this.health = 0;
+    	}
     }
     
     public String getName() {
