@@ -31,7 +31,7 @@ public class UndeadEnemy extends Enemy{
 	}
 	
 	public void attack() {
-		if(game.Commands.getRandomChance() < specialChance) {
+		if(game.Commands.getRandomChance() < specialChance && health < (maxHealth-healAmount)) {
 			health += healAmount;
 			System.out.println("The enemy heals for " + healAmount + " HP for a total of " + health + " HP!");
 		}
