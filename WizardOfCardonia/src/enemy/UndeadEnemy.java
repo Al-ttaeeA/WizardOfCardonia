@@ -33,20 +33,30 @@ public class UndeadEnemy extends Enemy{
 	public void attack() {
 		if(game.Commands.getRandomChance() < specialChance) {
 			health += healAmount;
+			System.out.println("The enemy heals for " + healAmount + " HP for a total of " + health + " HP!");
 		}
 		else if(game.Commands.getRandomChance() < 0.75) {
-			int diff = game.Battle.currentBlock - this.getDamage();
+			int damage = this.getDamage();
+			int diff = game.Battle.currentBlock - damage;
 			
 			if(diff < 0) {
 				game.Battle.currentBlock = 0;
 				game.Main.playCurrentHP += diff;
+				
+				if(game.Main.playCurrentHP <= 0) {
+					game.Main.playCurrentHP = 0;
+				}
+				
+				System.out.println("The enemy attacks you for " + damage + ", going through all of your block and leaving you with " + game.Main.playCurrentHP + " HP!");
 			}
 			else {
 				game.Battle.currentBlock = diff;
+				System.out.println("The enemy attacks you for " + damage + ", leaving you with " + game.Battle.currentBlock + " Damage block!");
 			}
 		}
 		else {
 			block += blockAmount;
+			System.out.println("The enemy blocks for " + blockAmount + " for a total of " + block + " Damage block!");
 		}
 	}
 	

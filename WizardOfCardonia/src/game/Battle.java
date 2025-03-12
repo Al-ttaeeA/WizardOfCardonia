@@ -265,6 +265,8 @@ public class Battle {
 	static void enemyTurn() {
 		battleBanner();
 		
+		System.out.println("It is now the enemy, " + currentEnemy.getName() + " turn!\n");
+		
 		currentEnemy.attack();
 		Commands.pressEnter();
 	}
