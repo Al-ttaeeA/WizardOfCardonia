@@ -35,7 +35,15 @@ public class UndeadEnemy extends Enemy{
 			health += healAmount;
 		}
 		else if(game.Commands.getRandomChance() < 0.75) {
-			game.Main.testInt -= this.getDamage();
+			int diff = game.Battle.currentBlock - this.getDamage();
+			
+			if(diff < 0) {
+				game.Battle.currentBlock = 0;
+				game.Main.playCurrentHP += diff;
+			}
+			else {
+				game.Battle.currentBlock = diff;
+			}
 		}
 		else {
 			block += blockAmount;

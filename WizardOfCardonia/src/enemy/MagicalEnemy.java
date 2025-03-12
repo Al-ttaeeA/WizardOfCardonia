@@ -37,7 +37,15 @@ public class MagicalEnemy extends Enemy{
 			currentMult += increaseMult;
 		}
 		else if(game.Commands.getRandomChance() < 0.75) {
-			game.Main.testInt -= (int) (this.getDamage() * currentMult);
+			int diff = game.Battle.currentBlock - this.getDamage();
+			
+			if(diff < 0) {
+				game.Battle.currentBlock = 0;
+				game.Main.playCurrentHP += diff;
+			}
+			else {
+				game.Battle.currentBlock = diff;
+			}
 		}
 		else {
 			block += (int) (blockAmount * currentMult);

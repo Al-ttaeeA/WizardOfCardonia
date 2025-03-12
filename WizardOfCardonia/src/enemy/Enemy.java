@@ -62,7 +62,15 @@ public abstract class Enemy {
     }
     
     public void takeDamage(int damage) {
-    	health -= damage;
+    	int diff = this.block - damage;
+    	
+    	if(diff < 0) {
+    		this.block = 0;
+    		this.health += diff;
+    	}
+    	else {
+    		this.block = diff;
+    	}
     }
     
     public String getName() {
