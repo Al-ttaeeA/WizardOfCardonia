@@ -22,6 +22,7 @@ public class HealCard extends Card {
 
     public boolean use() {
     	newHeal = game.Commands.skillMultiplier(heal, type);
+    	newHeal = (int) (newHeal * game.Battle.healMult);
     	
     	if(doMana()) {
     		game.Main.playCurrentHP += newHeal;

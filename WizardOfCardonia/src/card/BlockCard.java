@@ -22,6 +22,7 @@ public class BlockCard extends Card{
 
     public boolean use() {
     	newBlock = game.Commands.skillMultiplier(block, type);
+    	newBlock = (int) (newBlock * game.Battle.battleMult);
     	
     	if(doMana()) {
     		game.Battle.currentBlock += newBlock;

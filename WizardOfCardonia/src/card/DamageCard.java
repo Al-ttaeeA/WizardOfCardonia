@@ -22,6 +22,7 @@ public class DamageCard extends Card {
 
     public boolean use() {
     	newDamage = game.Commands.skillMultiplier(damage, type);
+    	newDamage = (int) (newDamage * game.Battle.attackMult);
     	
     	if(doMana()) {
     		game.Battle.currentEnemy.takeDamage(newDamage);

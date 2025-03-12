@@ -12,6 +12,7 @@ public class Battle {
 	public static double battleMult;
 	public static double attackMult = 1;
 	public static double blockMult = 1;
+	public static double healMult = 1;
 	public static double enemyDamageMult = 1;
 	
 	public static double battleDifficulty;
@@ -157,7 +158,7 @@ public class Battle {
 				break;
 			}
 			case 2:{
-				
+				inventory();
 				break;
 			}
 			case 3:{
@@ -172,8 +173,91 @@ public class Battle {
 			}
 			}
 		}
+	}
+	
+	static void inventory() {
+		if(Main.inventory.size() == 0) {
+			System.out.println("You inventory is currently empty!");
+			Commands.pressEnter();
+			return;
+		}
 		
+		int choice;
+		int useChoice;
+		int pageSize = 5;
+		int currentPage = 0; 
+		int totalPages;
 		
+		while(true) {
+			totalPages = (int) Math.ceil((double) (Main.inventory.size()) / pageSize);
+			
+			System.out.println("""
+						Inventory
+					*****************
+					
+					""");
+			
+			int start = currentPage * pageSize;
+			int end = Math.min(start + pageSize, Main.inventory.size());
+			
+			for(int i = start; i < end; i++) {
+				System.out.println((i+1) + ". " + Main.inventory.get(i));
+			}
+			
+			System.out.println("\nEnter -1 for next page | -2 for previous page | Item number to use | Or 0 to exit");
+			choice = Commands.inputInt(-2, end);
+			
+			if(choice == -2) {
+				if(currentPage == 0) {
+        			System.out.println("This is the first page, cannot go to a previous page!");
+        			Commands.pressEnter();
+        			continue;
+        		}
+        		
+        		currentPage--;
+			}
+			else if(choice == -1) {
+				if(currentPage == totalPages-1) {
+        			System.out.println("Page limit reached, invalid input!");
+        			Commands.pressEnter();
+        			continue;
+        		}
+        		
+        		currentPage++;
+			}
+			else if(choice == 0) {
+				return;
+			}
+			else {
+				if(choice <= start) {
+					System.out.println("Invalid input, please try again!");
+					Commands.pressEnter();
+					continue;
+				}
+				
+				System.out.println(Main.inventory.get(choice-1));
+				System.out.println("""
+						********************************************************************************
+						What would you like to do?
+						
+						1. Use Item
+						
+						2. Return
+						""");
+				useChoice = Commands.inputInt(1, 2);
+				
+				if(useChoice == 2) continue;
+				
+				Main.inventory.get(choice-1).copy().use();
+				
+				System.out.println("You use " + Main.inventory.get(choice-1).getName() + "!");
+				Commands.pressEnter();
+				
+				Main.inventory.remove(choice-1);
+				
+				return;
+			}
+		}
 	}
 	
 	static void enemyTurn() {

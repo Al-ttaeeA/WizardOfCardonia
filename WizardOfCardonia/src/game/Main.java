@@ -42,6 +42,10 @@ public class Main {
 	public static int location;
 	
 	public static void main(String[] args) {
+		for(int i = 0; i < 5; i++) {
+			inventory.add(Data.getItem());
+		}
+		
 		Commands.clearScreen();
 		
 		int mainMenuChoice;
