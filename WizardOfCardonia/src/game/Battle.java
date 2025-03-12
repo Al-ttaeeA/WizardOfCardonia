@@ -165,6 +165,17 @@ public class Battle {
 				break;
 			}
 			case 3:{
+				System.out.println("""
+						Are you sure you want to end your turn?
+						
+						1. End my turn
+						
+						2. DONT end my turn
+						""");
+				innerChoice = Commands.inputInt(1, 2);
+				
+				if(innerChoice == 2) break;
+				
 				int num = hand.size();
 				
 				for(int i = 0; i < num; i++) {
@@ -343,7 +354,19 @@ public class Battle {
 	}
 	
 	static void playIsDead() {
+		Main.playIsDead = true;
 		
+		System.out.println("""
+				********************************************************************************
+				*                                                                              *
+				*                              G A M E   O V E R                               *
+				*                                                                              *
+				*                                                                              *
+				*                          Y O U   H A V E   D I E D                           *
+				*                                                                              *
+				********************************************************************************
+				""");
+		Commands.pressEnter();
 	}
 	
 	static void battleBanner() {

@@ -41,7 +41,7 @@ public class HumanEnemy extends Enemy{
 			}
 			
 			block += blockAmount;
-			System.out.println("The enemy also blocks for " + blockAmount + " for a total of " + block + " Damage block!");
+			System.out.println("The enemy also increases their block for a total of " + block + " Damage block!");
 		}
 		else if(game.Commands.getRandomChance() < 0.75) {
 			int damage = this.getDamage();
@@ -64,7 +64,7 @@ public class HumanEnemy extends Enemy{
 		}
 		else {
 			block += blockAmount;
-			System.out.println("The enemy blocks for " + blockAmount + " for a total of " + block + " Damage block!");
+			System.out.println("The enemy increases their block for a total of " + block + " Damage block!");
 		}
 	}
 	

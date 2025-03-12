@@ -56,7 +56,7 @@ public class UndeadEnemy extends Enemy{
 		}
 		else {
 			block += blockAmount;
-			System.out.println("The enemy blocks for " + blockAmount + " for a total of " + block + " Damage block!");
+			System.out.println("The enemy increases their block for a total of " + block + " Damage block!");
 		}
 	}
 	

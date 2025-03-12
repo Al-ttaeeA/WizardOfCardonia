@@ -4,20 +4,20 @@ import game.Main;
 import game.Battle;
 
 public class MagicalEnemy extends Enemy{
-	private final double mult;
+	private int increase;
 	
-	public MagicalEnemy(String name, int health, int block, int blockAmount, int damageConstant, int damageVariable, double specialChance, double increaseMult) {
+	public MagicalEnemy(String name, int health, int block, int blockAmount, int damageConstant, int damageVariable, double specialChance, int increase) {
 		super(name, health, block, blockAmount, damageConstant, damageVariable, specialChance);
-		this.mult = increaseMult;
+		this.increase = increase;
 	}
 	
 	public MagicalEnemy() {
 		super();
-		this.mult = 1;
+		this.increase = 1;
 	}
 	
 	public Enemy copy() {
-		return new MagicalEnemy(name, health, block, blockAmount, damageConstant, damageVariable, specialChance, mult);
+		return new MagicalEnemy(name, health, block, blockAmount, damageConstant, damageVariable, specialChance, increase);
 	}
 	
 	public void initialize() {
@@ -27,13 +27,14 @@ public class MagicalEnemy extends Enemy{
 		blockAmount *= Battle.battleDifficulty;
 		damageConstant *= Battle.battleDifficulty;
 		damageVariable *= Battle.battleDifficulty;
+		increase *= Battle.battleDifficulty;
 	}
 	
 	public void attack() {
 		if(game.Commands.getRandomChance() < specialChance) {
-			blockAmount *= mult;
-			damageConstant *= mult;
-			damageVariable *= mult;
+			blockAmount += increase;
+			damageConstant += increase;
+			damageVariable += increase;
 			
 			System.out.println("The enemy chooses to buff themselves! Their damage and gained block increases!");
 		}
@@ -58,7 +59,7 @@ public class MagicalEnemy extends Enemy{
 		}
 		else {
 			block += blockAmount;
-			System.out.println("The enemy blocks for " + blockAmount + " for a total of " + block + " Damage block!");
+			System.out.println("The enemy increases their block for a total of " + block + " Damage block!");
 		}
 	}
 	
@@ -67,7 +68,7 @@ public class MagicalEnemy extends Enemy{
 				"\n   Base Max Health: " + maxHealth + " HP" +
 				"\n   Starting block:  " + block + " Damage" + 
 				"\n   Base Damage:     " + getMinDamage() + " - " + getMaxDamage() + " Damage" + 
-				"\n   Has a " + String.format("%2.0f", specialChance*100) + "% chance to increase damage and gained block by " + String.format("%2.0f", mult*100) + "%\n";
+				"\n   Has a " + String.format("%2.0f", specialChance*100) + "% chance to increase damage and gained block by " + String.format("%2.0f", increase*100) + "%\n";
 		
 		return str;
 	}

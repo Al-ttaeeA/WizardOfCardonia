@@ -231,10 +231,10 @@ public class Data {
 		new UndeadEnemy("Skeleton",       60,  0,  3, 10,  6, 0.10, 10),
 		new UndeadEnemy("Zombie Rhino",  110, 10,  3,  3,  4, 0.40, 10)
 	},{
-		new MagicalEnemy("Fire Axolotl",  60,  0,  3,  8,  5, 0.30, 1.10),
-		new MagicalEnemy("Ice Sprite",    60,  0,  2,  5,  5, 0.60, 1.10),
-		new MagicalEnemy("Wizard Spirit", 80,  0,  4,  7,  5, 0.20, 1.30),
-		new MagicalEnemy("Golem",  		 110,  0,  8,  3,  3, 0.40, 1.15)
+		new MagicalEnemy("Fire Axolotl",  60,  0,  3,  8,  5, 0.30, 1),
+		new MagicalEnemy("Ice Sprite",    60,  0,  2,  5,  5, 0.60, 2),
+		new MagicalEnemy("Wizard Spirit", 80,  0,  4,  7,  5, 0.20, 3),
+		new MagicalEnemy("Golem",  		 110,  0,  8,  3,  3, 0.40, 1)
 	}
 	};
 	
