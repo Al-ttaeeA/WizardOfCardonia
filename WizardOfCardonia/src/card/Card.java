@@ -35,6 +35,7 @@ public abstract class Card {
     	
     	if(type == Type.CORRUPT) {
     		Main.corruptedness += 1;
+    		System.out.println("The corruptness spreads...\n");
     	}
     }
     

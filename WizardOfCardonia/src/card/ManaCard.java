@@ -20,6 +20,10 @@ public class ManaCard extends Card{
 	public boolean use() {
 		if(doMana()) {
 			game.Battle.currentMana += mana;
+			
+			innerUse();
+			System.out.println("You gain " + mana + " Mana for a total of " + game.Battle.currentMana + " Mana for this round!");
+			
     		return true;
     	}
     	

@@ -20,6 +20,10 @@ public class WeaknessCard extends Card{
 	public boolean use() {
 		if(doMana()) {
 			game.Battle.enemyDamageMult *= weakness;
+			
+			innerUse();
+			System.out.println("You weaken the enemy's attacks by " + String.format("%.2f", 100*(1-weakness)) + "%!");
+			
     		return true;
     	}
     	

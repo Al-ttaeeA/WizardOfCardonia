@@ -111,6 +111,8 @@ public class Battle {
 		}
 		
 		while(true) {
+			if(currentEnemy.getHealth() <= 0) return;
+			
 			battleBanner();
 			System.out.println("""
 					
@@ -276,9 +278,9 @@ public class Battle {
 		Main.currentXp += battleXp;
 		
 		System.out.println("You have SUCCESSFULLY defeated " + currentEnemy.getName() + " and gained: ");
-		System.out.println("\n-" + battleGold + " Gold for a total of " + Main.gold + " Gold!");
-		System.out.println("\n-" + battleXp + " XP, you now have " + Main.currentXp + " XP/ " + Main.maxXp + " XP to level up!");
-		System.out.println("\n-" + battleCardCount + " brand new cards that you can add to your deck!");
+		System.out.println("\n- " + battleGold + " Gold for a total of " + Main.gold + " Gold!");
+		System.out.println("\n- " + battleXp + " XP, you now have " + Main.currentXp + " XP/ " + Main.maxXp + " XP to level up!");
+		System.out.println("\n- " + battleCardCount + " brand new cards that you can add to your deck!");
 		Commands.pressEnter();
 		
 		while(Main.currentXp >= Main.maxXp) {

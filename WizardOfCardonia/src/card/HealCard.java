@@ -1,5 +1,7 @@
 package card;
 
+import game.Main;
+
 public class HealCard extends Card {
     private final int heal;
     private int newHeal;
@@ -26,6 +28,12 @@ public class HealCard extends Card {
     	
     	if(doMana()) {
     		game.Main.playCurrentHP += newHeal;
+    		
+    		if(game.Main.playCurrentHP > game.Main.playMaxHP) game.Main.playCurrentHP = game.Main.playMaxHP;
+    		
+    		innerUse();
+    		System.out.println("You heal for " + newHeal + " HP for a total of " + Main.playCurrentHP + " HP!");
+    		
     		return true;
     	}
     	
