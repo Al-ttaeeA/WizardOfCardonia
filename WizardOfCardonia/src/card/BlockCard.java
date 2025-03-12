@@ -26,6 +26,10 @@ public class BlockCard extends Card{
     	
     	if(doMana()) {
     		game.Battle.currentBlock += newBlock;
+    		
+    		innerUse();
+    		System.out.println("You gain " + newBlock + " Damage block for a total of " + game.Battle.currentBlock + " Damage!");
+    		
     		return true;
     	}
     	
@@ -34,6 +38,7 @@ public class BlockCard extends Card{
     
     public String toString() {
     	newBlock = game.Commands.skillMultiplier(block, type);
+    	newBlock = (int) (newBlock * game.Battle.battleMult);
     	
     	return name + " (" + manaCost + " Mana) [" + rarity + "] {" + type + "}\n\tGain " + newBlock + " block\n";
     }

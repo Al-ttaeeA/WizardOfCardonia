@@ -18,7 +18,7 @@ public class Savegame {
 		Main.intelligence = 1;
 		Main.strength = 1;
 		Main.arcana = 1;
-		Main.corruptedness = 0;
+		Main.corruptedness = 1;
 		
 		Main.permMult = 1.00;
 		Main.permIntMult = 1.00;

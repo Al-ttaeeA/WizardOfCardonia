@@ -30,6 +30,14 @@ public abstract class Card {
     
     public abstract String toString();
     
+    protected void innerUse() {
+    	System.out.println("You use " + this.name + " costing you " + this.manaCost + " Mana!\n");
+    	
+    	if(type == Type.CORRUPT) {
+    		Main.corruptedness += 1;
+    	}
+    }
+    
     protected boolean doMana() {
     	if(Battle.currentMana < manaCost) {
     		System.out.println("You do not have enough Mana to play this card!");

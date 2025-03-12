@@ -153,6 +153,7 @@ public class Battle {
 				if(currentCard.use()) {
 					tempDeck.add(hand.get(innerChoice - 1).copy());
 					hand.remove(innerChoice - 1);
+					Commands.pressEnter();
 				}
 				
 				break;
@@ -192,9 +193,8 @@ public class Battle {
 			totalPages = (int) Math.ceil((double) (Main.inventory.size()) / pageSize);
 			
 			System.out.println("""
-						Inventory
+				        Inventory
 					*****************
-					
 					""");
 			
 			int start = currentPage * pageSize;
@@ -261,7 +261,10 @@ public class Battle {
 	}
 	
 	static void enemyTurn() {
+		battleBanner();
 		
+		currentEnemy.attack();
+		Commands.pressEnter();
 	}
 	
 	static void enemIsDead() {
