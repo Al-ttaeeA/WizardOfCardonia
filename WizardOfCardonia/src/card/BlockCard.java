@@ -23,6 +23,7 @@ public class BlockCard extends Card{
     public boolean use() {
     	newBlock = game.Commands.skillMultiplier(block, type);
     	newBlock = (int) (newBlock * game.Battle.battleMult);
+    	newBlock = (int) (newBlock * game.Battle.blockMult);
     	
     	if(doMana()) {
     		game.Battle.currentBlock += newBlock;
@@ -39,6 +40,7 @@ public class BlockCard extends Card{
     public String toString() {
     	newBlock = game.Commands.skillMultiplier(block, type);
     	newBlock = (int) (newBlock * game.Battle.battleMult);
+    	newBlock = (int) (newBlock * game.Battle.blockMult);
     	
     	return name + " (" + manaCost + " Mana) [" + rarity + "] {" + type + "}\n\tGain " + newBlock + " block\n";
     }

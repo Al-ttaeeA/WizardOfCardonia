@@ -287,7 +287,7 @@ public class Main {
 			}
 			case 6:{
 				System.out.println("Are you sure you want to exit to the main menu?");
-				System.out.println("\nYou data will be completely wiped!");
+				System.out.println("\nYou data will be completely wiped!\n");
 				System.out.println("1. Exit\n\n2. Go back DONT EXIT");
 				int exitChoice = Commands.inputInt(1, 2);
 				

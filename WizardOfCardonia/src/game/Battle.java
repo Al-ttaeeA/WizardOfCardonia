@@ -9,7 +9,7 @@ import java.util.*;
 public class Battle {
 	public static int currentMana, maxMana;
 	
-	public static double battleMult;
+	public static double battleMult = 1;
 	public static double attackMult = 1;
 	public static double blockMult = 1;
 	public static double healMult = 1;
@@ -38,8 +38,6 @@ public class Battle {
 		
 		currentMana = 3;
 		maxMana = 3;
-		
-		battleMult = 1.00;
 		
 		switch(Main.location) {
 		case 1:{
@@ -91,6 +89,13 @@ public class Battle {
 			
 			if(Main.playCurrentHP <= 0) {
 				playIsDead();
+				
+				battleMult = 1;
+				attackMult = 1;
+				blockMult = 1;
+				healMult = 1;
+				enemyDamageMult = 1;
+				
 				return;
 			}
 		} while(true);

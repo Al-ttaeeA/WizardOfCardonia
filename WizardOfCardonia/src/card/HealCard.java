@@ -24,6 +24,7 @@ public class HealCard extends Card {
 
     public boolean use() {
     	newHeal = game.Commands.skillMultiplier(heal, type);
+    	newHeal = (int) (newHeal * game.Battle.battleMult);
     	newHeal = (int) (newHeal * game.Battle.healMult);
     	
     	if(doMana()) {
@@ -42,6 +43,7 @@ public class HealCard extends Card {
     
     public String toString() {
     	newHeal = game.Commands.skillMultiplier(heal, type);
+    	newHeal = (int) (newHeal * game.Battle.battleMult);
     	newHeal = (int) (newHeal * game.Battle.healMult);
     	
     	return name + " (" + manaCost + " Mana) [" + rarity + "] {" + type + "}\n\tHeal " + newHeal + " HP\n"; 
