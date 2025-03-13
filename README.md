@@ -18,6 +18,12 @@ ________________________________________________________________________________
 
 ## Changelog
 
+### Early Access v0.1.1-alpha
+- Fixed a bug that showed 0 for some values of cards when viewing the deck in campsite
+- Heavily nerfed the corruption system as it was too overpowered
+- Buffed ALL enemies as they were too weak in any difficulty
+- Balanced difficulty modifier distribution
+
 ### Early Access v0.1.0-alpha
 - Initial early access release of the game
 ___________________________________________________________________________________________________________________________________________________________________
