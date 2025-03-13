@@ -1,4 +1,43 @@
 # Wizard of Cardonia
-Text-based Roguelike Deck Builder RPG
+Text-based Roguelike Deck Builder RPG with a ton of strategy, complexity, and an engaging story (hopefully)
 
-Still work in progress dont expect to see anything here
+The game is still in Early Access and there is many work in progress features that are planned!
+
+Feel free to give your feedback about the overall game, any bugs you encounter, or features you want to see added.
+
+___________________________________________________________________________________________________________________________________________________________________
+
+But for now, enjoy these amazing features that are included in the Early Access:
+- Intricate card system with many different card effects!
+- Physical, Magical, and Corrupt card types, each can be easily strengthened by leveling up the respective skill!
+- Turn based battle system that needs to be strategically played, plan the cards you will play beforehand to not mess up!
+- Many enemies each with unique abilities that may grant them a special attack, a heal, or even a complete buff to their damage and block!
+- Many items that give u battle buffs, and Artifacts that grant permanent buffs, to assist you against harder enemies!
+
+___________________________________________________________________________________________________________________________________________________________________
+
+## Changelog
+
+### Early Access v0.1.0-alpha
+- Initial early access release of the game
+___________________________________________________________________________________________________________________________________________________________________
+
+## Copyrights and Distribution
+
+Copyright © 2025 Dr4Go5 Developpers. All rights reserved. \
+Wizard of Cardonia is released under the GPL License (GNU General Public License). \
+This game is free and open-source; you may use and modify it under the terms of this license. 
+
+Unauthorized distribution, production, or modification of this game is completely allowed.
+
+This game is heavily inspired by Slay The Spire, although all assets are completely original and developped by Dr4Go5 Developpers.
+
+All game assets, including but not limited to code and UI design are the property of Dr4Go5 Developpers.
+
+Feel free to distribute this game to your family or friends.
+
+___________________________________________________________________________________________________________________________________________________________________
+
+## Technical Information
+
+The entire game is made using Java SE 22, compiled using Eclipse IDE, and packaged using JPackage. 
