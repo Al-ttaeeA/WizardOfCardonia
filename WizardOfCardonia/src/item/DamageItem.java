@@ -1,3 +1,9 @@
+/*****************************************************
+ * Part of Wizard of Cardonia
+ * Licensed under the GNU General Public License v3.0
+ * See LICENSE file for details.
+ *****************************************************/
+
 package item;
 
 public class DamageItem extends Item{
