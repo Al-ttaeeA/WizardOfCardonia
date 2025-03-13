@@ -33,7 +33,7 @@ public abstract class Card {
     protected void innerUse() {
     	System.out.println("You use " + this.name + " costing you " + this.manaCost + " Mana!\n");
     	
-    	if(type == Type.CORRUPT) {
+    	if(type == Type.CORRUPT && Commands.getRandomChance() < 0.10) {
     		Main.corruptedness += 1;
     		System.out.println("The corruptness spreads...\n");
     	}

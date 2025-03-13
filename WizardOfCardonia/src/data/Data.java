@@ -221,20 +221,20 @@ public class Data {
 	 * The array of all enemies, each row is a different type of enemy
 	 ******************************************/
 	private static final Enemy[][] enemies = {{
-		new HumanEnemy("Elite Guard", 	  80,  0,  3,  8,  5, 0.25),
-		new HumanEnemy("Royal Guard", 	  90,  0,  4,  6,  8, 0.30),
-		new HumanEnemy("Royal Archer", 	  60,  0,  2, 10,  8, 0.40),
-		new HumanEnemy("Lost Warrior", 	  70,  0,  3,  5, 10, 0.25),
-		new HumanEnemy("Royal Brute",    120, 15,  4,  2,  4, 0.40)
+		new HumanEnemy("Elite Guard", 	  80,  0,  5, 10,  5, 0.25),
+		new HumanEnemy("Royal Guard", 	  90,  0,  6,  8,  8, 0.30),
+		new HumanEnemy("Royal Archer", 	  60,  0,  4, 12,  8, 0.40),
+		new HumanEnemy("Lost Warrior", 	  70,  0,  5,  7, 10, 0.25),
+		new HumanEnemy("Royal Brute",    120, 15,  6,  4,  4, 0.40)
 	},{
-		new UndeadEnemy("Zombie", 		  80,  0,  3,  5,  8, 0.20, 8),
-		new UndeadEnemy("Skeleton",       60,  0,  3, 10,  6, 0.10, 10),
-		new UndeadEnemy("Zombie Rhino",  110, 10,  3,  3,  4, 0.40, 10)
+		new UndeadEnemy("Zombie", 		  80,  0,  5,  7,  8, 0.20, 8),
+		new UndeadEnemy("Skeleton",       60,  0,  5, 12,  6, 0.10, 10),
+		new UndeadEnemy("Zombie Rhino",  110, 10,  5,  5,  4, 0.40, 10)
 	},{
-		new MagicalEnemy("Fire Axolotl",  60,  0,  3,  8,  5, 0.30, 1),
-		new MagicalEnemy("Ice Sprite",    60,  0,  2,  5,  5, 0.60, 2),
-		new MagicalEnemy("Wizard Spirit", 80,  0,  4,  7,  5, 0.20, 3),
-		new MagicalEnemy("Golem",  		 110,  0,  8,  3,  3, 0.40, 1)
+		new MagicalEnemy("Fire Axolotl",  60,  0,  5, 10,  5, 0.15, 1),
+		new MagicalEnemy("Ice Sprite",    60,  0,  4,  7,  5, 0.30, 2),
+		new MagicalEnemy("Wizard Spirit", 80,  0,  6,  9,  5, 0.10, 3),
+		new MagicalEnemy("Golem",  		 110,  0,  10, 5,  3, 0.20, 1)
 	}
 	};
 	

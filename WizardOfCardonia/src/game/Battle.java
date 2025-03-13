@@ -41,34 +41,34 @@ public class Battle {
 		
 		switch(Main.location) {
 		case 1:{
-			battleDifficulty = Commands.getRandomDouble(1.00, 1.20);
+			battleDifficulty = Commands.getRandomDouble(1.00, 1.50);
 			
-			if(Commands.getRandomChance() < 0.80) battleCardCount = 1;
+			if(Commands.getRandomChance() < 0.90) battleCardCount = 1;
 			else battleCardCount = 2;
 			
 			break;
 		}
 		case 2:{
-			battleDifficulty = Commands.getRandomDouble(1.20, 2.00);
+			battleDifficulty = Commands.getRandomDouble(1.50, 3.00);
 			
-			if(Commands.getRandomChance() < 0.50) battleCardCount = 1;
-			else if(Commands.getRandomChance() < 0.60) battleCardCount = 2;
+			if(Commands.getRandomChance() < 0.60) battleCardCount = 1;
+			else if(Commands.getRandomChance() < 0.75) battleCardCount = 2;
 			else battleCardCount = 3;
 			
 			break;
 		}
 		case 3:{
-			battleDifficulty = Commands.getRandomDouble(2.00, 3.50);
+			battleDifficulty = Commands.getRandomDouble(3.00, 5.00);
 			
-			if(Commands.getRandomChance() < 0.50) battleCardCount = 2;
-			else if(Commands.getRandomChance() < 0.25) battleCardCount = 3;
+			if(Commands.getRandomChance() < 0.60) battleCardCount = 2;
+			else if(Commands.getRandomChance() < 0.75) battleCardCount = 3;
 			else battleCardCount = 4;
 			
 			break;
 		}
 		}
-		battleGold = (int) (battleDifficulty * 100);
-		battleXp = (int) (battleGold / 2);
+		battleGold = (int) (battleDifficulty * 75);
+		battleXp = (int) (battleGold * 0.60);
 		
 		currentEnemy = Data.getEnemy();
 		currentEnemy.initialize();
