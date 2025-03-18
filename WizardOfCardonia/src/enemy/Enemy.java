@@ -139,6 +139,34 @@ public abstract class Enemy {
     	}
     }
     
+    public void setPoison() {
+    	poison = true;
+    }
+    
+    public void setBurn() {
+    	burn = true;
+    }
+    
+    public void setInjured() {
+    	injured = true;
+    }
+    
+    public String getEffects() {
+    	String str = "";
+    	
+    	if(injured) {
+    		str += "[Injured] ";
+    	}
+    	if(burn) {
+    		str += "[Burned] ";
+    	}
+    	if(poison) {
+    		str += "[Poisoned]";
+    	}
+    	
+    	return str;
+    }
+    
     public String getName() {
         return name;
     }

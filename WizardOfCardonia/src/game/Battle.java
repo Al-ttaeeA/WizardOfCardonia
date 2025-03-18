@@ -400,7 +400,7 @@ public class Battle {
 		String playMana = "Mana: " + currentMana + " MP / " + maxMana + " MP";
 		String enemyDamage = "Damage: " + currentEnemy.getMinDamage() + " - " + currentEnemy.getMaxDamage() + " Damage";
 		String playCards = "Cards in hand: " + hand.size();
-		String empty = " ";
+		String enemyEffects = currentEnemy.getEffects();
 		
 		
 		System.out.println("********************************************************************************");
@@ -412,7 +412,7 @@ public class Battle {
 		System.out.println("*                                       *                                      *");
 		System.out.println(String.format("* %-38s* %-37s*", playMana, enemyDamage));
 		System.out.println("*                                       *                                      *");
-		System.out.println(String.format("* %-38s* %-37s*", playCards, empty));
+		System.out.println(String.format("* %-38s* %-37s*", playCards, enemyEffects));
 		System.out.println("********************************************************************************");
 	}
 }
