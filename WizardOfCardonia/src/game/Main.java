@@ -46,16 +46,16 @@ public class Main {
 	public static int maxXp;
 	public static int skillpoints;
 	
-	public static int intelligence;
-	public static int strength;
-	public static int arcana;
-	public static int corruptedness;
+	public static int intelligence = 1;
+	public static int strength = 1;
+	public static int arcana = 1;
+	public static int corruptedness = 1;
 	
-	public static double permMult;
-	public static double permIntMult;
-	public static double permStrMult;
-	public static double permCorMult;
-	public static double permShopSale;
+	public static double permMult = 1;
+	public static double permIntMult = 1;
+	public static double permStrMult = 1;
+	public static double permCorMult = 1;
+	public static double permShopSale = 1;
 	
 	public static int location;
 	

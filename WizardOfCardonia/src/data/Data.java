@@ -131,26 +131,39 @@ public class Data {
 	 * The array of all cards, each row is a different rarity
 	 *************************/
 	static Card[][] cards = {{
-		new DamageCard("Stab", 				Rarity.COMMON, 1, Type.PHYSICAL, 6),
-		new DamageCard("Jab", 				Rarity.COMMON, 2, Type.PHYSICAL, 10),			
-		new DamageCard("Fireball", 			Rarity.COMMON, 1, Type.MAGICAL, 7),
-		new DamageCard("Dark Shroud", 		Rarity.COMMON, 1, Type.CORRUPT, 8),
-		new BlockCard("Shield", 			Rarity.COMMON, 1, Type.PHYSICAL, 6),
-		new BlockCard("Spectral Shield", 	Rarity.COMMON, 1, Type.MAGICAL, 5),
-		new BlockCard("Shadow Seal", 		Rarity.COMMON, 1, Type.CORRUPT, 9)
+		new DamageCard("Stab", 					Rarity.COMMON, 1, Type.PHYSICAL, 6),
+		new DamageCard("Jab", 					Rarity.COMMON, 2, Type.PHYSICAL, 10),			
+		new DamageCard("Fireball", 				Rarity.COMMON, 1, Type.MAGICAL, 7),
+		new DamageCard("Dark Shroud", 			Rarity.COMMON, 1, Type.CORRUPT, 8),
+		new BlockCard("Shield", 				Rarity.COMMON, 1, Type.PHYSICAL, 6),
+		new BlockCard("Spectral Shield", 		Rarity.COMMON, 1, Type.MAGICAL, 5),
+		new BlockCard("Shadow Seal", 			Rarity.COMMON, 1, Type.CORRUPT, 9)
 	},{
-		new DamageCard("Slash", 			Rarity.UNCOMMON, 2, Type.PHYSICAL, 15),
-		new DamageCard("Ice Shards", 		Rarity.UNCOMMON, 2, Type.MAGICAL, 16),
-		new DamageCard("Blood Slash", 		Rarity.UNCOMMON, 2, Type.CORRUPT, 18)
+		new DamageCard("Slash", 				Rarity.UNCOMMON, 2, Type.PHYSICAL, 15),
+		new DamageCard("Ice Shards", 			Rarity.UNCOMMON, 2, Type.MAGICAL, 16),
+		new DamageCard("Blood Slash", 			Rarity.UNCOMMON, 2, Type.CORRUPT, 18),
+		new StatusCard("Leg Smash",				Rarity.UNCOMMON, 2, Type.PHYSICAL, 0.40),
+		new StatusCard("Ignite",				Rarity.UNCOMMON, 2, Type.MAGICAL, 0.50),
+		new StatusCard("Poisoned Dart", 		Rarity.UNCOMMON, 2, Type.CORRUPT, 0.50)
 	},{
-		new HealCard("Heal Orb",			Rarity.RARE, 2, Type.MAGICAL, 10),
-		new HealCard("Cursed Replenish",	Rarity.RARE, 2, Type.MAGICAL, 15)
+		new HealCard("Heal Orb",				Rarity.RARE, 2, Type.MAGICAL, 10),
+		new HealCard("Cursed Replenish",		Rarity.RARE, 2, Type.CORRUPT, 15),
+		new StatusCard("Head Bash",				Rarity.RARE, 2, Type.PHYSICAL, 0.75),
+		new StatusCard("Fire Breath",			Rarity.RARE, 2, Type.MAGICAL, 0.80),
+		new StatusCard("Toxic Mist", 			Rarity.RARE, 2, Type.CORRUPT, 0.80)
 	},{
-		new ManaCard("Mana Replenish", 		Rarity.EPIC, 0, Type.MAGICAL, 1),
-		new ManaCard("Shadow Power", 		Rarity.EPIC, 0, Type.MAGICAL, 2)
+		new ManaCard("Mana Replenish", 			Rarity.EPIC, 0, Type.MAGICAL, 1),
+		new ManaCard("Shadow Power", 			Rarity.EPIC, 0, Type.MAGICAL, 2),
+		new StatusCard("Fracture Slash", 		Rarity.EPIC, 2, Type.PHYSICAL, 1),
+		new StatusCard("Dragon’s Breath", 		Rarity.EPIC, 2, Type.MAGICAL, 1),
+		new StatusCard("Necrotic Toxin", 		Rarity.EPIC, 2, Type.CORRUPT, 1)
+		
 	},{
-		new WeaknessCard("Bone Breaker", 	Rarity.LEGENDARY, 1, Type.PHYSICAL, 0.80),
-		new WeaknessCard("Blinding Spell", 	Rarity.LEGENDARY, 1, Type.MAGICAL, 0.75)
+		new WeaknessCard("Bone Breaker", 		Rarity.LEGENDARY, 1, Type.PHYSICAL, 0.80),
+		new WeaknessCard("Blinding Spell", 		Rarity.LEGENDARY, 1, Type.MAGICAL, 0.75),
+		new StatusCard("Executioner’s Wrath", 	Rarity.LEGENDARY, 1, Type.PHYSICAL, 1),
+		new StatusCard("Phoenix’s Wrath", 		Rarity.LEGENDARY, 1, Type.MAGICAL, 1),
+		new StatusCard("Serpent's Wrath", 		Rarity.LEGENDARY, 1, Type.CORRUPT, 1)
 	}
 	};
 	
