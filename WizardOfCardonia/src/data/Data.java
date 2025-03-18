@@ -142,7 +142,7 @@ public class Data {
 		new BlockCard("Spectral Shield", 		Rarity.COMMON, 1, Type.MAGICAL, 5),
 		new BlockCard("Arcane Barrier", 		Rarity.COMMON, 2, Type.MAGICAL, 10),
 		new BlockCard("Shadow Seal", 			Rarity.COMMON, 1, Type.CORRUPT, 9),
-		new BlockCard("Dark Pact Shield",		Rarity.COMMON, 2, Type.CORRUPT, 18),
+		new BlockCard("Dark Pact Shield",		Rarity.COMMON, 2, Type.CORRUPT, 14),
 		new HealCard("Vital surge",				Rarity.COMMON, 1, Type.PHYSICAL, 6),
 		new HealCard("Healing Wave", 			Rarity.COMMON, 1, Type.MAGICAL, 7),
 		new HealCard("Blood Pact",				Rarity.COMMON, 1, Type.CORRUPT, 8)
@@ -150,6 +150,9 @@ public class Data {
 		new DamageCard("Slash", 				Rarity.UNCOMMON, 2, Type.PHYSICAL, 15),
 		new DamageCard("Ice Shards", 			Rarity.UNCOMMON, 2, Type.MAGICAL, 16),
 		new DamageCard("Blood Slash", 			Rarity.UNCOMMON, 2, Type.CORRUPT, 18),
+		new BlockCard("Titan's Defense",		Rarity.UNCOMMON, 1, Type.PHYSICAL, 12),
+		new BlockCard("Astral Veil",			Rarity.UNCOMMON, 1, Type.MAGICAL, 10),
+		new BlockCard("Veil of the Damned", 	Rarity.UNCOMMON, 1, Type.CORRUPT, 14),
 		new StatusCard("Leg Smash",				Rarity.UNCOMMON, 2, Type.PHYSICAL, 0.40),
 		new StatusCard("Ignite",				Rarity.UNCOMMON, 2, Type.MAGICAL, 0.50),
 		new StatusCard("Poisoned Dart", 		Rarity.UNCOMMON, 2, Type.CORRUPT, 0.50)
@@ -157,19 +160,27 @@ public class Data {
 		new HealCard("Enduring Spirit", 		Rarity.RARE, 1, Type.PHYSICAL, 9),
 		new HealCard("Radiant Rejuvenation",	Rarity.RARE, 1, Type.MAGICAL, 10),
 		new HealCard("Dark Regeneration",		Rarity.RARE, 1, Type.CORRUPT, 12),
+		new ManaCard("Battle Fury", 			Rarity.RARE, 0, Type.PHYSICAL, 1),
+		new ManaCard("Mana Replenish", 			Rarity.RARE, 0, Type.MAGICAL, 1),
+		new ManaCard("Dark Ritual",				Rarity.RARE, 0, Type.CORRUPT, 1),
 		new StatusCard("Head Bash",				Rarity.RARE, 2, Type.PHYSICAL, 0.75),
 		new StatusCard("Fire Breath",			Rarity.RARE, 2, Type.MAGICAL, 0.80),
 		new StatusCard("Toxic Mist", 			Rarity.RARE, 2, Type.CORRUPT, 0.80)
 	},{
-		new ManaCard("Mana Replenish", 			Rarity.EPIC, 0, Type.MAGICAL, 1),
-		new ManaCard("Shadow Power", 			Rarity.EPIC, 0, Type.MAGICAL, 2),
+		new ManaCard("Warrior's Focus",			Rarity.EPIC, 0, Type.PHYSICAL, 2),
+		new ManaCard("Celestial Flow", 			Rarity.EPIC, 0, Type.MAGICAL, 2),
+		new ManaCard("Blood Offering",			Rarity.EPIC, 1, Type.CORRUPT, 3),
+		new WeaknessCard("Weakening Blow", 		Rarity.EPIC, 1, Type.PHYSICAL, 0.90),
+		new WeaknessCard("Arcane Disruption",	Rarity.EPIC, 1, Type.MAGICAL, 0.88),
+		new WeaknessCard("Curse of Frality",	Rarity.EPIC, 1, Type.CORRUPT, 0.85),
 		new StatusCard("Fracture Slash", 		Rarity.EPIC, 2, Type.PHYSICAL, 1),
 		new StatusCard("Dragon’s Breath", 		Rarity.EPIC, 2, Type.MAGICAL, 1),
 		new StatusCard("Necrotic Toxin", 		Rarity.EPIC, 2, Type.CORRUPT, 1)
 		
 	},{
 		new WeaknessCard("Bone Breaker", 		Rarity.LEGENDARY, 1, Type.PHYSICAL, 0.80),
-		new WeaknessCard("Blinding Spell", 		Rarity.LEGENDARY, 1, Type.MAGICAL, 0.75),
+		new WeaknessCard("Blinding Spell", 		Rarity.LEGENDARY, 1, Type.MAGICAL, 0.78),
+		new WeaknessCard("Soul Rot", 			Rarity.LEGENDARY, 1, Type.CORRUPT, 0.75),
 		new StatusCard("Executioner’s Wrath", 	Rarity.LEGENDARY, 1, Type.PHYSICAL, 1),
 		new StatusCard("Phoenix’s Wrath", 		Rarity.LEGENDARY, 1, Type.MAGICAL, 1),
 		new StatusCard("Serpent's Wrath", 		Rarity.LEGENDARY, 1, Type.CORRUPT, 1)
