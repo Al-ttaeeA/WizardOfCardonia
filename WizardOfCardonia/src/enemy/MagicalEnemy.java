@@ -37,6 +37,8 @@ public class MagicalEnemy extends Enemy{
 	}
 	
 	public void attack() {
+		innerAttack();
+		
 		if(game.Commands.getRandomChance() < specialChance) {
 			blockAmount += increase;
 			damageConstant += increase;

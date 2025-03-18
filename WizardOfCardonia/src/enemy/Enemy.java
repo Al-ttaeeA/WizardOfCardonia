@@ -18,6 +18,8 @@
 
 package enemy;
 
+import game.Commands;
+
 public abstract class Enemy {
     protected final String name;
     protected int maxHealth;
@@ -27,6 +29,14 @@ public abstract class Enemy {
     protected int damageConstant;
     protected int damageVariable;
     protected final double specialChance;
+    
+    //Status effects
+    protected boolean poison = false;
+    protected boolean burn = false;
+    protected boolean injured = false;
+    
+    private double damageModifier = 1;
+    
 
     public Enemy(String name, int health, int block, int blockAmount, int damageConstant, int damageVariable, double specialChance) {
         this.name = name;
@@ -56,6 +66,40 @@ public abstract class Enemy {
 
     public abstract void attack();
     
+    protected void innerAttack() {
+    	int damage;
+    	
+    	if(poison) {
+    		damage = Commands.skillMultiplier(4, card.Type.CORRUPT);
+    		
+    		takeDamage(damage);
+    		
+    		System.out.println("The enemy was poisoned and took " + damage + " Damage to poison!\n");
+    	}
+    	
+    	if(burn) {
+    		damage = Commands.skillMultiplier(5, card.Type.MAGICAL);
+    		
+    		takeDamage(damage);
+    		
+    		System.out.println("The enemy was burning and took " + damage + " Damage to burning!\n");
+    		
+    		if(Commands.getRandomChance() < 0.40) {
+    			burn = false;
+    			
+    			System.out.println("The enemy also stopped burning!\n");
+    		}
+    	}
+    	
+    	if(injured) {
+    		damageModifier = 0.75;
+    		System.out.println("The enemy is injured so their damage is reduced by 25%!");
+    	}
+    	else {
+    		damageModifier = 1;
+    	}
+    }
+    
     public abstract String toString();
     
     public String printStats() {
@@ -68,7 +112,7 @@ public abstract class Enemy {
     }
     
     public int getDamage() {
-    	return (int) ((damageConstant + game.Commands.getRandomInt(damageVariable)) * game.Battle.enemyDamageMult);
+    	return (int) ((damageConstant + game.Commands.getRandomInt(damageVariable)) * game.Battle.enemyDamageMult * damageModifier);
     }
     
     public int getMinDamage() {

@@ -32,6 +32,8 @@ public class HumanEnemy extends Enemy{
 	}
 	
 	public void attack() {
+		innerAttack();
+		
 		if(game.Commands.getRandomChance() < specialChance) {
 			int damage = this.getDamage();
 			int diff = game.Battle.currentBlock - damage;
