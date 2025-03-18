@@ -132,12 +132,20 @@ public class Data {
 	 *************************/
 	static Card[][] cards = {{
 		new DamageCard("Stab", 					Rarity.COMMON, 1, Type.PHYSICAL, 6),
-		new DamageCard("Jab", 					Rarity.COMMON, 2, Type.PHYSICAL, 10),			
+		new DamageCard("Strike", 				Rarity.COMMON, 2, Type.PHYSICAL, 10),			
 		new DamageCard("Fireball", 				Rarity.COMMON, 1, Type.MAGICAL, 7),
+		new DamageCard("Arcane Bolt",			Rarity.COMMON, 2, Type.MAGICAL, 11),	
 		new DamageCard("Dark Shroud", 			Rarity.COMMON, 1, Type.CORRUPT, 8),
+		new DamageCard("Dark Bolt", 			Rarity.COMMON, 2, Type.CORRUPT, 12),
 		new BlockCard("Shield", 				Rarity.COMMON, 1, Type.PHYSICAL, 6),
+		new BlockCard("Iron Guard", 			Rarity.COMMON, 2, Type.PHYSICAL, 12),
 		new BlockCard("Spectral Shield", 		Rarity.COMMON, 1, Type.MAGICAL, 5),
-		new BlockCard("Shadow Seal", 			Rarity.COMMON, 1, Type.CORRUPT, 9)
+		new BlockCard("Arcane Barrier", 		Rarity.COMMON, 2, Type.MAGICAL, 10),
+		new BlockCard("Shadow Seal", 			Rarity.COMMON, 1, Type.CORRUPT, 9),
+		new BlockCard("Dark Pact Shield",		Rarity.COMMON, 2, Type.CORRUPT, 18),
+		new HealCard("Vital surge",				Rarity.COMMON, 1, Type.PHYSICAL, 6),
+		new HealCard("Healing Wave", 			Rarity.COMMON, 1, Type.MAGICAL, 7),
+		new HealCard("Blood Pact",				Rarity.COMMON, 1, Type.CORRUPT, 8)
 	},{
 		new DamageCard("Slash", 				Rarity.UNCOMMON, 2, Type.PHYSICAL, 15),
 		new DamageCard("Ice Shards", 			Rarity.UNCOMMON, 2, Type.MAGICAL, 16),
@@ -146,8 +154,9 @@ public class Data {
 		new StatusCard("Ignite",				Rarity.UNCOMMON, 2, Type.MAGICAL, 0.50),
 		new StatusCard("Poisoned Dart", 		Rarity.UNCOMMON, 2, Type.CORRUPT, 0.50)
 	},{
-		new HealCard("Heal Orb",				Rarity.RARE, 2, Type.MAGICAL, 10),
-		new HealCard("Cursed Replenish",		Rarity.RARE, 2, Type.CORRUPT, 15),
+		new HealCard("Enduring Spirit", 		Rarity.RARE, 1, Type.PHYSICAL, 9),
+		new HealCard("Radiant Rejuvenation",	Rarity.RARE, 1, Type.MAGICAL, 10),
+		new HealCard("Dark Regeneration",		Rarity.RARE, 1, Type.CORRUPT, 12),
 		new StatusCard("Head Bash",				Rarity.RARE, 2, Type.PHYSICAL, 0.75),
 		new StatusCard("Fire Breath",			Rarity.RARE, 2, Type.MAGICAL, 0.80),
 		new StatusCard("Toxic Mist", 			Rarity.RARE, 2, Type.CORRUPT, 0.80)
