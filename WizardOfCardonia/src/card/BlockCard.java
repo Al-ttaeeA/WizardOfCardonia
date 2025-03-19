@@ -51,7 +51,7 @@ public class BlockCard extends Card{
     	return name + " (" + manaCost + " Mana) [" + rarity + "] {" + type + "}\n\tGain " + newBlock + " block\n";
     }
 
-    public int getHeal(int num) {
+    public int getBlock(int num) {
     	if(num == 0) {
         	return block;
         }
