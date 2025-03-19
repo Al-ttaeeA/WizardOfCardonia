@@ -601,14 +601,16 @@ public class Main {
 		Artifact shopArtifact;
 		int shopArtifactPrice;
 		
+		int randomArtifactIndex;
+		
 		if(artifacts.size() == 0) {
 			shopArtifact = null;
 			shopArtifactPrice = 0;
+			randomArtifactIndex = -1;
 		}
 		else {
-			int randomArtifactIndex = Commands.getRandomInt(artifacts.size()-1);
+			randomArtifactIndex = Commands.getRandomInt(artifacts.size()-1);
 			shopArtifact = artifacts.get(randomArtifactIndex);
-			artifacts.remove(randomArtifactIndex);
 			shopArtifactPrice = shopArtifact.getPrice();
 		}
 		
@@ -793,6 +795,8 @@ public class Main {
 				gold -= shopArtifactPrice;
 				
 				shopArtifact.use();
+
+				artifacts.remove(randomArtifactIndex);
 				
 				System.out.println("You bought and used the " + shopArtifact.getName() + "!");
 				System.out.println("\nYou now have " + gold + " Gold left!");

@@ -448,8 +448,16 @@ public class Data {
 	}
 	
 	public static void initiateArtifactList() {
+		ArrayList<Artifact> temp = new ArrayList<Artifact>();
+		
+		for(int i = 0; i < artifacts.length; i++) {
+			temp.add(artifacts[i]);
+		}
+		
 		for(int i = 0; i < 10; i++) {
-			Main.artifacts.add(getArtifact());
+			int random = Commands.getRandomInt(temp.size()) - 1;
+			Main.artifacts.add(temp.get(random).copy());
+			temp.remove(random);
 		}
 	}
 	
