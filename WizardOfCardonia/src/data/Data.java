@@ -458,9 +458,20 @@ public class Data {
 	}
 	
 	static Artifact[] artifacts = {
-		new SaleArtifact("Gold Necklace", ArtifactType.COMMON, 0.9),
-		new SaleArtifact("Crimson Amulet", ArtifactType.ANCIENT, 0.8),
-		new AllArtifact("Soul Crystal", ArtifactType.COMMON, 1.2),
-		new AllArtifact("Gold Spirit Essence", ArtifactType.ANCIENT, 1.4)
+		new SaleArtifact("Trader's Coin", 		ArtifactType.COMMON, 0.95),
+		new SaleArtifact("Gold Necklace", 		ArtifactType.COMMON, 0.9),
+		new SaleArtifact("Crimson Amulet", 		ArtifactType.ANCIENT, 0.8),
+		new AllArtifact("Emblem of Mastery", 	ArtifactType.COMMON, 1.2),
+		new AllArtifact("Sigil of Power",	 	ArtifactType.COMMON, 1.25),
+		new AllArtifact("Crown of Dominion", 	ArtifactType.ANCIENT, 1.4),
+		new StrArtifact("Bracer of Might",     	ArtifactType.COMMON, 1.2),
+		new StrArtifact("Dead Man's Ring",     	ArtifactType.COMMON, 1.25),
+		new StrArtifact("Titan's Gauntlet", 	ArtifactType.ANCIENT, 1.4),
+		new IntArtifact("Mindstone Pendant",	ArtifactType.COMMON, 1.2),
+		new IntArtifact("Charm of Insight",		ArtifactType.COMMON, 1.25),
+		new IntArtifact("Tome of Eternal Mind",	ArtifactType.ANCIENT, 1.4),
+		new CorArtifact("Shadowbiner's token",	ArtifactType.COMMON, 1.2),
+		new CorArtifact("Cursed Fang",			ArtifactType.COMMON, 1.25),	
+		new CorArtifact("Bloodmoon Skull", 		ArtifactType.ANCIENT, 1.4)
 	};
 }
