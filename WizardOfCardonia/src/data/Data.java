@@ -148,11 +148,11 @@ public class Data {
 		new HealCard("Blood Pact",					Rarity.COMMON, 1, Type.CORRUPT, 8)
 	},{
 		new DamageBlockCard("Slash and Bash", 		Rarity.UNCOMMON, 2, Type.PHYSICAL, 7, 6),
-		new DamageBlockCard("Ice Shards", 			Rarity.UNCOMMON, 2, Type.MAGICAL, 8, 6),
-		new DamageBlockCard("Runic Counterblast", 	Rarity.UNCOMMON, 2, Type.CORRUPT, 8, 8),
-		new BlockCard("Titan's Defense",			Rarity.UNCOMMON, 1, Type.PHYSICAL, 12),
-		new BlockCard("Astral Veil",				Rarity.UNCOMMON, 1, Type.MAGICAL, 10),
-		new BlockCard("Veil of the Damned", 		Rarity.UNCOMMON, 1, Type.CORRUPT, 14),
+		new DamageBlockCard("Runic Counterblast", 	Rarity.UNCOMMON, 2, Type.MAGICAL, 8, 6),
+		new DamageBlockCard("Cursed Reflection", 	Rarity.UNCOMMON, 2, Type.CORRUPT, 8, 8),
+		new BlockHealCard("Fortified Recovery",		Rarity.UNCOMMON, 1, Type.PHYSICAL, 6, 6),
+		new BlockHealCard("Runic Restoration",		Rarity.UNCOMMON, 1, Type.MAGICAL, 6, 7),
+		new BlockHealCard("Dark Resurgence", 		Rarity.UNCOMMON, 1, Type.CORRUPT, 8, 8),
 		new StatusCard("Leg Smash",					Rarity.UNCOMMON, 2, Type.PHYSICAL, 0.40),
 		new StatusCard("Ignite",					Rarity.UNCOMMON, 2, Type.MAGICAL, 0.50),
 		new StatusCard("Poisoned Dart", 			Rarity.UNCOMMON, 2, Type.CORRUPT, 0.50)
