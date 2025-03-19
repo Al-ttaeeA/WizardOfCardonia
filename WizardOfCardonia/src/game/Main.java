@@ -57,6 +57,9 @@ public class Main {
 	public static double permCorMult = 1;
 	public static double permShopSale = 1;
 	
+	public static int permMaxMana = 3;
+	public static int permHand = 5;
+	
 	public static int location;
 	
 	public static void main(String[] args) {

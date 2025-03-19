@@ -472,6 +472,8 @@ public class Data {
 		new IntArtifact("Tome of Eternal Mind",	ArtifactType.ANCIENT, 1.4),
 		new CorArtifact("Shadowbiner's token",	ArtifactType.COMMON, 1.2),
 		new CorArtifact("Cursed Fang",			ArtifactType.COMMON, 1.25),	
-		new CorArtifact("Bloodmoon Skull", 		ArtifactType.ANCIENT, 1.4)
+		new CorArtifact("Bloodmoon Skull", 		ArtifactType.ANCIENT, 1.4),
+		new ManaArtifact("Focus Gem",			ArtifactType.COMMON, 1),
+		new ManaArtifact("Essence Stone",		ArtifactType.COMMON, 1)
 	};
 }

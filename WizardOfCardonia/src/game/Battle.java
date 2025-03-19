@@ -54,8 +54,8 @@ public class Battle {
 	public static void Battle(){
 		iniateTempDeck();
 		
-		currentMana = 3;
-		maxMana = 3;
+		maxMana = Main.permMaxMana;
+		currentMana = maxMana;
 		
 		switch(Main.location) {
 		case 1:{
@@ -127,7 +127,7 @@ public class Battle {
 		currentBlock = 0;
 		currentMana = maxMana;
 		
-		for(int i = 0; i < 5; i++) {
+		for(int i = 0; i < Main.permHand; i++) {
 			int random = Commands.getRandomInt(tempDeck.size()-1);
 			hand.add(tempDeck.get(random));
 			tempDeck.remove(random);

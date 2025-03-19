@@ -44,6 +44,8 @@ public class Savegame {
 		Main.permCorMult = 1.00;
 		Main.permShopSale = 1.00;
 		
+		Main.permMaxMana = 3;
+		
 		Main.location = 1;
 		
 		Data.initiateDeck();
