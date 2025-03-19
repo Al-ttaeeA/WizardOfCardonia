@@ -474,6 +474,9 @@ public class Data {
 		new CorArtifact("Cursed Fang",			ArtifactType.COMMON, 1.25),	
 		new CorArtifact("Bloodmoon Skull", 		ArtifactType.ANCIENT, 1.4),
 		new ManaArtifact("Focus Gem",			ArtifactType.COMMON, 1),
-		new ManaArtifact("Essence Stone",		ArtifactType.COMMON, 1)
+		new ManaArtifact("Essence Stone",		ArtifactType.COMMON, 1),
+		new HandArtifact("Master’s Talisman",	ArtifactType.COMMON, 1),
+		new HandArtifact("Cardbinder’s Ring",	ArtifactType.COMMON, 1),
+		new HandArtifact("Chronomancer’s Deck", ArtifactType.ANCIENT, 2)
 	};
 }

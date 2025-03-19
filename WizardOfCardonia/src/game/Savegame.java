@@ -45,6 +45,7 @@ public class Savegame {
 		Main.permShopSale = 1.00;
 		
 		Main.permMaxMana = 3;
+		Main.permHand = 5;
 		
 		Main.location = 1;
 		
