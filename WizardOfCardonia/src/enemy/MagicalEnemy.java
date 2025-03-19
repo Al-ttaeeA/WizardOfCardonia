@@ -76,7 +76,7 @@ public class MagicalEnemy extends Enemy{
 				"\n   Base Max Health: " + maxHealth + " HP" +
 				"\n   Starting block:  " + block + " Damage" + 
 				"\n   Base Damage:     " + getMinDamage() + " - " + getMaxDamage() + " Damage" + 
-				"\n   Has a " + String.format("%2.0f", specialChance*100) + "% chance to increase damage and gained block by " + String.format("%2.0f", increase*100) + "%\n";
+				"\n   Has a " + String.format("%2.0f", specialChance*100) + "% chance to increase damage and gained block by " + increase + "\n";
 		
 		return str;
 	}

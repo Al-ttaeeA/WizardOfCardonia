@@ -37,7 +37,7 @@ public class WeaknessCard extends Card{
 	}
 	
 	public String toString() {
-		return name + " (" + manaCost + " Mana) [" + rarity + "] {" + type + "}\n\tWeaken the enemy's damage by " + String.format("%.2f", 100*(1-weakness)) + "%\n";
+		return name + " (" + manaCost + " Mana) [" + rarity + "] {" + type + "}\n\tWeaken the enemy's damage by " + String.format("%2.0f", 100*(1-weakness)) + "%\n";
 	}
 	
 	public double getDmgDebuff(int num) {
