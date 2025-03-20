@@ -85,6 +85,16 @@ public class Battle {
 			break;
 		}
 		}
+		
+		if(Main.battleCount == 0) {
+			battleDifficulty = 1.00;
+			battleCardCount = 1;
+		}
+		else if(Main.battleCount == 1) {
+			battleDifficulty = 1.20;
+			battleCardCount = 2;
+		}
+		
 		battleGold = (int) (battleDifficulty * 75);
 		battleXp = (int) (battleGold * 0.60);
 		
@@ -100,6 +110,15 @@ public class Battle {
 			
 			if(currentEnemy.getHealth() <= 0) {
 				enemIsDead();
+				
+				currentBlock = 0;
+				
+				battleMult = 1;
+				attackMult = 1;
+				blockMult = 1;
+				healMult = 1;
+				enemyDamageMult = 1;
+				
 				return;
 			}
 			
@@ -107,6 +126,8 @@ public class Battle {
 			
 			if(Main.playCurrentHP <= 0) {
 				playIsDead();
+				
+				currentBlock = 0;
 				
 				battleMult = 1;
 				attackMult = 1;

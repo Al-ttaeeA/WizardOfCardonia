@@ -93,7 +93,7 @@ public abstract class Enemy {
     	
     	if(injured) {
     		damageModifier = 0.75;
-    		System.out.println("The enemy is injured so their damage is reduced by 25%!");
+    		System.out.println("The enemy is injured so their damage is reduced by 25%!\n");
     	}
     	else {
     		damageModifier = 1;

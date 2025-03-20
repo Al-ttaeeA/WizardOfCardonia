@@ -35,7 +35,7 @@ public class DamageCard extends Card {
     		game.Battle.currentEnemy.takeDamage(newDamage);
     		
     		innerUse();
-    		System.out.println("You attack for " + newDamage + " Damage leaving the enemy with " + game.Battle.currentEnemy.getHealth() + " HP!");
+    		System.out.println("You attack for " + newDamage + " Damage leaving the enemy with " + game.Battle.currentEnemy.getHealth() + " HP and " + game.Battle.currentEnemy.getBlock() + " Damage block!");
     		
     		return true;
     	}
