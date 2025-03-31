@@ -99,9 +99,9 @@ public class Main {
 					
 					4. View Codex 
 					
-					5. Credits (WIP)
+					5. Credits and Copyrights
 					
-					6. Exit (REALLY?)
+					6. Exit to desktop
 					""");
 			
 			mainMenuChoice = Commands.inputInt(1, 6);
@@ -212,10 +212,29 @@ public class Main {
 	
 	/********************
 	 * credits
-	 * Prints the credits for the game (a lil bit narcissistic if u ask me)
+	 * Prints the credits and copyright information for the game 
 	 ********************/
 	static void credits() {
-		System.out.println("Credits goes here");
+		System.out.println("""
+				The entire game's design, code, development, and assests are developped by 
+				A. Al-Ttaee under Dr4Go5 Developpers.
+				
+				Copyright © 2025 Dr4Go5 Developpers. All rights reserved. 
+				Wizard of Cardonia is released under the GPL License (GNU General Public 
+				License). This game is free and open-source; you may use and modify it under 
+				the terms of this license. 
+
+				Unauthorized distribution, production, or modification of this game is 
+				completely allowed.
+
+				This game is heavily inspired by Slay The Spire, although all assets are 
+				completely original and developped by Dr4Go5 Developpers.
+
+				All game assets, including but not limited to code and UI design are the 
+				property of Dr4Go5 Developpers.
+
+				Feel free to distribute this game to your family or friends.
+				""");
 		Commands.pressEnter();
 	}
 	
