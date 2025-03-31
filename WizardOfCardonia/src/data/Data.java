@@ -276,16 +276,23 @@ public class Data {
 		new HumanEnemy("Royal Guard", 	  90,  0,  6,  8,  8, 0.30),
 		new HumanEnemy("Royal Archer", 	  60,  0,  4, 12,  8, 0.40),
 		new HumanEnemy("Lost Warrior", 	  70,  0,  5,  7, 10, 0.25),
-		new HumanEnemy("Royal Brute",    120, 15,  6,  4,  4, 0.40)
+		new HumanEnemy("Royal Brute",    120, 15,  6,  4,  4, 0.40),
+		new HumanEnemy("Bladed Bandit",	  60,  0,  4, 14,  4, 0.10),
+		new HumanEnemy("Lone Assassin",   80,  0,  5, 14,  2, 0.20)
 	},{
 		new UndeadEnemy("Zombie", 		  80,  0,  5,  7,  8, 0.20, 8),
 		new UndeadEnemy("Skeleton",       60,  0,  5, 12,  6, 0.10, 10),
-		new UndeadEnemy("Zombie Rhino",  110, 10,  5,  5,  4, 0.40, 10)
+		new UndeadEnemy("Zombie Rhino",  110, 10,  5,  5,  4, 0.40, 10),
+		new UndeadEnemy("Undead Husk",    70, 10,  6,  6, 14, 0.05, 15),
+		new UndeadEnemy("Bone Goliath",  120, 10,  7,  5,  5, 0.30, 10),
+		new UndeadEnemy("Phantom", 		  90,  0,  8, 10,  6, 0.20, 10)
 	},{
 		new MagicalEnemy("Fire Axolotl",  60,  0,  5, 10,  5, 0.15, 1),
 		new MagicalEnemy("Ice Sprite",    60,  0,  4,  7,  5, 0.30, 2),
 		new MagicalEnemy("Wizard Spirit", 80,  0,  6,  9,  5, 0.10, 3),
-		new MagicalEnemy("Golem",  		 110,  0,  10, 5,  3, 0.20, 1)
+		new MagicalEnemy("Golem",  		 110, 10, 10,  5,  3, 0.20, 1),
+		new MagicalEnemy("Phoenix",  	  90,  0,  2, 10,  8, 0.15, 2),
+		new MagicalEnemy("Vile Serpent", 100,  0,  4,  8,  6, 0.30, 2)
 	}
 	};
 	
