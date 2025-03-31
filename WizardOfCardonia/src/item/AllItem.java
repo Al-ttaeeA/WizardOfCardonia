@@ -32,7 +32,7 @@ private final double mult;
 		return name + " [" + price + " G]\n\tBoosts ALL card effects by " + String.format("%2.0f", 100*(mult-1)) + "% until the end of the battle\n";
 	}
 	
-	public double getDmgBuff() {
+	public double getMult() {
 		return mult;
 	}
 }

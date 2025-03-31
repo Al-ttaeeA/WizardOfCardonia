@@ -7,32 +7,32 @@
 package item;
 
 public class BlockItem extends Item{
-	private final double blockBuff;
+	private final double mult;
 	
-	public BlockItem(String name, ItemRarity rarity, int price, double blockBuff) {
+	public BlockItem(String name, ItemRarity rarity, int price, double mult) {
 		super(name, rarity, price);
-		this.blockBuff = blockBuff;
+		this.mult = mult;
 	}
 	
 	public BlockItem() {
 		super();
-		this.blockBuff = 1;
+		this.mult = 1;
 	}
 	
 	public Item copy() {
-		return new BlockItem(name, rarity, price, blockBuff);
+		return new BlockItem(name, rarity, price, mult);
 	}
 	
 	public void use() {
-		game.Battle.blockMult *= blockBuff;
-		System.out.println("You increase ALL gained block by " + String.format("%2.0f", 100*(blockBuff-1)) + "% until the end of the battle!");
+		game.Battle.blockMult *= mult;
+		System.out.println("You increase ALL gained block by " + String.format("%2.0f", 100*(mult-1)) + "% until the end of the battle!");
 	}
 	
 	public String toString() {
-		return name + " [" + price + " G]\n\tBoosts ALL gained block by " + String.format("%2.0f", 100*(blockBuff-1)) + "% until the end of the battle\n";
+		return name + " [" + price + " G]\n\tBoosts ALL gained block by " + String.format("%2.0f", 100*(mult-1)) + "% until the end of the battle\n";
 	}
 	
-	public double getBlockBuff() {
-		return blockBuff;
+	public double getMult() {
+		return mult;
 	}
 }

@@ -374,16 +374,19 @@ public class Data {
 	static Item[][] items = {{
 		new BlockItem("Block Flask", 				ItemRarity.COMMON, 20, 1.10),
 		new DamageItem("Damage Flask", 				ItemRarity.COMMON, 20, 1.10),
+		new HealItem("Healing Flask", 				ItemRarity.COMMON, 20, 1.10),
 		new ManaItem("Mana Flask", 					ItemRarity.COMMON, 25, 1)
 	},{
 		new AllItem("Warrior's Potion",				ItemRarity.RARE,   60, 1.20),
 		new BlockItem("Block Potion", 				ItemRarity.RARE,   40, 1.20),
 		new DamageItem("Damage Potion", 			ItemRarity.RARE,   40, 1.20),
+		new HealItem("Healing Potion",				ItemRarity.RARE,   40, 1.20),
 		new ManaItem("Mana Potion", 				ItemRarity.RARE,   50, 2)
 	},{
 		new AllItem("Wizard's Ancient Elixir", 		ItemRarity.EPIC,  120, 1.40),
 		new BlockItem("Potent Elixir Of Blocking", 	ItemRarity.EPIC,   80, 1.40),
 		new DamageItem("Potent Elixir Of Damage",  	ItemRarity.EPIC,   80, 1.40),
+		new HealItem("Potent Elixir Of Healing",	ItemRarity.EPIC,   80, 1.40),
 		new ManaItem("Potent Elixir Of Mana", 	    ItemRarity.EPIC,  100, 3)	
 	}
 	};
