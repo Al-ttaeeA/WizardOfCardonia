@@ -30,15 +30,15 @@ ________________________________________________________________________________
 
 ## Copyrights and Distribution
 
-Copyright © 2025 Dr4Go5 Developpers. All rights reserved. \
+Copyright © 2025 A2Z Developpers. All rights reserved. \
 Wizard of Cardonia is released under the GPL License (GNU General Public License). \
 This game is free and open-source; you may use and modify it under the terms of this license. 
 
 Unauthorized distribution, production, or modification of this game is completely allowed.
 
-This game is heavily inspired by Slay The Spire, although all assets are completely original and developped by Dr4Go5 Developpers.
+This game is heavily inspired by Slay The Spire, although all assets are completely original and developped by A2Z Developpers.
 
-All game assets, including but not limited to code and UI design are the property of Dr4Go5 Developpers.
+All game assets, including but not limited to code and UI design are the property of A2Z Developpers.
 
 Feel free to distribute this game to your family or friends.
 
