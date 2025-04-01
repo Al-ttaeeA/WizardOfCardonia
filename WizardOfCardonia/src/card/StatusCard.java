@@ -91,7 +91,7 @@ public class StatusCard extends Card{
 			str += "\n\t" + effect + " the enemy!\n";
 		}
 		else {
-			str += "\n\tHas a " + String.format("%2.0f", 100*(1-effectChance)) + "% chance to " + effect + " the enemy!\n";
+			str += "\n\tHas a " + String.format("%2.0f", 100*(effectChance)) + "% chance to " + effect + " the enemy!\n";
 		}
 		
 		return str;
