@@ -18,6 +18,15 @@ ________________________________________________________________________________
 
 ## Changelog
 
+### Early Access v0.2.0-alpha
+- Added 40+ new cards with many new effects including but not limited to:
+  - Hybrid Cards that can both deal damage AND gain block or gain block AND heal
+  - Status Effect Cards with a new system that tracks Status Effects on enemies such as Injury, Burning, and Poison, each with a unique effect that will help you in battle
+- Added many new items and artifacts to help you in your difficult battles with a bunch of variety to choose from
+- Added many new well-balanced enemies to keep the battles from getting repetitive
+- Fixed many bugs that were previously overlooked
+
+
 ### Early Access v0.1.1-alpha
 - Fixed a bug that showed 0 for some values of cards when viewing the deck in campsite
 - Heavily nerfed the corruption system as it was too overpowered
