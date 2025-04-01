@@ -1,6 +1,6 @@
 /***********************************************************************
  * Wizard of Cardonia
- * Copyright (C) 2025 Dr4Go5 Developers
+ * Copyright (C) 2025 A2Z Studios
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
