@@ -25,7 +25,7 @@ public class Savegame {
 		Main.playMaxHP = 100;
 		Main.playCurrentHP = 100;
 		Main.gold = 1000; //Change
-		Main.battleCount = 1;
+		Main.battleCount = 0;
 		Main.playIsDead = false;
 		
 		Main.xpLevel = 1;

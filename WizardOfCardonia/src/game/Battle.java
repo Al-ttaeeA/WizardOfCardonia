@@ -45,17 +45,19 @@ public class Battle {
 	
 	public static Enemy currentEnemy = Data.getEnemy();
 	
-	private static void iniateTempDeck() {
+	private static void initiateTempDeck() {
 		for(int i = 0; i < Main.deck.size(); i++) {
 			tempDeck.add(Main.deck.get(i).copy());
 		}
 	}
 	
 	public static void Battle(){
-		iniateTempDeck();
+		initiateTempDeck();
 		
 		maxMana = Main.permMaxMana;
 		currentMana = maxMana;
+		
+		Main.battleCount++;
 		
 		switch(Main.location) {
 		case 1:{
@@ -86,17 +88,15 @@ public class Battle {
 		}
 		}
 		
-		if(Main.battleCount == 0) {
-			battleDifficulty = 1.00;
-			battleCardCount = 1;
-		}
-		else if(Main.battleCount == 1) {
-			battleDifficulty = 1.20;
-			battleCardCount = 2;
-		}
-		
 		battleGold = (int) (battleDifficulty * 75);
 		battleXp = (int) (battleGold * 0.60);
+		
+		if(Main.battleCount == 1) {
+			battleDifficulty = 0.60;
+			battleCardCount = 1;
+			battleGold = Commands.getRandomInt(50) + 50;
+			battleXp = (int) (battleGold * 0.60);
+		}
 		
 		currentEnemy = Data.getEnemy();
 		currentEnemy.initialize();
@@ -119,6 +119,9 @@ public class Battle {
 				healMult = 1;
 				enemyDamageMult = 1;
 				
+				tempDeck.clear();
+				hand.clear();
+				
 				return;
 			}
 			
@@ -134,6 +137,9 @@ public class Battle {
 				blockMult = 1;
 				healMult = 1;
 				enemyDamageMult = 1;
+				
+				tempDeck.clear();
+				hand.clear();
 				
 				return;
 			}
@@ -329,7 +335,6 @@ public class Battle {
 		Card gainedCard;
 		int keepChoice;
 		
-		Main.battleCount++;
 		Main.gold += battleGold;
 		Main.currentXp += battleXp;
 		

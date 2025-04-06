@@ -254,6 +254,15 @@ public class Main {
 				return;
 			}
 			
+			if(battleCount == 0) {
+				merchantCount++;
+				
+				Battle.Battle();
+				campChoice = 0;
+				
+				continue;
+			}
+			
 			System.out.println("""
 					********************************************************************************
 					*                                   CAMPSITE                                   *
@@ -312,7 +321,7 @@ public class Main {
 				break;
 			}
 			case 5:{
-				if(merchantCount != 0 && (Commands.getRandomChance() < 0.33 || merchantCount == 3)) {
+				if(merchantCount != 0 && (Commands.getRandomChance() < 0.50 || merchantCount == 2)) {
 					merchantCount = 0;
 					
 					merchant();
