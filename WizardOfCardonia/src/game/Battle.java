@@ -261,7 +261,7 @@ public class Battle {
 			totalPages = (int) Math.ceil((double) (Main.inventory.size()) / pageSize);
 			
 			System.out.println("""
-				        Inventory
+				     Inventory
 					*****************
 					""");
 			

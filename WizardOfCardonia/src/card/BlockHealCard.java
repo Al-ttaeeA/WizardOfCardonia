@@ -51,7 +51,10 @@ public class BlockHealCard extends Card{
     		
     		game.Main.playCurrentHP += newHeal;
     		
-    		if(game.Main.playCurrentHP > game.Main.playMaxHP) game.Main.playCurrentHP = game.Main.playMaxHP;
+    		if(game.Main.playCurrentHP > game.Main.playMaxHP) {
+    			newHeal = newHeal - (game.Main.playCurrentHP - game.Main.playMaxHP);
+    			game.Main.playCurrentHP = game.Main.playMaxHP;
+    		}
     		
     		System.out.println("And you heal for " + newHeal + " HP for a total of " + Main.playCurrentHP + " HP!");
     		

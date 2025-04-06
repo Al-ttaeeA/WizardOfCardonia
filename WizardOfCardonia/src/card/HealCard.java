@@ -36,7 +36,10 @@ public class HealCard extends Card {
     	if(doMana()) {
     		game.Main.playCurrentHP += newHeal;
     		
-    		if(game.Main.playCurrentHP > game.Main.playMaxHP) game.Main.playCurrentHP = game.Main.playMaxHP;
+    		if(game.Main.playCurrentHP > game.Main.playMaxHP) {
+    			newHeal = newHeal - (game.Main.playCurrentHP - game.Main.playMaxHP);
+    			game.Main.playCurrentHP = game.Main.playMaxHP;
+    		}
     		
     		innerUse();
     		System.out.println("You heal for " + newHeal + " HP for a total of " + Main.playCurrentHP + " HP!");
