@@ -97,6 +97,11 @@ public class Battle {
 			battleGold = Commands.getRandomInt(50) + 50;
 			battleXp = (int) (battleGold * 0.60);
 		}
+		else if(Main.battleCount <= 4) {
+			battleDifficulty *= 0.70;
+			battleGold = (int) (battleGold * 0.80);
+			battleXp = (int) (battleXp * 0.80);
+		}
 		
 		currentEnemy = Data.getEnemy();
 		currentEnemy.initialize();

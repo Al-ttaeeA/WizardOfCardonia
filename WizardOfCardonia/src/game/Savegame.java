@@ -54,9 +54,8 @@ public class Savegame {
 		
 		
 		System.out.println("New Game started!");
-		Commands.pressEnter();
 		
-		System.out.println("Please Enter your username: ");
+		System.out.print("\nPlease Enter your username: ");
 		Main.playName = Commands.inputString();
 		
 		story();
