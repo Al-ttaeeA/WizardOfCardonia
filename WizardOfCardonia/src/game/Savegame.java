@@ -109,7 +109,7 @@ public class Savegame {
 		Commands.pressEnter();
 		
 		System.out.println("""
-				You start your adventure as one of the few surviving mages!
+				You start your adventure as one of the few surviving mages!!!
 				""");
 	}
 }
