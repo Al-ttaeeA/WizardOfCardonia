@@ -332,7 +332,7 @@ public class Battle {
 		
 		System.out.println("It is now the enemy, " + currentEnemy.getName() + " turn!\n");
 		
-		currentEnemy.attack();
+		currentEnemy.action();
 		Commands.pressEnter();
 	}
 	

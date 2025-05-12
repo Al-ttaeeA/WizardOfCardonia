@@ -36,8 +36,8 @@ public class UndeadEnemy extends Enemy{
 		healAmount *= Battle.battleDifficulty;
 	}
 	
-	public void attack() {
-		innerAttack();
+	public void action() {
+		innerAction();
 		
 		if(game.Commands.getRandomChance() < specialChance && health < (maxHealth-healAmount)) {
 			health += healAmount;

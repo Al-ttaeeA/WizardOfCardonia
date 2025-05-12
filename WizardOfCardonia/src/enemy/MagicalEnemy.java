@@ -36,8 +36,8 @@ public class MagicalEnemy extends Enemy{
 		increase *= Battle.battleDifficulty;
 	}
 	
-	public void attack() {
-		innerAttack();
+	public void action() {
+		innerAction();
 		
 		if(game.Commands.getRandomChance() < specialChance) {
 			blockAmount += increase;

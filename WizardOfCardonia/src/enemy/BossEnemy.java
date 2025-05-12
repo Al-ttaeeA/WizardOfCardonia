@@ -4,7 +4,7 @@ import game.Main;
 import game.Commands;
 
 public class BossEnemy extends Enemy{
-	private static int healAmount;
+	private int healAmount;
 	
 	public BossEnemy(String name, int health, int block, int blockAmount, int damageConstant, int damageVariable, int healAmount) {
 		super(name, health, block, blockAmount, damageConstant, damageVariable, 0);
@@ -24,30 +24,30 @@ public class BossEnemy extends Enemy{
 		//Empty
 	}
 	
-	public void attack() {
-		int totalWeight, heal = 0, attack = 0, block = 0, attackAndBlock = 0, healAndBlock = 0, attackAndHeal = 0;
+	public void action() {
+		int totalWeight, heal = 0, attack = 0, blockW = 0, attackAndBlock = 0, healAndBlock = 0, attackAndHeal = 0;
 		int randomChoice;
 		
 		//Checking health percentage
 		if(this.health <= this.maxHealth / 5) {
 			heal += 5;
-			healAndBlock += 3;
-			attackAndHeal += 3;
+			healAndBlock += 5;
+			attackAndHeal += 5;
 		}
 		else if(this.health <= this.maxHealth / 4) {
 			heal += 4;
-			healAndBlock += 2;
-			attackAndHeal += 2;
+			healAndBlock += 4;
+			attackAndHeal += 4;
 		}
 		else if(this.health <= this.maxHealth / 3) {
 			heal += 3;
-			healAndBlock += 2;
-			attackAndHeal += 2;
+			healAndBlock += 3;
+			attackAndHeal += 3;
 		}
 		else if(this.health <= this.maxHealth / 2) {
 			heal += 2;
-			healAndBlock += 1;
-			attackAndHeal += 1;
+			healAndBlock += 2;
+			attackAndHeal += 2;
 		}
 		else {
 			heal += 1;
@@ -59,39 +59,39 @@ public class BossEnemy extends Enemy{
 		//Checking player health percentage
 		if(Main.playCurrentHP >= Main.playMaxHP * 0.8) {
 			attack += 6;
-			attackAndBlock += 3;
-			attackAndHeal += 3;
+			attackAndBlock += 6;
+			attackAndHeal += 6;
 		}
 		else if(Main.playCurrentHP >= Main.playMaxHP / 2) {
 			attack += 4;
-			attackAndBlock += 2;
-			attackAndHeal += 2;
+			attackAndBlock += 4;
+			attackAndHeal += 4;
 		}
 		else if(Main.playCurrentHP >= Main.playMaxHP / 4) {
 			attack += 2;
-			attackAndBlock += 1;
-			attackAndHeal += 1;
+			attackAndBlock += 2;
+			attackAndHeal += 2;
 		}
 		else {
 			attack += 4;
-			attackAndBlock += 2;
-			attackAndHeal += 2;
+			attackAndBlock += 4;
+			attackAndHeal += 4;
 		}
 		
 		
 		//Checking for blocks
 		if(this.block == 0) {
-			block += 3;
+			blockW += 3;
 			attackAndBlock += 3;
 			healAndBlock += 3;
 		}
 		else if(this.block <= this.maxHealth / 5) {
-			block += 2;
+			blockW += 2;
 			attackAndBlock += 2;
 			healAndBlock += 2;
 		}
 		else {
-			block += 1;
+			blockW += 1;
 			attackAndBlock += 1;
 			healAndBlock += 1;
 		}
@@ -105,14 +105,13 @@ public class BossEnemy extends Enemy{
 		}
 		
 		
-		totalWeight = heal + attack + block + healAndBlock + attackAndBlock + attackAndHeal;
+		totalWeight = heal + attack + blockW + healAndBlock + attackAndBlock + attackAndHeal;
 		
 		randomChoice = Commands.getRandomInt(totalWeight);
 		
 		//If the choice is heal
 		if(randomChoice <= heal) {
-			health += healAmount;
-			System.out.println("The enemy heals for " + healAmount + " HP for a total of " + health + " HP!");
+			heal();
 			
 			return;
 		}
@@ -122,29 +121,120 @@ public class BossEnemy extends Enemy{
 		
 		//If the choice is to attack
 		if(randomChoice <= attack) {
-			int damage = this.getDamage();
-			int diff = game.Battle.currentBlock - damage;
-			
-			if(diff < 0) {
-				game.Battle.currentBlock = 0;
-				game.Main.playCurrentHP += diff;
-				
-				if(game.Main.playCurrentHP <= 0) {
-					game.Main.playCurrentHP = 0;
-				}
-				
-				System.out.println("The enemy attacks you for " + damage + ", going through all of your block and leaving you with " + game.Main.playCurrentHP + " HP!");
-			}
-			else {
-				game.Battle.currentBlock = diff;
-				System.out.println("The enemy attacks you for " + damage + ", leaving you with " + game.Battle.currentBlock + " Damage block!");
-			}
+			attack();
 			
 			return;
 		}
 		else {
 			randomChoice -= attack;
 		}
+		
+		//If the choice is to block
+		if(randomChoice <= blockW) {
+			block();
+			
+			return;
+		}
+		else {
+			randomChoice -= blockW;
+		}
+		
+		//If the choice is to heal and block
+		if(randomChoice <= healAndBlock) {
+			healAndBlock();
+		
+			return;
+		}
+		else {
+			randomChoice -= healAndBlock;
+		}
+		
+		//If the choice is to attack and block
+		if(randomChoice <= attackAndBlock) {
+			attackAndBlock();
+			
+			return;
+		}
+		else {
+			randomChoice -= attackAndBlock;
+		}
+		
+		//If the choice is to attack and heal
+		attackAndHeal();
+	}
+	
+	private void heal() {
+		health += healAmount;
+		System.out.println("The enemy heals for " + healAmount + " HP for a total of " + health + " HP!");
+	}
+	
+	private void attack() {
+		int damage = this.getDamage();
+		int diff = game.Battle.currentBlock - damage;
+		
+		if(diff < 0) {
+			game.Battle.currentBlock = 0;
+			game.Main.playCurrentHP += diff;
+			
+			if(game.Main.playCurrentHP <= 0) {
+				game.Main.playCurrentHP = 0;
+			}
+			
+			System.out.println("The enemy attacks you for " + damage + ", going through all of your block and leaving you with " + game.Main.playCurrentHP + " HP!");
+		}
+		else {
+			game.Battle.currentBlock = diff;
+			System.out.println("The enemy attacks you for " + damage + ", leaving you with " + game.Battle.currentBlock + " Damage block!");
+		}
+	}
+	
+	private void block() {
+		block += blockAmount;
+		System.out.println("The enemy increases their block for a total of " + block + " Damage block!");
+	}
+	
+	private void healAndBlock() {
+		health += healAmount;
+		System.out.println("The enemy heals for " + healAmount + " HP for a total of " + health + " HP!\n");
+		
+		block += blockAmount;
+		System.out.println("The enemy also increases their block for a total of " + block + " Damage block!");
+	}
+	
+	private void attackAndBlock() {
+		int damage = this.getDamage();
+		int diff = game.Battle.currentBlock - damage;
+		
+		if(diff < 0) {
+			game.Battle.currentBlock = 0;
+			game.Main.playCurrentHP += diff;
+			System.out.println("The enemy attacks you for " + damage + ", going through all of your block and leaving you with " + game.Main.playCurrentHP + " HP!\n");
+		}
+		else {
+			game.Battle.currentBlock = diff;
+			System.out.println("The enemy attacks you for " + damage + ", leaving you with " + game.Battle.currentBlock + " Damage block!\n");
+		}
+		
+		block += blockAmount;
+		System.out.println("The enemy also increases their block for a total of " + block + " Damage block!");
+	}
+	
+	private void attackAndHeal() {
+		int damage = this.getDamage();
+		int diff = game.Battle.currentBlock - damage;
+		
+		if(diff < 0) {
+			game.Battle.currentBlock = 0;
+			game.Main.playCurrentHP += diff;
+			System.out.println("The enemy attacks you for " + damage + ", going through all of your block and leaving you with " + game.Main.playCurrentHP + " HP!\n");
+		}
+		else {
+			game.Battle.currentBlock = diff;
+			System.out.println("The enemy attacks you for " + damage + ", leaving you with " + game.Battle.currentBlock + " Damage block!\n");
+		}
+		
+		health += healAmount;
+		System.out.println("The enemy also heals for " + healAmount + " HP for a total of " + health + " HP!");
 	}
 	
 	public String toString() {

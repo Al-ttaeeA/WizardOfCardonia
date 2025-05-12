@@ -64,9 +64,9 @@ public abstract class Enemy {
     
     public abstract void initialize();
 
-    public abstract void attack();
+    public abstract void action();
     
-    protected void innerAttack() {
+    protected void innerAction() {
     	int damage;
     	
     	if(poison) {

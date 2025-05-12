@@ -31,8 +31,8 @@ public class HumanEnemy extends Enemy{
 		damageVariable *= Battle.battleDifficulty;
 	}
 	
-	public void attack() {
-		innerAttack();
+	public void action() {
+		innerAction();
 		
 		if(game.Commands.getRandomChance() < specialChance) {
 			int damage = this.getDamage();
