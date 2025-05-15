@@ -59,6 +59,136 @@ public class Battle {
 		
 		Main.battleCount++;
 		
+		startBattle();
+		
+		do {
+			playerTurn();
+			
+			if(currentEnemy.getHealth() <= 0) {
+				enemIsDead();
+				
+				currentBlock = 0;
+				
+				battleMult = 1;
+				attackMult = 1;
+				blockMult = 1;
+				healMult = 1;
+				enemyDamageMult = 1;
+				
+				tempDeck.clear();
+				hand.clear();
+				
+				return;
+			}
+			
+			enemyTurn();
+			
+			if(Main.playCurrentHP <= 0) {
+				playIsDead();
+				
+				currentBlock = 0;
+				
+				battleMult = 1;
+				attackMult = 1;
+				blockMult = 1;
+				healMult = 1;
+				enemyDamageMult = 1;
+				
+				tempDeck.clear();
+				hand.clear();
+				
+				return;
+			}
+		} while(true);
+	}
+	
+	static void startBattle() {
+		if(Main.battleCount % 5 == 0) {
+			int boss = Main.battleCount / 5;
+			
+			currentEnemy = Data.bosses[boss - 1];
+			
+			battleCardCount = 4;
+			
+			battleGold = 50 * Main.battleCount;
+			battleXp = (int) (battleGold * 0.60);
+			
+			switch(boss) {
+			case 1:{
+				Commands.typeWriterEffect("""
+						You see a grotesque, bear-like creature—dark, bloody, and hideous...
+
+						It snarls as it senses your presence—and charges without hesitation!
+
+						Up close, the truth hits you: this is no beast.
+
+						It’s Plensor—the corrupted mage!
+
+						Prepare for battle!
+						""");
+				Commands.pressEnter();
+				
+				return;
+			}
+			case 2:{
+				Commands.typeWriterEffect("""
+						Your hands begin to go numb... your vision blurs...
+
+						Around you, the grass shrivels, the bushes wilt, and the flowers decay...
+
+						Then—out of the dying earth—it appears!
+
+						A wolf-like figure of pure corruption, draining life from everything nearby.
+
+						Mejashi has revealed himself!
+
+						His presence alone chills your soul...
+						
+						Prepare for battle!
+						""");
+				Commands.pressEnter();
+				
+				return;
+			}
+			case 3:{
+				Commands.typeWriterEffect("""
+						The land trembles as life itself begins to fade...
+
+						Trees recoil, hiding their branches. Birds flee in desperation...
+
+						A heavy, suffocating presence looms nearby...
+
+						You don't know where it came from—or how—but you feel it...
+
+						Suddenly, the world around you twists into a void of shadows...
+
+						The ground cracks open. Corrupt creatures crawl from the abyss...
+
+						Then—something watches you...
+						""");
+				Commands.pressEnter();
+
+				Commands.typeWriterEffect("""
+						From within the darkness, two glowing red eyes pierce through...
+
+						Your heart sinks...
+
+						This is no mere beast...
+
+						This is Cruden—the first to fall to the corruption...
+
+						...and the strongest of them all!
+
+						Prepare for the hardest battle of your life!
+						""");
+				Commands.pressEnter();
+				
+				return;
+			}
+			}
+		}
+		
+		
 		switch(Main.location) {
 		case 1:{
 			battleDifficulty = Commands.getRandomDouble(1.00, 1.50);
@@ -109,46 +239,6 @@ public class Battle {
 		System.out.println("You stumble across a hostile " + currentEnemy.getName() + " in your adventure!");
 		System.out.println("\nBattle No: " + Main.battleCount + " starts!");
 		Commands.pressEnter();
-		
-		do {
-			playerTurn();
-			
-			if(currentEnemy.getHealth() <= 0) {
-				enemIsDead();
-				
-				currentBlock = 0;
-				
-				battleMult = 1;
-				attackMult = 1;
-				blockMult = 1;
-				healMult = 1;
-				enemyDamageMult = 1;
-				
-				tempDeck.clear();
-				hand.clear();
-				
-				return;
-			}
-			
-			enemyTurn();
-			
-			if(Main.playCurrentHP <= 0) {
-				playIsDead();
-				
-				currentBlock = 0;
-				
-				battleMult = 1;
-				attackMult = 1;
-				blockMult = 1;
-				healMult = 1;
-				enemyDamageMult = 1;
-				
-				tempDeck.clear();
-				hand.clear();
-				
-				return;
-			}
-		} while(true);
 	}
 	
 	static void playerTurn() {
@@ -330,7 +420,7 @@ public class Battle {
 	static void enemyTurn() {
 		battleBanner();
 		
-		System.out.println("It is now the enemy, " + currentEnemy.getName() + " turn!\n");
+		System.out.println("It is now the enemy, " + currentEnemy.getName() + "'s turn!\n");
 		
 		currentEnemy.action();
 		Commands.pressEnter();
@@ -342,6 +432,92 @@ public class Battle {
 		
 		Main.gold += battleGold;
 		Main.currentXp += battleXp;
+		
+		if(Main.battleCount % 5 == 0) {
+			switch(Main.battleCount / 5) {
+			case 1:{
+				Commands.typeWriterEffect("""
+						Plensor stumbles, his monstrous form cracking and breaking apart...
+
+						Dark blood drips from the wounds of his corrupted shell...
+
+						For a moment... he looks human again.
+
+						A faint light flickers in his eyes—regret, maybe, or relief.
+
+						Then, with a final gasp, the corrupted mage collapses.
+
+						The ground stills.
+
+						One of the founders has fallen...
+						""");
+				Commands.pressEnter();
+				
+				break;
+			}
+			case 2:{
+				Commands.typeWriterEffect("""
+						The withered grass begins to regrow...
+
+						The air clears...
+
+						Mejashi lets out a final, haunting howl as his body dissolves into ash...
+
+						Where corruption once drained life, nature now breathes again.
+
+						His shadow vanishes, carried away by the wind.
+
+						One more wound in Cardonia begins to heal...
+						""");
+				Commands.pressEnter();
+				
+				break;
+			}
+			case 3:{
+				Commands.typeWriterEffect("""
+						The earth groans as the void shrinks inward...
+
+						Cruden's monstrous form convulses—twisting, unraveling.
+
+						The red eyes fade... but not with fear...
+
+						With fury...
+
+						A deafening scream tears through the darkness, then silence...
+
+						The abyss crumbles.
+
+						And in its place... nothing...
+
+						The greatest corruption is gone—but its echoes will never truly fade...
+						""");
+				Commands.pressEnter();
+				
+			    System.out.println("""
+			    		You have defeated the root of chaos and corruptness!
+			    		
+			    		However, humankind is far from safe...
+			    		
+			    		Congratulations! You have finished Wizard Of Cardonia!
+			    		********************************************************************************
+			    		
+			    		Do you wish to continue your adventure infinitely or end your journey here?
+			    		
+			    		1. Continue infinitely (The story is over, there will be no more bosses)
+			    		
+			    		2. End the journey
+			    		""");
+			    int stayChoice = Commands.inputInt(1, 2);
+			    
+			    if(stayChoice == 2) {
+			    	Main.playIsDead = true;
+			    	return;
+			    }
+				
+				break;
+			}
+			}
+		}
 		
 		System.out.println("You have SUCCESSFULLY defeated " + currentEnemy.getName() + " and gained: ");
 		System.out.println("\n- " + battleGold + " Gold for a total of " + Main.gold + " Gold!");

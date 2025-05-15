@@ -220,4 +220,31 @@ public class Commands {
     	
     	return num;
     }
+    
+    /**
+     * Prints text to the console using a typewriter effect.
+     *
+     * @param text         The text to display.
+     * @param delayMillis  Delay in milliseconds between each character (10–30 is typical).
+     */
+    public static void typeWriterEffect(String text) {
+    	int delayMillis = 10;
+    	
+        for (char c : text.toCharArray()) {
+            System.out.print(c);
+            try {
+                // Longer pause after punctuation or newlines for dramatic effect
+                if (c == '.' || c == '!' || c == '?' || c == '\n') {
+                    Thread.sleep(delayMillis * 6);
+                } else {
+                    Thread.sleep(delayMillis);
+                }
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt(); // Restore the interrupted status
+                System.out.println("\n[Typewriter interrupted]");
+                return;
+            }
+        }
+        System.out.println(); // Move to the next line after text is done
+    }
 }

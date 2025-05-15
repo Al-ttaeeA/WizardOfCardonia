@@ -25,7 +25,7 @@ public class Savegame {
 		Main.playMaxHP = 100;
 		Main.playCurrentHP = 100;
 		Main.gold = 1000; //Change
-		Main.battleCount = 0;
+		Main.battleCount = 4;
 		Main.playIsDead = false;
 		
 		Main.xpLevel = 1;
@@ -77,7 +77,7 @@ public class Savegame {
 	            For centuries, humanity banded together, struggling to survive against
 	            nature’s magical fury. Until one fateful day, everything changed.
 
-	            Three visionaries—Plensor, Mejashi, and Cruden—discovered a way to wield
+	            Three visionaries —Plensor, Mejashi, and Cruden— discovered a way to wield
 	            magic through enchanted cards and relics. With this newfound power, they
 	            taught others, built great schools of magic, and brought hope to all.
 

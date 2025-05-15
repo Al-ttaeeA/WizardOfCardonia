@@ -85,7 +85,7 @@ public class BossEnemy extends Enemy{
 			attackAndBlock += 3;
 			healAndBlock += 3;
 		}
-		else if(this.block <= this.maxHealth / 5) {
+		else if(this.block <= this.maxHealth / 10) {
 			blockW += 2;
 			attackAndBlock += 2;
 			healAndBlock += 2;

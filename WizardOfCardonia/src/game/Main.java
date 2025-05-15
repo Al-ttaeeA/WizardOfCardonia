@@ -247,7 +247,6 @@ public class Main {
 	 *********************/
 	static void campsite() {
 		int campChoice;
-		int merchantCount = 0;
 		
 		do {
 			if(playIsDead) {
@@ -255,9 +254,8 @@ public class Main {
 			}
 			
 			if(battleCount == 0) {
-				merchantCount++;
-				
 				Battle.Battle();
+				merchant();
 				campChoice = 0;
 				
 				continue;
@@ -321,17 +319,9 @@ public class Main {
 				break;
 			}
 			case 5:{
-				if(merchantCount != 0 && (Commands.getRandomChance() < 0.50 || merchantCount == 2)) {
-					merchantCount = 0;
-					
-					merchant();
-					
-					break;
-				}
-				
-				merchantCount++;
-				
 				Battle.Battle();
+				
+				merchant();
 				break;
 			}
 			case 6:{
@@ -655,7 +645,7 @@ public class Main {
 			shopItemPrices[i] = shopItems[i].getPrice();
 		}
 		
-		System.out.println("You stumble accross a merchant!");
+		System.out.println("After your ferocious battle you stumble accross a merchant!");
 		Commands.pressEnter();
 		
 		do {
