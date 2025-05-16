@@ -321,6 +321,10 @@ public class Main {
 			case 5:{
 				Battle.Battle();
 				
+				if(playIsDead) {
+					break;
+				}
+				
 				merchant();
 				break;
 			}
