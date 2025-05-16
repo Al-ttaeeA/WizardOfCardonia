@@ -38,6 +38,10 @@ public class UndeadEnemy extends Enemy{
 	
 	public void action() {
 		innerAction();
+
+		if(health <= 0) {
+			return;
+		}
 		
 		if(game.Commands.getRandomChance() < specialChance && health < (maxHealth-healAmount)) {
 			health += healAmount;
@@ -59,7 +63,7 @@ public class UndeadEnemy extends Enemy{
 			}
 			else {
 				game.Battle.currentBlock = diff;
-				System.out.println("The enemy attacks you for " + damage + ", leaving you with " + game.Battle.currentBlock + " Damage block!");
+				System.out.println("The enemy attacks you for " + damage + ", you fully block the attack!");
 			}
 		}
 		else {

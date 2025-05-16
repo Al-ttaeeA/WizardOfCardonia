@@ -174,15 +174,15 @@ public class Data {
 		new WeaknessCard("Arcane Disruption",		Rarity.EPIC, 1, Type.MAGICAL, 0.88),
 		new WeaknessCard("Curse of Frality",		Rarity.EPIC, 1, Type.CORRUPT, 0.85),
 		new StatusCard("Fracture Slash", 			Rarity.EPIC, 2, Type.PHYSICAL, 1),
-		new StatusCard("Dragon’s Breath", 			Rarity.EPIC, 2, Type.MAGICAL, 1),
+		new StatusCard("Dragon's Breath", 			Rarity.EPIC, 2, Type.MAGICAL, 1),
 		new StatusCard("Necrotic Toxin", 			Rarity.EPIC, 2, Type.CORRUPT, 1)
 		
 	},{
 		new WeaknessCard("Bone Breaker", 			Rarity.LEGENDARY, 1, Type.PHYSICAL, 0.80),
 		new WeaknessCard("Blinding Spell", 			Rarity.LEGENDARY, 1, Type.MAGICAL, 0.78),
 		new WeaknessCard("Soul Rot", 				Rarity.LEGENDARY, 1, Type.CORRUPT, 0.75),
-		new StatusCard("Executioner’s Wrath", 		Rarity.LEGENDARY, 1, Type.PHYSICAL, 1),
-		new StatusCard("Phoenix’s Wrath", 			Rarity.LEGENDARY, 1, Type.MAGICAL, 1),
+		new StatusCard("Executioner's Wrath", 		Rarity.LEGENDARY, 1, Type.PHYSICAL, 1),
+		new StatusCard("Phoenix's Wrath", 			Rarity.LEGENDARY, 1, Type.MAGICAL, 1),
 		new StatusCard("Serpent's Wrath", 			Rarity.LEGENDARY, 1, Type.CORRUPT, 1)
 	}
 	};
@@ -501,8 +501,8 @@ public class Data {
 		new CorArtifact("Bloodmoon Skull", 		ArtifactType.ANCIENT, 1.4),
 		new ManaArtifact("Focus Gem",			ArtifactType.COMMON, 1),
 		new ManaArtifact("Essence Stone",		ArtifactType.COMMON, 1),
-		new HandArtifact("Master’s Talisman",	ArtifactType.COMMON, 1),
-		new HandArtifact("Cardbinder’s Ring",	ArtifactType.COMMON, 1),
-		new HandArtifact("Chronomancer’s Deck", ArtifactType.ANCIENT, 2)
+		new HandArtifact("Master's Talisman",	ArtifactType.COMMON, 1),
+		new HandArtifact("Cardbinder's Ring",	ArtifactType.COMMON, 1),
+		new HandArtifact("Chronomancer's Deck", ArtifactType.ANCIENT, 2)
 	};
 }

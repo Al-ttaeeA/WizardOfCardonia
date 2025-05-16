@@ -118,13 +118,13 @@ public class Battle {
 			switch(boss) {
 			case 1:{
 				Commands.typeWriterEffect("""
-						You see a grotesque, bear-like creature—dark, bloody, and hideous...
+						You see a grotesque, bear-like creature-dark, bloody, and hideous...
 
-						It snarls as it senses your presence—and charges without hesitation!
+						It snarls as it senses your presence-and charges without hesitation!
 
 						Up close, the truth hits you: this is no beast.
 
-						It’s Plensor—the corrupted mage!
+						It’s Plensor-the corrupted mage!
 
 						Prepare for battle!
 						""");
@@ -138,7 +138,7 @@ public class Battle {
 
 						Around you, the grass shrivels, the bushes wilt, and the flowers decay...
 
-						Then—out of the dying earth—it appears!
+						Then-out of the dying earth-it appears!
 
 						A wolf-like figure of pure corruption, draining life from everything nearby.
 
@@ -160,13 +160,13 @@ public class Battle {
 
 						A heavy, suffocating presence looms nearby...
 
-						You don't know where it came from—or how—but you feel it...
+						You don't know where it came from-or how-but you feel it...
 
 						Suddenly, the world around you twists into a void of shadows...
 
 						The ground cracks open. Corrupt creatures crawl from the abyss...
 
-						Then—something watches you...
+						Then-something watches you...
 						""");
 				Commands.pressEnter();
 
@@ -177,7 +177,7 @@ public class Battle {
 
 						This is no mere beast...
 
-						This is Cruden—the first to fall to the corruption...
+						This is Cruden-the first to fall to the corruption...
 
 						...and the strongest of them all!
 
@@ -224,13 +224,13 @@ public class Battle {
 		battleXp = (int) (battleGold * 0.60);
 		
 		if(Main.battleCount == 1) {
-			battleDifficulty = 0.60;
+			battleDifficulty = 0.40;
 			battleCardCount = 1;
 			battleGold = Commands.getRandomInt(50) + 50;
-			battleXp = (int) (battleGold * 0.60);
+			battleXp = (int) (battleGold * 0.7);
 		}
 		else if(Main.battleCount <= 4) {
-			battleDifficulty *= 0.70;
+			battleDifficulty *= 0.60;
 			battleGold = (int) (battleGold * 0.80);
 			battleXp = (int) (battleXp * 0.80);
 		}
@@ -448,7 +448,7 @@ public class Battle {
 
 						For a moment... he looks human again.
 
-						A faint light flickers in his eyes—regret, maybe, or relief.
+						A faint light flickers in his eyes-regret, maybe, or relief.
 
 						Then, with a final gasp, the corrupted mage collapses.
 
@@ -482,7 +482,7 @@ public class Battle {
 				Commands.typeWriterEffect("""
 						The earth groans as the void shrinks inward...
 
-						Cruden's monstrous form convulses—twisting, unraveling.
+						Cruden's monstrous form convulses-twisting, unraveling.
 
 						The red eyes fade... but not with fear...
 
@@ -494,7 +494,7 @@ public class Battle {
 
 						And in its place... nothing...
 
-						The greatest corruption is gone—but its echoes will never truly fade...
+						The greatest corruption is gone-but its echoes will never truly fade...
 						""");
 				Commands.pressEnter();
 				

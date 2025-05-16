@@ -84,7 +84,7 @@ public abstract class Enemy {
     		
     		System.out.println("The enemy was burning and took " + damage + " Damage to burning!\n");
     		
-    		if(Commands.getRandomChance() < 0.40) {
+    		if(Commands.getRandomChance() < 0.20) {
     			burn = false;
     			
     			System.out.println("The enemy also stopped burning!\n");

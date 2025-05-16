@@ -34,6 +34,10 @@ public class HumanEnemy extends Enemy{
 	public void action() {
 		innerAction();
 		
+		if(health <= 0) {
+			return;
+		}
+		
 		if(game.Commands.getRandomChance() < specialChance) {
 			int damage = this.getDamage();
 			int diff = game.Battle.currentBlock - damage;
@@ -45,7 +49,7 @@ public class HumanEnemy extends Enemy{
 			}
 			else {
 				game.Battle.currentBlock = diff;
-				System.out.println("The enemy attacks you for " + damage + ", leaving you with " + game.Battle.currentBlock + " Damage block!\n");
+				System.out.println("The enemy attacks you for " + damage + ", you fully block the attack!\n");
 			}
 			
 			block += blockAmount;
@@ -67,7 +71,7 @@ public class HumanEnemy extends Enemy{
 			}
 			else {
 				game.Battle.currentBlock = diff;
-				System.out.println("The enemy attacks you for " + damage + ", leaving you with " + game.Battle.currentBlock + " Damage block!");
+				System.out.println("The enemy attacks you for " + damage + ", you fully block the attack!");
 			}
 		}
 		else {

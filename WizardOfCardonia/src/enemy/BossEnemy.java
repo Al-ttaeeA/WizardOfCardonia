@@ -31,6 +31,12 @@ public class BossEnemy extends Enemy{
 	}
 	
 	public void action() {
+		innerAction();
+		
+		if(health <= 0) {
+			return;
+		}
+		
 		int totalWeight, heal = 0, attack = 0, blockW = 0, attackAndBlock = 0, healAndBlock = 0, attackAndHeal = 0;
 		int randomChoice;
 		
@@ -190,7 +196,7 @@ public class BossEnemy extends Enemy{
 		}
 		else {
 			game.Battle.currentBlock = diff;
-			System.out.println("The enemy attacks you for " + damage + ", leaving you with " + game.Battle.currentBlock + " Damage block!");
+			System.out.println("The enemy attacks you for " + damage + ", you fully block the attack!");
 		}
 	}
 	
@@ -218,7 +224,7 @@ public class BossEnemy extends Enemy{
 		}
 		else {
 			game.Battle.currentBlock = diff;
-			System.out.println("The enemy attacks you for " + damage + ", leaving you with " + game.Battle.currentBlock + " Damage block!\n");
+			System.out.println("The enemy attacks you for " + damage + ", you fully block the attack!\n");
 		}
 		
 		block += blockAmount;
@@ -236,7 +242,7 @@ public class BossEnemy extends Enemy{
 		}
 		else {
 			game.Battle.currentBlock = diff;
-			System.out.println("The enemy attacks you for " + damage + ", leaving you with " + game.Battle.currentBlock + " Damage block!\n");
+			System.out.println("The enemy attacks you for " + damage + ", you fully block the attack!\n");
 		}
 		
 		health += healAmount;

@@ -70,21 +70,21 @@ public class Savegame {
 	
 	public static void story() {
 		String text = """
-	            Long ago, the land of Cardonia pulsed with ancient magic—wild, untamed,
+	            Long ago, the land of Cardonia pulsed with ancient magic-wild, untamed,
 	            and unreachable by human hands. From enchanted forests to monstrous
 	            beasts, the world was a beautiful yet dangerous place.
 
 	            For centuries, humanity banded together, struggling to survive against
 	            nature’s magical fury. Until one fateful day, everything changed.
 
-	            Three visionaries —Plensor, Mejashi, and Cruden— discovered a way to wield
+	            Three visionaries -Plensor, Mejashi, and Cruden- discovered a way to wield
 	            magic through enchanted cards and relics. With this newfound power, they
 	            taught others, built great schools of magic, and brought hope to all.
 
 	            But magic has a price.
 
 	            The very power they harnessed began to twist and corrupt. Their creations
-	            turned dark. The great mages, once heroes, were consumed—now shadows of
+	            turned dark. The great mages, once heroes, were consumed-now shadows of
 	            their former selves, spreading ruin across the land.
 
 	            Now, only a few untainted mages remain. Armed with the very cards forged
