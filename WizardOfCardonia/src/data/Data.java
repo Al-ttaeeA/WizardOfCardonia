@@ -280,12 +280,12 @@ public class Data {
 		new HumanEnemy("Bladed Bandit",	  60,  0,  4, 14,  4, 0.10),
 		new HumanEnemy("Lone Assassin",   80,  0,  5, 14,  2, 0.20)
 	},{
-		new UndeadEnemy("Zombie", 		  80,  0,  5,  7,  8, 0.20, 8),
+		new UndeadEnemy("Zombie", 		  80,  0,  5,  7,  8, 0.15, 8),
 		new UndeadEnemy("Skeleton",       60,  0,  5, 12,  6, 0.10, 10),
-		new UndeadEnemy("Zombie Rhino",  110, 10,  5,  5,  4, 0.40, 10),
+		new UndeadEnemy("Zombie Rhino",  110, 10,  5,  5,  4, 0.30, 10),
 		new UndeadEnemy("Undead Husk",    70, 10,  6,  6, 14, 0.05, 15),
-		new UndeadEnemy("Bone Goliath",  120, 10,  7,  5,  5, 0.30, 10),
-		new UndeadEnemy("Phantom", 		  90,  0,  8, 10,  6, 0.20, 10)
+		new UndeadEnemy("Bone Goliath",  120, 10,  7,  5,  5, 0.20, 10),
+		new UndeadEnemy("Phantom", 		  90,  0,  8, 10,  6, 0.15, 10)
 	},{
 		new MagicalEnemy("Fire Axolotl",  60,  0,  5, 10,  5, 0.15, 1),
 		new MagicalEnemy("Ice Sprite",    60,  0,  4,  7,  5, 0.30, 2),

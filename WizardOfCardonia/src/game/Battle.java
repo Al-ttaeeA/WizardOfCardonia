@@ -105,7 +105,7 @@ public class Battle {
 	}
 	
 	static void startBattle() {
-		if(Main.battleCount % 5 == 0) {
+		if(Main.battleCount % 5 == 0 && Main.battleCount <= 15) {
 			int boss = Main.battleCount / 5;
 			
 			currentEnemy = Data.bosses[boss - 1];
@@ -233,6 +233,11 @@ public class Battle {
 			battleDifficulty *= 0.70;
 			battleGold = (int) (battleGold * 0.80);
 			battleXp = (int) (battleXp * 0.80);
+		}
+		else if(Main.battleCount > 15) {
+			battleDifficulty *= Math.pow(1.10, Main.battleCount - 15);
+			battleGold *= Math.pow(1.02, Main.battleCount - 15);
+			battleXp *= Math.pow(1.02, Main.battleCount - 15);
 		}
 		
 		currentEnemy = Data.getEnemy();
@@ -433,7 +438,7 @@ public class Battle {
 		Main.gold += battleGold;
 		Main.currentXp += battleXp;
 		
-		if(Main.battleCount % 5 == 0) {
+		if(Main.battleCount % 5 == 0 && Main.battleCount <= 15) {
 			switch(Main.battleCount / 5) {
 			case 1:{
 				Commands.typeWriterEffect("""

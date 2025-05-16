@@ -24,8 +24,8 @@ public class Savegame {
 	public static void newGame() {
 		Main.playMaxHP = 100;
 		Main.playCurrentHP = 100;
-		Main.gold = 1000; //Change
-		Main.battleCount = 14;
+		Main.gold = 0; //Change
+		Main.battleCount = 0;
 		Main.playIsDead = false;
 		
 		Main.xpLevel = 1;
@@ -58,7 +58,7 @@ public class Savegame {
 		System.out.print("\nPlease Enter your username: ");
 		Main.playName = Commands.inputString();
 		
-		// story();
+		story();
 	}
 	
 	public static void loadGame() {
