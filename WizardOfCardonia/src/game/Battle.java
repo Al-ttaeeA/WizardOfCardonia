@@ -555,9 +555,6 @@ public class Battle {
 			System.out.println("You add " + gainedCard.getName() + " to your deck!");
 			Commands.pressEnter();
 		}
-		
-		System.out.println("You return back to your campsite after a successful battle!");
-		Commands.pressEnter();
 	}
 	
 	static void levelUp() {
@@ -565,13 +562,13 @@ public class Battle {
 		
 		Main.currentXp -= Main.maxXp;
 		
-		Main.maxXp = (int) (50 * Math.pow(1.20, Main.battleCount - 1));
+		Main.maxXp = (int) (50 * Math.pow(1.20, Main.xpLevel));
 		
 		Main.xpLevel += 1;
 		Main.playMaxHP += 5;
 		
 		if(Commands.getRandomChance() < 0.4) gainedSkillPoints = 2;
-		else if(Commands.getRandomChance() < 0.8) gainedSkillPoints = 3;
+		else if(Commands.getRandomChance() < 0.9) gainedSkillPoints = 3;
 		else gainedSkillPoints = 4;
 		
 		Main.skillpoints += gainedSkillPoints;

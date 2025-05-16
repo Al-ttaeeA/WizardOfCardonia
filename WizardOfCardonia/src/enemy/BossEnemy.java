@@ -104,7 +104,7 @@ public class BossEnemy extends Enemy{
 		
 		
 		//If health is close to max, eliminate the possibility that healing occurs
-		if(this.health >= this.maxHealth * 0.8) {
+		if(this.health >= this.maxHealth * 0.8 && health < (maxHealth-healAmount)) {
 			heal = 0;
 			healAndBlock = 0;
 			attackAndHeal = 0;

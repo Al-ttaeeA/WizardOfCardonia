@@ -327,7 +327,7 @@ public class Main {
 			case 6:{
 				System.out.println("Are you sure you want to exit to the main menu?");
 				System.out.println("\nYou data will be completely wiped!\n");
-				System.out.println("1. Exit\n\n2. Go back DONT EXIT");
+				System.out.println("1. Exit\n\n2. Go back DONT EXIT\n");
 				int exitChoice = Commands.inputInt(1, 2);
 				
 				if(exitChoice == 2) {
@@ -843,6 +843,9 @@ public class Main {
 			}
 			}
 		} while (shopChoice != 0);
+		
+		System.out.println("You return back to your campsite!");
+		Commands.pressEnter();
 	}
 	
 	/**********************************
