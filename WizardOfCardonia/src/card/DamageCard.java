@@ -6,6 +6,9 @@
 
 package card;
 
+import game.Battle;
+import game.Main;
+
 public class DamageCard extends Card {
     private final int damage;
     private int newDamage;
@@ -32,9 +35,18 @@ public class DamageCard extends Card {
     	newDamage = (int) (newDamage * game.Battle.attackMult);
     	
     	if(doMana()) {
+    		innerUse();
+    		
+    		//Only if its boss
+    		if(Main.battleCount % 5 == 0 && Main.battleCount <= 15) {
+    			if(Battle.currentEnemy.getResilience().equals(this.type)) {
+    				newDamage = (int) (newDamage * 0.5);
+    				System.out.println(Battle.currentEnemy.getName() + " is resilient to " + type + " damage! Damage reduced to " + newDamage + "!\n");
+    			}
+    		}
+    		
     		game.Battle.currentEnemy.takeDamage(newDamage);
     		
-    		innerUse();
     		System.out.println("You attack for " + newDamage + " Damage leaving the enemy with " + game.Battle.currentEnemy.getHealth() + " HP and " + game.Battle.currentEnemy.getBlock() + " Damage block!");
     		
     		return true;

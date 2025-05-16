@@ -40,6 +40,8 @@ public class Battle {
 	
 	public static int currentBlock = 0;
 	
+	public static Card currentCard;
+	
 	private static ArrayList<Card> tempDeck = new ArrayList<>();
 	private static ArrayList<Card> hand = new ArrayList<>();
 	
@@ -236,15 +238,13 @@ public class Battle {
 		currentEnemy = Data.getEnemy();
 		currentEnemy.initialize();
 		
-		System.out.println("You stumble across a hostile " + currentEnemy.getName() + " in your adventure!");
-		System.out.println("\nBattle No: " + Main.battleCount + " starts!");
+		Commands.typeWriterEffect("You stumble across a hostile " + currentEnemy.getName() + " in your adventure!" + "\n\nBattle No: " + Main.battleCount + " starts!");
 		Commands.pressEnter();
 	}
 	
 	static void playerTurn() {
 		int choice;
 		int innerChoice;
-		Card currentCard;
 		
 		currentBlock = 0;
 		currentMana = maxMana;

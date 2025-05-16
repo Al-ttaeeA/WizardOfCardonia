@@ -35,7 +35,7 @@ public class BlockCard extends Card{
     		game.Battle.currentBlock += newBlock;
     		
     		innerUse();
-    		System.out.println("You gain " + newBlock + " Damage block for a total of " + game.Battle.currentBlock + " Damage!");
+    		System.out.println("You gain " + newBlock + " Damage block for a total of " + game.Battle.currentBlock + " Block!");
     		
     		return true;
     	}

@@ -58,7 +58,7 @@ public class Savegame {
 		System.out.print("\nPlease Enter your username: ");
 		Main.playName = Commands.inputString();
 		
-		story();
+		// story();
 	}
 	
 	public static void loadGame() {
@@ -95,12 +95,12 @@ public class Savegame {
 	            To become the next legend.
 	            """;
 		
-		int delayMillis = 10;
+		int delayMillis = 20;
 		
 		for (char c : text.toCharArray()) {
             System.out.print(c);
             try {
-                Thread.sleep(c == '.' || c == '\n' ? delayMillis * 6 : delayMillis);
+                Thread.sleep(c == '.' || c == '\n' ? delayMillis * 10 : delayMillis);
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }

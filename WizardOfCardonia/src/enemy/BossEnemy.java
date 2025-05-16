@@ -1,23 +1,29 @@
 package enemy;
 
+import card.Type;
+
 import game.Main;
 import game.Commands;
+import game.Battle;
 
 public class BossEnemy extends Enemy{
 	private int healAmount;
+	private Type resilience;
 	
-	public BossEnemy(String name, int health, int block, int blockAmount, int damageConstant, int damageVariable, int healAmount) {
+	public BossEnemy(String name, int health, int block, int blockAmount, int damageConstant, int damageVariable, int healAmount, Type resilience) {
 		super(name, health, block, blockAmount, damageConstant, damageVariable, 0);
 		this.healAmount = healAmount;
+		this.resilience = resilience;
 	}
 	
 	public BossEnemy() {
 		super();
 		this.healAmount = 0;
+		this.resilience = Type.PHYSICAL;
 	}
 	
 	public Enemy copy() {
-		return new BossEnemy(name, health, block, blockAmount, damageConstant, damageVariable, healAmount);
+		return new BossEnemy(name, health, block, blockAmount, damageConstant, damageVariable, healAmount, resilience);
 	}
 	
 	public void initialize() {
@@ -245,5 +251,25 @@ public class BossEnemy extends Enemy{
 				"\n   This is a BOSS, and can deal damage, block, heal, and deal damage and block at the same time";
 		
 		return str;
+	}
+	
+	public void takeDamage(int damage) {
+		int diff = this.block - damage;
+    	
+    	if(diff < 0) {
+    		this.block = 0;
+    		this.health += diff;
+    	}
+    	else {
+    		this.block = diff;
+    	}
+    	
+    	if(this.health < 0) {
+    		this.health = 0;
+    	}
+    }
+	
+	public Type getResilience() {
+		return this.resilience;
 	}
 }

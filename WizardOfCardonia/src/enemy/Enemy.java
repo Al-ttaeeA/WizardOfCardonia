@@ -198,4 +198,8 @@ public abstract class Enemy {
     public double getSpecialChance() {
         return specialChance;
     }
+    
+    public card.Type getResilience(){
+    	return null;
+    }
 }

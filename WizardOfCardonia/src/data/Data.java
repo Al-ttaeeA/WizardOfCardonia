@@ -120,7 +120,7 @@ public class Data {
 	public static void initiateDeck() {
 		Main.deck.add(cards[0][0].copy());
 		Main.deck.add(cards[0][2].copy());
-		Main.deck.add(cards[0][3].copy());
+		Main.deck.add(cards[0][4].copy());
 		
 		for(int i = 0; i < 7; i++) {
 			Main.deck.add(getRandomCard());
@@ -298,9 +298,9 @@ public class Data {
 	
 	
 	public static Enemy[] bosses = {
-		new BossEnemy("Plensor", 		 120, 10, 6, 5, 10, 15),
-		new BossEnemy("Mejashi",		 250, 20, 12, 15, 10, 30),
-		new BossEnemy("Cruden", 		 400, 30, 20, 25, 15, 50)
+		new BossEnemy("Plensor", 		 120, 10, 6, 5, 10, 15, Type.PHYSICAL),
+		new BossEnemy("Mejashi",		 250, 20, 12, 15, 10, 30, Type.MAGICAL),
+		new BossEnemy("Cruden", 		 400, 30, 20, 25, 15, 50, Type.CORRUPT)
 	};
 	
 	

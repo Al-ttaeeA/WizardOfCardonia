@@ -47,7 +47,7 @@ public class BlockHealCard extends Card{
     		game.Battle.currentBlock += newBlock;
     		
     		innerUse();
-    		System.out.println("You gain " + newBlock + " Damage block for a total of " + game.Battle.currentBlock + " Damage!\n");
+    		System.out.println("You gain " + newBlock + " Damage block for a total of " + game.Battle.currentBlock + " Block!\n");
     		
     		game.Main.playCurrentHP += newHeal;
     		

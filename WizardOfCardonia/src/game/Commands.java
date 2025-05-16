@@ -228,14 +228,14 @@ public class Commands {
      * @param delayMillis  Delay in milliseconds between each character (10–30 is typical).
      */
     public static void typeWriterEffect(String text) {
-    	int delayMillis = 10;
+    	int delayMillis = 20;
     	
         for (char c : text.toCharArray()) {
             System.out.print(c);
             try {
                 // Longer pause after punctuation or newlines for dramatic effect
                 if (c == '.' || c == '!' || c == '?' || c == '\n') {
-                    Thread.sleep(delayMillis * 6);
+                    Thread.sleep(delayMillis * 10);
                 } else {
                     Thread.sleep(delayMillis);
                 }
