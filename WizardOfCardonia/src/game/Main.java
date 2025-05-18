@@ -95,7 +95,7 @@ public class Main {
 					
 					2. Load previous game (WIP Starts a new game)
 					
-					3. Tutorial (WIP)
+					3. Tutorial
 					
 					4. View Codex 
 					
