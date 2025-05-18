@@ -155,7 +155,10 @@ public class Data {
 		new BlockHealCard("Dark Resurgence", 		Rarity.UNCOMMON, 1, Type.CORRUPT, 8, 8),
 		new StatusCard("Leg Smash",					Rarity.UNCOMMON, 2, Type.PHYSICAL, 0.40),
 		new StatusCard("Ignite",					Rarity.UNCOMMON, 2, Type.MAGICAL, 0.50),
-		new StatusCard("Poisoned Dart", 			Rarity.UNCOMMON, 2, Type.CORRUPT, 0.50)
+		new StatusCard("Poisoned Dart", 			Rarity.UNCOMMON, 2, Type.CORRUPT, 0.50),
+		new DrawCard("Warrior's Instinct", 			Rarity.UNCOMMON, 1, Type.PHYSICAL, 1),
+		new DrawCard("Arcane Vision", 				Rarity.UNCOMMON, 1, Type.MAGICAL, 1),
+		new DrawCard("Forbidden Recall",			Rarity.UNCOMMON, 1, Type.CORRUPT, 1)
 	},{
 		new HealCard("Enduring Spirit", 			Rarity.RARE, 1, Type.PHYSICAL, 9),
 		new HealCard("Radiant Rejuvenation",		Rarity.RARE, 1, Type.MAGICAL, 10),
@@ -165,7 +168,10 @@ public class Data {
 		new ManaCard("Dark Ritual",					Rarity.RARE, 0, Type.CORRUPT, 1),
 		new StatusCard("Head Bash",					Rarity.RARE, 2, Type.PHYSICAL, 0.75),
 		new StatusCard("Fire Breath",				Rarity.RARE, 2, Type.MAGICAL, 0.80),
-		new StatusCard("Toxic Mist", 				Rarity.RARE, 2, Type.CORRUPT, 0.80)
+		new StatusCard("Toxic Mist", 				Rarity.RARE, 2, Type.CORRUPT, 0.80),
+		new DrawCard("Battle Scavenge",				Rarity.RARE, 1, Type.PHYSICAL, 2),
+		new DrawCard("Insight Surge",				Rarity.RARE, 1, Type.MAGICAL, 2),
+		new DrawCard("Whispers from Beyond",		Rarity.RARE, 1, Type.CORRUPT, 2)
 	},{
 		new ManaCard("Warrior's Focus",				Rarity.EPIC, 0, Type.PHYSICAL, 2),
 		new ManaCard("Celestial Flow", 				Rarity.EPIC, 0, Type.MAGICAL, 2),
@@ -175,15 +181,20 @@ public class Data {
 		new WeaknessCard("Curse of Frality",		Rarity.EPIC, 1, Type.CORRUPT, 0.85),
 		new StatusCard("Fracture Slash", 			Rarity.EPIC, 2, Type.PHYSICAL, 1),
 		new StatusCard("Dragon's Breath", 			Rarity.EPIC, 2, Type.MAGICAL, 1),
-		new StatusCard("Necrotic Toxin", 			Rarity.EPIC, 2, Type.CORRUPT, 1)
-		
+		new StatusCard("Necrotic Toxin", 			Rarity.EPIC, 2, Type.CORRUPT, 1),
+		new DrawCard("Combat Reflexes",				Rarity.EPIC, 0, Type.PHYSICAL, 1),
+		new DrawCard("Runes of Revelation", 		Rarity.EPIC, 0, Type.MAGICAL, 1),
+		new DrawCard("Dark Revelation",				Rarity.EPIC, 0, Type.CORRUPT, 1)
 	},{
 		new WeaknessCard("Bone Breaker", 			Rarity.LEGENDARY, 1, Type.PHYSICAL, 0.80),
 		new WeaknessCard("Blinding Spell", 			Rarity.LEGENDARY, 1, Type.MAGICAL, 0.78),
 		new WeaknessCard("Soul Rot", 				Rarity.LEGENDARY, 1, Type.CORRUPT, 0.75),
 		new StatusCard("Executioner's Wrath", 		Rarity.LEGENDARY, 1, Type.PHYSICAL, 1),
 		new StatusCard("Phoenix's Wrath", 			Rarity.LEGENDARY, 1, Type.MAGICAL, 1),
-		new StatusCard("Serpent's Wrath", 			Rarity.LEGENDARY, 1, Type.CORRUPT, 1)
+		new StatusCard("Serpent's Wrath", 			Rarity.LEGENDARY, 1, Type.CORRUPT, 1),
+		new DrawCard("Echoes of the Battlefield",	Rarity.LEGENDARY, 0, Type.PHYSICAL, 2),
+		new DrawCard("Eye of the Arcane Storm",		Rarity.LEGENDARY, 0, Type.MAGICAL, 2),
+		new DrawCard("Whispers from the Ashen Gate",Rarity.LEGENDARY, 0, Type.CORRUPT, 2)
 	}
 	};
 	
