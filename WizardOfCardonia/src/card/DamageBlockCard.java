@@ -51,7 +51,13 @@ public class DamageBlockCard extends Card{
     		//Only if its boss
     		if(Main.battleCount % 5 == 0 && Main.battleCount <= 15) {
     			if(Battle.currentEnemy.getResilience().equals(this.type)) {
-    				newDamage = (int) (newDamage * 0.5);
+    				if(this.type == Type.CORRUPT) { //Corrupt resilience bosses are much more resilient
+    					newDamage = (int) (newDamage * 0.2);
+    				}
+    				else {
+    					newDamage = (int) (newDamage * 0.5);
+    				}
+    				
     				System.out.println(Battle.currentEnemy.getName() + " is resilient to " + type + " damage! Damage reduced to " + newDamage + "!\n");
     			}
     		}
