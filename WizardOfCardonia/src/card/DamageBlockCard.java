@@ -55,7 +55,7 @@ public class DamageBlockCard extends Card{
     					newDamage = (int) (newDamage * 0.2);
     				}
     				else {
-    					newDamage = (int) (newDamage * 0.5);
+    					newDamage = (int) (newDamage * 0.4);
     				}
     				
     				System.out.println(Battle.currentEnemy.getName() + " is resilient to " + type + " damage! Damage reduced to " + newDamage + "!\n");
