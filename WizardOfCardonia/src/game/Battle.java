@@ -53,6 +53,21 @@ public class Battle {
 		}
 	}
 	
+	public static boolean draw() {
+		if(tempDeck.size() == 0) {
+			System.out.println("You have no more cards to draw!");
+			Commands.pressEnter();
+			
+			return false;
+		}
+		
+		int random = Commands.getRandomInt(tempDeck.size()-1);
+		hand.add(tempDeck.get(random));
+		tempDeck.remove(random);
+		
+		return true;
+	}
+	
 	public static void Battle(){
 		initiateTempDeck();
 		
@@ -255,9 +270,9 @@ public class Battle {
 		currentMana = maxMana;
 		
 		for(int i = 0; i < Main.permHand; i++) {
-			int random = Commands.getRandomInt(tempDeck.size()-1);
-			hand.add(tempDeck.get(random));
-			tempDeck.remove(random);
+			if(!draw()) {
+				break;
+			}
 		}
 		
 		while(true) {
