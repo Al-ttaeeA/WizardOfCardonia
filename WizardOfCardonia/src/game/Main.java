@@ -152,7 +152,98 @@ public class Main {
 	 * This method allows the user to view the tutorial
 	 *********************/
 	static void tutorial() {
-		System.out.println("Tutorial plays");
+		String tutorial1 = """
+				Welcome to Wizard of Cardonia! This tutorial will guide you through
+				the basics of gameplay. Let's begin your journey into the world of
+				magic, strategy, and corruption.
+
+					== OVERVIEW ==
+				In Cardonia, you fight enemies using a deck of magical cards.
+				You’ll battle foes, earn gold and cards, and grow your power.
+
+					== CARD TYPES ==
+				Each card has a type and a mana cost:
+				- Physical Cards: Gain power from Strength.
+				- Magical Cards: Gain power from Intelligence.
+				- Corrupt Cards: Grow stronger with Corruption.
+				
+				Be careful! Corruption boosts corrupt cards, but weakens others.
+				Leveling Arcana reduces corruption’s negative effects.
+				""";
+		
+		Commands.typeWriterEffect(tutorial1);
+		Commands.pressEnter();
+		
+		String tutorial2 = """
+					== BASIC ACTIONS ==
+				During your turn, you may:
+				- Play cards (if you have enough mana)
+				- Use items (one-time use, lasts only this battle)
+				- End your turn
+				
+				At the end of your turn, enemies attack or use effects.
+				At the start of your next turn, your block resets to 0.
+				
+					== MANA ==
+				You begin with a limited mana pool each turn.
+				Spend mana to use cards. Regain it at the start of your turn.
+				Some cards or effects may increase or restore your mana.
+				""";
+		
+		Commands.typeWriterEffect(tutorial2);
+		Commands.pressEnter();
+		
+		String tutorial3 = """
+					== BUILDING YOUR DECK ==
+				- You start with 10 cards.
+				- Win battles to gain new cards.
+				- Buy cards from the merchant.
+				- Remove unwanted cards to refine your strategy.
+				- Your deck must always have at least 10 cards.
+				
+					== LEVELING UP ==
+				Win battles to earn XP and gold.
+				Leveling up grants max HP and skill points (2–4).
+				Spend skill points on:
+				- Strength: boosts Physical cards
+				- Intelligence: boosts Magical cards
+				- Arcana: controls corruption’s effects
+				""";
+		
+		Commands.typeWriterEffect(tutorial3);
+		Commands.pressEnter();
+		
+		String tutorial4 = """
+					== ITEMS & ARTIFACTS ==
+				- Items: One-time buffs usable in battle.
+				- Artifacts: Permanent bonuses, always active.
+				Both are available at the merchant after battles.
+				
+					== THE MERCHANT ==
+				After each battle, visit the merchant.
+				They offer:
+				- 5 random cards
+				- 2 random items
+				- 1 artifact
+				You may buy any, or reroll for new options.
+				""";
+		
+		Commands.typeWriterEffect(tutorial4);
+		Commands.pressEnter();
+		
+		String tutorial5 = """
+					== WINNING BATTLES ==
+				Defeat enemies by reducing their HP to 0.
+				Use combos, block damage, manage your deck wisely.
+				
+					== TIP ==
+				Corrupt cards are powerful but risky.
+				Balance your stats and corruption for success.
+				
+				Now go forth, Mage of Cardonia. Fate awaits your deck!
+				""";
+		
+		Commands.typeWriterEffect(tutorial5);
 		Commands.pressEnter();
 	}
 	
@@ -364,7 +455,7 @@ public class Main {
 			System.out.println("Strength: " + strength);
 			System.out.println("\nIntelligence: " + intelligence);
 			System.out.println("\nArcana: " + arcana);
-			System.out.println("\nCorruptedness: " + corruptedness);
+			System.out.println("\nCorruption: " + corruptedness);
 			System.out.println("""
 					\n********************************************************************************
 					What would you like to do?
