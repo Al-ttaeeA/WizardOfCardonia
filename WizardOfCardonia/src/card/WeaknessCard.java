@@ -10,7 +10,7 @@ public class WeaknessCard extends Card{
 	private final double weakness;
 	
 	public WeaknessCard(String name, Rarity rarity, int manaCost, Type type, double weakness) {
-		super(name, rarity, manaCost, type);
+		super(9, name, rarity, manaCost, type);
 		this.weakness = weakness;
 	}
     

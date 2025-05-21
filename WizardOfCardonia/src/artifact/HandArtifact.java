@@ -10,7 +10,7 @@ public class HandArtifact extends Artifact{
 	private final int cards;
 	
 	public HandArtifact(String name, ArtifactType type, int cards) {
-		super(name, type);
+		super(3, name, type);
 		this.cards = cards;
 	}
 	

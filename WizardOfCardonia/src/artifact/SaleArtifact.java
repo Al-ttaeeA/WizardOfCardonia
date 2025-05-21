@@ -10,7 +10,7 @@ public class SaleArtifact extends Artifact{
 	private final double mult;
 	
 	public SaleArtifact(String name, ArtifactType type, double mult) {
-		super(name, type);
+		super(6, name, type);
 		this.mult = mult;
 	}
 	

@@ -27,15 +27,19 @@ public abstract class Card {
     protected final Rarity rarity;
     protected final int manaCost;
     protected final Type type;
+    
+    protected final int id;
 
-    public Card(String name, Rarity rarity, int manaCost, Type type) {
-        this.name = name;
+    public Card(int id, String name, Rarity rarity, int manaCost, Type type) {
+        this.id = id;
+    	this.name = name;
         this.rarity = rarity;
         this.manaCost = manaCost;
         this.type = type;
     }
     
     public Card() {
+    	this.id = 0;
     	this.name = "Empty Card";
     	this.rarity = Rarity.COMMON;
     	this.manaCost = 0;
@@ -83,6 +87,10 @@ public abstract class Card {
 
     public Type getType() {
         return type;
+    }
+    
+    public int getId() {
+    	return id;
     }
     
     public int getPrice() {

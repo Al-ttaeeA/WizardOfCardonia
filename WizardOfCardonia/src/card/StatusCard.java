@@ -13,7 +13,7 @@ public class StatusCard extends Card{
 	private final double effectChance;
 	
 	public StatusCard(String name, Rarity rarity, int manaCost, Type type, double effectChance) {
-		super(name, rarity, manaCost, type);
+		super(8, name, rarity, manaCost, type);
 		this.effectChance = effectChance;
 	}
 	

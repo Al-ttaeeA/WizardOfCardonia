@@ -10,7 +10,7 @@ public class CorArtifact extends Artifact{
 	private final double mult;
 	
 	public CorArtifact(String name, ArtifactType type, double mult) {
-		super(name, type);
+		super(2, name, type);
 		this.mult = mult;
 	}
 	

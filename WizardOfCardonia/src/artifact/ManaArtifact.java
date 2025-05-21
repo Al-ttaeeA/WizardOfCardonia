@@ -10,7 +10,7 @@ public class ManaArtifact extends Artifact{
 	private final int mana;
 	
 	public ManaArtifact(String name, ArtifactType type, int mana) {
-		super(name, type);
+		super(5, name, type);
 		this.mana = mana;
 	}
 	

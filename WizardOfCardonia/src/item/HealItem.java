@@ -4,7 +4,7 @@ public class HealItem extends Item{
 private final double mult;
 	
 	public HealItem(String name, ItemRarity rarity, int price, double mult) {
-		super(name, rarity, price);
+		super(4, name, rarity, price);
 		this.mult = mult;
 	}
 	

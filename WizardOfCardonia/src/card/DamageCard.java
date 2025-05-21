@@ -14,7 +14,7 @@ public class DamageCard extends Card {
     private int newDamage;
 
     public DamageCard(String name, Rarity rarity, int manaCost, Type type, int damage) {
-        super(name, rarity, manaCost, type);
+        super(4, name, rarity, manaCost, type);
         this.damage = damage;
         this.newDamage = damage;
     }

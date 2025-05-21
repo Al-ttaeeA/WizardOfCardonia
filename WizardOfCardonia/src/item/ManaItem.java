@@ -10,7 +10,7 @@ public class ManaItem extends Item{
 	private final int mana;
 	
 	public ManaItem(String name, ItemRarity rarity, int price, int mana) {
-		super(name, rarity, price);
+		super(5, name, rarity, price);
 		this.mana = mana;
 	}
 	

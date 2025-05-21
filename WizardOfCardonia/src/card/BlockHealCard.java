@@ -15,7 +15,7 @@ public class BlockHealCard extends Card{
 	private int newHeal;
 	
 	public BlockHealCard(String name, Rarity rarity, int manaCost, Type type, int block, int heal) {
-		super(name, rarity, manaCost, type);
+		super(2, name, rarity, manaCost, type);
 		this.block = block;
         this.newBlock = block;
 		this.heal = heal;

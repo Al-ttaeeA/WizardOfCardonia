@@ -11,7 +11,7 @@ public class BlockCard extends Card{
 	private int newBlock;
 
     public BlockCard(String name, Rarity rarity, int manaCost, Type type, int block) {
-        super(name, rarity, manaCost, type);
+        super(1, name, rarity, manaCost, type);
         this.block = block;
         this.newBlock = block;
     }

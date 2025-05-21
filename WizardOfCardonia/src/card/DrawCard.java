@@ -4,7 +4,7 @@ public class DrawCard extends Card{
 	private final int cardCount;
 	
 	public DrawCard(String name, Rarity rarity, int manaCost, Type type, int cardCount) {
-		super(name, rarity, manaCost, type);
+		super(5, name, rarity, manaCost, type);
 		this.cardCount = cardCount;
 	}
 	

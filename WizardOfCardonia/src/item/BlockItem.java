@@ -10,7 +10,7 @@ public class BlockItem extends Item{
 	private final double mult;
 	
 	public BlockItem(String name, ItemRarity rarity, int price, double mult) {
-		super(name, rarity, price);
+		super(2, name, rarity, price);
 		this.mult = mult;
 	}
 	

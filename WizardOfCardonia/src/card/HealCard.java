@@ -13,7 +13,7 @@ public class HealCard extends Card {
     private int newHeal;
 
     public HealCard(String name, Rarity rarity, int manaCost, Type type, int heal) {
-        super(name, rarity, manaCost, type);
+        super(6, name, rarity, manaCost, type);
         this.heal = heal;
         this.newHeal = heal;
     }

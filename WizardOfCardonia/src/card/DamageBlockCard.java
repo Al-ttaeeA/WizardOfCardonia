@@ -17,7 +17,7 @@ public class DamageBlockCard extends Card{
 	private int newBlock;
 	
 	public DamageBlockCard(String name, Rarity rarity, int manaCost, Type type, int damage, int block) {
-		super(name, rarity, manaCost, type);
+		super(3, name, rarity, manaCost, type);
 		this.damage = damage;
 		this.newDamage = damage;
 		this.block = block;

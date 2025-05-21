@@ -10,7 +10,7 @@ public class ManaCard extends Card{
 	private final int mana;
 	
 	public ManaCard(String name, Rarity rarity, int manaCost, Type type, int mana) {
-		super(name, rarity, manaCost, type);
+		super(7, name, rarity, manaCost, type);
 		this.mana = mana;
 	}
 	

@@ -10,7 +10,7 @@ public class AllItem extends Item{
 private final double mult;
 	
 	public AllItem(String name, ItemRarity rarity, int price, double mult) {
-		super(name, rarity, price);
+		super(1, name, rarity, price);
 		this.mult = mult;
 	}
 	

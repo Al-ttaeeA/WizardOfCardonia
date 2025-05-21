@@ -22,12 +22,16 @@ public abstract class Artifact {
 	protected final String name;
 	protected final ArtifactType type;
 	
-	public Artifact(String name, ArtifactType type) {
+	protected final int id;
+	
+	public Artifact(int id, String name, ArtifactType type) {
+		this.id = id;
 		this.name = name;
 		this.type = type;
 	}
 	
 	public Artifact() {
+		this.id = 0;
 		this.name = "Empty Artifact";
 		this.type = ArtifactType.COMMON;
 	}
@@ -45,6 +49,10 @@ public abstract class Artifact {
 	public ArtifactType getType() {
 		return type;
 	}
+	
+	public int getId() {
+    	return id;
+    }
 	
 	public int getPrice() {
 		if(type == ArtifactType.COMMON) {

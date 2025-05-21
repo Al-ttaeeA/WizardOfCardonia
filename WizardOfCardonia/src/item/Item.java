@@ -25,13 +25,17 @@ public abstract class Item {
 	protected final ItemRarity rarity;
 	protected final int price;
 	
-	public Item(String name, ItemRarity rarity, int price) {
+	protected final int id;
+	
+	public Item(int id, String name, ItemRarity rarity, int price) {
+		this.id = id;
 		this.name = name;
 		this.rarity = rarity;
 		this.price = price;
 	}
 	
 	public Item() {
+		this.id = 0;
 		this.name = "Empty item";
 		this.rarity = ItemRarity.COMMON;
 		this.price = 0;
@@ -50,6 +54,10 @@ public abstract class Item {
 	public ItemRarity getRarity() {
 		return rarity;
 	}
+	
+	public int getId() {
+    	return id;
+    }
 	
 	public int getPrice() {
 		return (int) (price * Main.permShopSale);
