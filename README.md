@@ -22,8 +22,8 @@ ________________________________________________________________________________
 - Added actual progression with story and bosses
 - Added tutorial to help new players start out
 - 3 New boss type enemies that you might meet on your adventure
- - The bosses use an advanced method of deciding the optimal action, with some randomization of course
- - Each boss is more difficult than any enemy that preceded it, so be careful and play your cards strategically!
+  - The bosses use an advanced method of deciding the optimal action, with some randomization of course
+  - Each boss is more difficult than any enemy that preceded it, so be careful and play your cards strategically!
 - Many new card types, cards, items, and artifacts to help you in your adventure
 - Enjoy many new quality of life changes that enhance the user experience
 - MANY balance changes that make the game harder yet more funs
