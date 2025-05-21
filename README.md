@@ -1,5 +1,5 @@
 # Wizard of Cardonia
-Text-based Roguelike Deck Builder RPG with a ton of strategy, complexity, and an engaging story (hopefully)
+Text-based Roguelike Deck Builder RPG with a ton of strategy, complexity, and an engaging story!
 
 The game is still in Early Access and there is many work in progress features that are planned!
 
@@ -7,7 +7,7 @@ Feel free to give your feedback about the overall game, any bugs you encounter, 
 
 ___________________________________________________________________________________________________________________________________________________________________
 
-But for now, enjoy these amazing features that are included in the Early Access:
+Enjoy these amazing features:
 - Intricate card system with many different card effects!
 - Physical, Magical, and Corrupt card types, each can be easily strengthened by leveling up the respective skill!
 - Turn based battle system that needs to be strategically played, plan the cards you will play beforehand to not mess up!
@@ -17,6 +17,16 @@ But for now, enjoy these amazing features that are included in the Early Access:
 ___________________________________________________________________________________________________________________________________________________________________
 
 ## Changelog
+
+### Early Access v0.3.3-alpha
+- Added actual progression with story and bosses
+- Added tutorial to help new players start out
+- 3 New boss type enemies that you might meet on your adventure
+ - The bosses use an advanced method of deciding the optimal action, with some randomization of course
+ - Each boss is more difficult than any enemy that preceded it, so be careful and play your cards strategically!
+- Many new card types, cards, items, and artifacts to help you in your adventure
+- Enjoy many new quality of life changes that enhance the user experience
+- MANY balance changes that make the game harder yet more funs
 
 ### Early Access v0.2.0-alpha
 - Added 40+ new cards with many new effects including but not limited to:
