@@ -27,7 +27,15 @@ public class BossEnemy extends Enemy{
 	}
 	
 	public void initialize() {
-		//Empty
+		double bossDiff = Math.pow(1.20, Battle.battleDifficulty);
+		
+		maxHealth *= bossDiff;
+		health *= bossDiff;
+		block *= bossDiff;
+		blockAmount *= bossDiff;
+		damageConstant *= bossDiff;
+		damageVariable *= bossDiff;
+		healAmount *= bossDiff;
 	}
 	
 	public void action() {

@@ -29,7 +29,7 @@ public class HealCard extends Card {
     }
 
     public boolean use() {
-    	newHeal = game.Commands.skillMultiplier(heal, type);
+    	newHeal = heal;
     	newHeal = (int) (newHeal * game.Battle.battleMult);
     	newHeal = (int) (newHeal * game.Battle.healMult);
     	

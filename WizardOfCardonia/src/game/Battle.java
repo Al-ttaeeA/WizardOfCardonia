@@ -120,14 +120,45 @@ public class Battle {
 	}
 	
 	static void startBattle() {
+		switch(Main.location) {
+		case 1:{
+			battleDifficulty = Commands.getRandomDouble(1.00, 1.50);
+			
+			if(Commands.getRandomChance() < 0.90) battleCardCount = 1;
+			else battleCardCount = 2;
+			
+			break;
+		}
+		case 2:{
+			battleDifficulty = Commands.getRandomDouble(1.50, 3.00);
+			
+			if(Commands.getRandomChance() < 0.60) battleCardCount = 1;
+			else if(Commands.getRandomChance() < 0.75) battleCardCount = 2;
+			else battleCardCount = 3;
+			
+			break;
+		}
+		case 3:{
+			battleDifficulty = Commands.getRandomDouble(3.00, 5.00);
+			
+			if(Commands.getRandomChance() < 0.60) battleCardCount = 2;
+			else if(Commands.getRandomChance() < 0.75) battleCardCount = 3;
+			else battleCardCount = 4;
+			
+			break;
+		}
+		}
+		
+		
 		if(Main.battleCount % 5 == 0 && Main.battleCount <= 15) {
 			int boss = Main.battleCount / 5;
 			
 			currentEnemy = Data.bosses[boss - 1];
+			currentEnemy.initialize();
 			
 			battleCardCount = 4;
 			
-			battleGold = 50 * Main.battleCount;
+			battleGold = 70 * Main.battleCount;
 			battleXp = (int) (battleGold * 0.60);
 			
 			switch(boss) {
@@ -139,7 +170,7 @@ public class Battle {
 
 						Up close, the truth hits you: this is no beast.
 
-						It’s Plensor-the corrupted mage!
+						It's Plensor-the corrupted mage!
 
 						Prepare for battle!
 						""");
@@ -206,37 +237,8 @@ public class Battle {
 		}
 		
 		
-		switch(Main.location) {
-		case 1:{
-			battleDifficulty = Commands.getRandomDouble(1.00, 1.50);
-			
-			if(Commands.getRandomChance() < 0.90) battleCardCount = 1;
-			else battleCardCount = 2;
-			
-			break;
-		}
-		case 2:{
-			battleDifficulty = Commands.getRandomDouble(1.50, 3.00);
-			
-			if(Commands.getRandomChance() < 0.60) battleCardCount = 1;
-			else if(Commands.getRandomChance() < 0.75) battleCardCount = 2;
-			else battleCardCount = 3;
-			
-			break;
-		}
-		case 3:{
-			battleDifficulty = Commands.getRandomDouble(3.00, 5.00);
-			
-			if(Commands.getRandomChance() < 0.60) battleCardCount = 2;
-			else if(Commands.getRandomChance() < 0.75) battleCardCount = 3;
-			else battleCardCount = 4;
-			
-			break;
-		}
-		}
-		
-		battleGold = (int) (battleDifficulty * 75);
-		battleXp = (int) (battleGold * 0.60);
+		battleGold = (int) (battleDifficulty * 100);
+		battleXp = (int) (battleGold * 0.50);
 		
 		if(Main.battleCount == 1) {
 			battleDifficulty = 0.40;
@@ -245,9 +247,15 @@ public class Battle {
 			battleXp = (int) (battleGold * 0.7);
 		}
 		else if(Main.battleCount <= 4) {
-			battleDifficulty *= 0.60;
+			battleDifficulty *= 0.70;
 			battleGold = (int) (battleGold * 0.80);
 			battleXp = (int) (battleXp * 0.80);
+		}
+		else if(Main.battleCount <= 9) {
+			battleDifficulty *= 1.30;
+		}
+		else if(Main.battleCount <= 14) {
+			battleDifficulty *= 2;
 		}
 		else if(Main.battleCount > 15) {
 			battleDifficulty *= Math.pow(1.10, Main.battleCount - 15);

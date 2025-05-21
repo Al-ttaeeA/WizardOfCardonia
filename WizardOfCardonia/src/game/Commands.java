@@ -179,7 +179,7 @@ public class Commands {
     	
     	if(skills < 0) skills = 0;
     	
-    	skillMultiplier = 1 + (skills / 10.0);
+    	skillMultiplier = 1 + (skills / 20.0);
     	
     	skillMultiplier *= Main.permMult;
     	

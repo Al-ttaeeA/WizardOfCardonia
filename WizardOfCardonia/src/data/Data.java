@@ -143,16 +143,16 @@ public class Data {
 		new BlockCard("Arcane Barrier", 			Rarity.COMMON, 2, Type.MAGICAL, 10),
 		new BlockCard("Shadow Seal", 				Rarity.COMMON, 1, Type.CORRUPT, 9),
 		new BlockCard("Dark Pact Shield",			Rarity.COMMON, 2, Type.CORRUPT, 14),
-		new HealCard("Vital surge",					Rarity.COMMON, 1, Type.PHYSICAL, 6),
-		new HealCard("Healing Wave", 				Rarity.COMMON, 1, Type.MAGICAL, 7),
-		new HealCard("Blood Pact",					Rarity.COMMON, 1, Type.CORRUPT, 8)
+		new HealCard("Vital surge",					Rarity.COMMON, 1, Type.PHYSICAL, 4),
+		new HealCard("Healing Wave", 				Rarity.COMMON, 1, Type.MAGICAL, 5),
+		new HealCard("Blood Pact",					Rarity.COMMON, 1, Type.CORRUPT, 6)
 	},{
 		new DamageBlockCard("Slash and Bash", 		Rarity.UNCOMMON, 2, Type.PHYSICAL, 7, 6),
 		new DamageBlockCard("Runic Counterblast", 	Rarity.UNCOMMON, 2, Type.MAGICAL, 8, 6),
 		new DamageBlockCard("Cursed Reflection", 	Rarity.UNCOMMON, 2, Type.CORRUPT, 8, 8),
-		new BlockHealCard("Fortified Recovery",		Rarity.UNCOMMON, 1, Type.PHYSICAL, 6, 6),
-		new BlockHealCard("Runic Restoration",		Rarity.UNCOMMON, 1, Type.MAGICAL, 6, 7),
-		new BlockHealCard("Dark Resurgence", 		Rarity.UNCOMMON, 1, Type.CORRUPT, 8, 8),
+		new BlockHealCard("Fortified Recovery",		Rarity.UNCOMMON, 1, Type.PHYSICAL, 6, 4),
+		new BlockHealCard("Runic Restoration",		Rarity.UNCOMMON, 1, Type.MAGICAL, 6, 5),
+		new BlockHealCard("Dark Resurgence", 		Rarity.UNCOMMON, 1, Type.CORRUPT, 8, 6),
 		new StatusCard("Leg Smash",					Rarity.UNCOMMON, 2, Type.PHYSICAL, 0.40),
 		new StatusCard("Ignite",					Rarity.UNCOMMON, 2, Type.MAGICAL, 0.50),
 		new StatusCard("Poisoned Dart", 			Rarity.UNCOMMON, 2, Type.CORRUPT, 0.50),
@@ -160,9 +160,9 @@ public class Data {
 		new DrawCard("Arcane Vision", 				Rarity.UNCOMMON, 1, Type.MAGICAL, 1),
 		new DrawCard("Forbidden Recall",			Rarity.UNCOMMON, 1, Type.CORRUPT, 1)
 	},{
-		new HealCard("Enduring Spirit", 			Rarity.RARE, 1, Type.PHYSICAL, 9),
-		new HealCard("Radiant Rejuvenation",		Rarity.RARE, 1, Type.MAGICAL, 10),
-		new HealCard("Dark Regeneration",			Rarity.RARE, 1, Type.CORRUPT, 12),
+		new HealCard("Enduring Spirit", 			Rarity.RARE, 1, Type.PHYSICAL, 6),
+		new HealCard("Radiant Rejuvenation",		Rarity.RARE, 1, Type.MAGICAL, 7),
+		new HealCard("Dark Regeneration",			Rarity.RARE, 1, Type.CORRUPT, 8),
 		new ManaCard("Battle Fury", 				Rarity.RARE, 0, Type.PHYSICAL, 1),
 		new ManaCard("Mana Replenish", 				Rarity.RARE, 0, Type.MAGICAL, 1),
 		new ManaCard("Dark Ritual",					Rarity.RARE, 0, Type.CORRUPT, 1),
@@ -283,35 +283,35 @@ public class Data {
 	 * The array of all enemies, each row is a different type of enemy
 	 ******************************************/
 	private static final Enemy[][] enemies = {{
-		new HumanEnemy("Elite Guard", 	  80,  0,  5, 10,  5, 0.25),
-		new HumanEnemy("Royal Guard", 	  90,  0,  6,  8,  8, 0.30),
-		new HumanEnemy("Royal Archer", 	  60,  0,  4, 12,  8, 0.40),
-		new HumanEnemy("Lost Warrior", 	  70,  0,  5,  7, 10, 0.25),
-		new HumanEnemy("Royal Brute",    120, 15,  6,  4,  4, 0.40),
-		new HumanEnemy("Bladed Bandit",	  60,  0,  4, 14,  4, 0.10),
-		new HumanEnemy("Lone Assassin",   80,  0,  5, 14,  2, 0.20)
+		new HumanEnemy("Elite Guard", 	  80,  0,  5, 12,  7, 0.25),
+		new HumanEnemy("Royal Guard", 	  90,  0,  6, 10, 10, 0.30),
+		new HumanEnemy("Royal Archer", 	  60,  0,  4, 14, 10, 0.40),
+		new HumanEnemy("Lost Warrior", 	  70,  0,  5,  9, 12, 0.25),
+		new HumanEnemy("Royal Brute",    120, 15,  6,  6,  6, 0.40),
+		new HumanEnemy("Bladed Bandit",	  60,  0,  4, 16,  6, 0.10),
+		new HumanEnemy("Lone Assassin",   80,  0,  5, 16,  4, 0.20)
 	},{
-		new UndeadEnemy("Zombie", 		  80,  0,  5,  7,  8, 0.15, 8),
-		new UndeadEnemy("Skeleton",       60,  0,  5, 12,  6, 0.10, 10),
-		new UndeadEnemy("Zombie Rhino",  110, 10,  5,  5,  4, 0.30, 10),
-		new UndeadEnemy("Undead Husk",    70, 10,  6,  6, 14, 0.05, 15),
-		new UndeadEnemy("Bone Goliath",  120, 10,  7,  5,  5, 0.20, 10),
-		new UndeadEnemy("Phantom", 		  90,  0,  8, 10,  6, 0.15, 10)
+		new UndeadEnemy("Zombie", 		  80,  0,  5,  9, 10, 0.15, 8),
+		new UndeadEnemy("Skeleton",       60,  0,  5, 14,  8, 0.10, 10),
+		new UndeadEnemy("Zombie Rhino",  110, 10,  5,  7,  6, 0.30, 10),
+		new UndeadEnemy("Undead Husk",    70, 10,  6,  8, 16, 0.05, 15),
+		new UndeadEnemy("Bone Goliath",  120, 10,  7,  7,  7, 0.20, 10),
+		new UndeadEnemy("Phantom", 		  90,  0,  8, 12,  8, 0.15, 10)
 	},{
-		new MagicalEnemy("Fire Axolotl",  60,  0,  5, 10,  5, 0.15, 1),
-		new MagicalEnemy("Ice Sprite",    60,  0,  4,  7,  5, 0.30, 2),
-		new MagicalEnemy("Wizard Spirit", 80,  0,  6,  9,  5, 0.10, 3),
-		new MagicalEnemy("Golem",  		 110, 10, 10,  5,  3, 0.20, 1),
-		new MagicalEnemy("Phoenix",  	  90,  0,  2, 10,  8, 0.15, 2),
-		new MagicalEnemy("Vile Serpent", 100,  0,  4,  8,  6, 0.30, 2)
+		new MagicalEnemy("Fire Axolotl",  60,  0,  5, 12,  7, 0.15, 1),
+		new MagicalEnemy("Ice Sprite",    60,  0,  4,  9,  7, 0.30, 2),
+		new MagicalEnemy("Wizard Spirit", 80,  0,  6, 11,  7, 0.10, 3),
+		new MagicalEnemy("Golem",  		 110, 10, 10,  7,  5, 0.20, 1),
+		new MagicalEnemy("Phoenix",  	  90,  0,  2, 12, 10, 0.15, 2),
+		new MagicalEnemy("Vile Serpent", 100,  0,  4, 10,  8, 0.30, 2)
 	}
 	};
 	
 	
 	public static Enemy[] bosses = {
-		new BossEnemy("Plensor", 		 120, 10, 6, 5, 10, 15, Type.PHYSICAL),
-		new BossEnemy("Mejashi",		 250, 20, 12, 15, 10, 30, Type.MAGICAL),
-		new BossEnemy("Cruden", 		 400, 30, 20, 25, 15, 50, Type.CORRUPT)
+		new BossEnemy("Plensor", 		 150, 15, 6, 10, 10, 15, Type.PHYSICAL),
+		new BossEnemy("Mejashi",		 400, 25, 12, 20, 10, 30, Type.MAGICAL),
+		new BossEnemy("Cruden", 		 800, 50, 20, 30, 15, 40, Type.CORRUPT)
 	};
 	
 	
@@ -495,9 +495,9 @@ public class Data {
 	}
 	
 	static Artifact[] artifacts = {
-		new SaleArtifact("Trader's Coin", 		ArtifactType.COMMON, 0.95),
-		new SaleArtifact("Gold Necklace", 		ArtifactType.COMMON, 0.9),
-		new SaleArtifact("Crimson Amulet", 		ArtifactType.ANCIENT, 0.8),
+		new SaleArtifact("Trader's Coin", 		ArtifactType.COMMON, 0.9),
+		new SaleArtifact("Gold Necklace", 		ArtifactType.COMMON, 0.85),
+		new SaleArtifact("Crimson Amulet", 		ArtifactType.ANCIENT, 0.75),
 		new AllArtifact("Emblem of Mastery", 	ArtifactType.COMMON, 1.2),
 		new AllArtifact("Sigil of Power",	 	ArtifactType.COMMON, 1.25),
 		new AllArtifact("Crown of Dominion", 	ArtifactType.ANCIENT, 1.4),

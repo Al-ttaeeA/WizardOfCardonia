@@ -39,7 +39,7 @@ public class BlockHealCard extends Card{
     	newBlock = (int) (newBlock * game.Battle.battleMult);
     	newBlock = (int) (newBlock * game.Battle.blockMult);
     	
-    	newHeal = game.Commands.skillMultiplier(heal, type);
+    	newHeal = heal;
     	newHeal = (int) (newHeal * game.Battle.battleMult);
     	newHeal = (int) (newHeal * game.Battle.healMult);
     	
