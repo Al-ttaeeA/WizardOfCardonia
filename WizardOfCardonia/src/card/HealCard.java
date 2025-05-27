@@ -66,4 +66,16 @@ public class HealCard extends Card {
         	return newHeal;
         }
     }
+    
+    public String save() {
+    	String str = this.id + ",";
+    	str += this.name + ",";
+    	str += this.rarity + ",";
+    	str += this.manaCost + ",";
+    	str += this.type + ",";
+    	
+    	str += this.heal;
+    	
+    	return str;
+    }
 }

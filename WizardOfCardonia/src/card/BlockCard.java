@@ -59,4 +59,16 @@ public class BlockCard extends Card{
         	return newBlock;
         }
     }
+    
+    public String save() {
+    	String str = this.id + ",";
+    	str += this.name + ",";
+    	str += this.rarity + ",";
+    	str += this.manaCost + ",";
+    	str += this.type + ",";
+    	
+    	str += this.block;
+    	
+    	return str;
+    }
 }

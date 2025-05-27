@@ -77,4 +77,16 @@ public class DamageCard extends Card {
         	return newDamage;
         }
     }
+    
+    public String save() {
+    	String str = this.id + ",";
+    	str += this.name + ",";
+    	str += this.rarity + ",";
+    	str += this.manaCost + ",";
+    	str += this.type + ",";
+    	
+    	str += this.damage;
+    	
+    	return str;
+    }
 }

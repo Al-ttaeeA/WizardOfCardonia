@@ -127,4 +127,60 @@ public abstract class Card {
     	
     	return (int) ((constant + Commands.getRandomInt(variable)) * Main.permShopSale);
     }
+    
+    
+    
+    public abstract String save();
+    
+    public static Card loadCard(String line) {
+    	String[] tokens = line.split(",");
+    	
+    	String name = tokens[1];
+    	Rarity rarity = Rarity.valueOf(tokens[2]);
+    	int manaCost = Integer.parseInt(tokens[3]);
+    	Type type = Type.valueOf(tokens[4]);
+    	
+    	switch(Integer.parseInt(tokens[0])) {
+    	case 1:{
+    		int block = Integer.parseInt(tokens[5]);
+    		return new BlockCard(name, rarity, manaCost, type, block);
+    	}
+    	case 2:{
+    		int block = Integer.parseInt(tokens[5]);
+    		int heal = Integer.parseInt(tokens[6]);
+    		return new BlockHealCard(name, rarity, manaCost, type, block, heal);
+    	}
+		case 3:{
+			int damage = Integer.parseInt(tokens[5]);
+			int block = Integer.parseInt(tokens[6]);
+			return new DamageBlockCard(name, rarity, manaCost, type, damage, block);
+		}
+		case 4:{
+			int damage = Integer.parseInt(tokens[5]);
+			return new DamageCard(name, rarity, manaCost, type, damage);
+		}
+		case 5:{
+			int cardCount = Integer.parseInt(tokens[5]);
+			return new DrawCard(name, rarity, manaCost, type, cardCount);
+		}
+		case 6:{
+			int heal = Integer.parseInt(tokens[5]);
+			return new HealCard(name, rarity, manaCost, type, heal);
+		}
+		case 7:{
+			int mana = Integer.parseInt(tokens[5]);
+			return new ManaCard(name, rarity, manaCost, type, mana);
+		}
+		case 8:{
+			double effectChance = Double.parseDouble(tokens[5]);
+			return new StatusCard(name, rarity, manaCost, type, effectChance);
+		}
+		case 9:{
+			double weakness = Double.parseDouble(tokens[5]);
+			return new WeaknessCard(name, rarity, manaCost, type, weakness);
+		}
+    	}
+    	
+    	return new BlockCard();
+    }
 }

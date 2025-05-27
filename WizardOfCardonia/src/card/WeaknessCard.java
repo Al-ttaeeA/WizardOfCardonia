@@ -43,4 +43,16 @@ public class WeaknessCard extends Card{
 	public double getDmgDebuff(int num) {
 		return weakness;
     }
+	
+	public String save() {
+		String str = this.id + ",";
+    	str += this.name + ",";
+    	str += this.rarity + ",";
+    	str += this.manaCost + ",";
+    	str += this.type + ",";
+    	
+    	str += this.weakness;
+    	
+    	return str;
+	}
 }

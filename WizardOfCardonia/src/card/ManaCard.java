@@ -39,4 +39,16 @@ public class ManaCard extends Card{
 	public String toString() {
 		return name + " (" + manaCost + " Mana) [" + rarity + "] {" + type + "}\n\tGain " + mana + " mana\n";
 	}
+	
+	public String save() {
+    	String str = this.id + ",";
+    	str += this.name + ",";
+    	str += this.rarity + ",";
+    	str += this.manaCost + ",";
+    	str += this.type + ",";
+    	
+    	str += this.mana;
+    	
+    	return str;
+    }
 }

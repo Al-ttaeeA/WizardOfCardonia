@@ -90,4 +90,16 @@ public class DamageBlockCard extends Card{
     	
     	return str;
 	}
+	
+	public String save() {
+    	String str = this.id + ",";
+    	str += this.name + ",";
+    	str += this.rarity + ",";
+    	str += this.manaCost + ",";
+    	str += this.type + ",";
+    	
+    	str += this.damage + "," + this.block;
+    	
+    	return str;
+    }
 }

@@ -100,4 +100,16 @@ public class StatusCard extends Card{
 	public double getEffectChance() {
 		return effectChance;
 	}
+	
+	public String save() {
+    	String str = this.id + ",";
+    	str += this.name + ",";
+    	str += this.rarity + ",";
+    	str += this.manaCost + ",";
+    	str += this.type + ",";
+    	
+    	str += this.effectChance;
+    	
+    	return str;
+    }
 }

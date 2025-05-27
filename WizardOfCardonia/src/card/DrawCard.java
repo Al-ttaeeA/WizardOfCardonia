@@ -37,4 +37,16 @@ public class DrawCard extends Card{
 	public String toString() {
 		return name + " (" + manaCost + " Mana) [" + rarity + "] {" + type + "}\n\tDraw " + cardCount + " card(s)\n";
 	}
+	
+	public String save() {
+    	String str = this.id + ",";
+    	str += this.name + ",";
+    	str += this.rarity + ",";
+    	str += this.manaCost + ",";
+    	str += this.type + ",";
+    	
+    	str += this.cardCount;
+    	
+    	return str;
+    }
 }
