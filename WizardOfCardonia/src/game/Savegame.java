@@ -19,8 +19,65 @@
 package game;
 
 import data.*;
+import java.io.*;
+import java.util.*;
 
 public class Savegame {
+	private static File mainFolder;
+	private static File mainFile;
+	private static File[] savefiles = new File[5];
+	
+	public static int activeSave;
+	
+	private static ArrayList<SaveSlot> saves = new ArrayList<SaveSlot>();
+	
+	
+	
+	public static void initiate() {
+		try {
+            String userHome = System.getProperty("user.home");
+            String saveFolderPath = userHome + File.separator + "Documents" + File.separator + "WizardOfCardonia";
+
+            mainFolder = new File(saveFolderPath);
+            if (!mainFolder.exists()) {
+                mainFolder.mkdirs();
+            }
+            
+            mainFile = new File(saveFolderPath, "savegameInfo.txt");
+            if(!mainFile.exists()) {
+            	mainFile.createNewFile();
+            	
+            	PrintWriter pw = new PrintWriter(mainFile);
+            	
+            	for(int i = 0; i < 5; i++) {
+            		pw.println("Empty,0,0");
+            	}
+            	
+            	pw.close();
+            }
+
+            for(int i = 0; i < 5; i++) {
+            	savefiles[i] = new File(mainFolder, "savegame" + (i+1) + ".txt");
+            	
+            	if(!savefiles[i].exists()) {
+            		savefiles[i].createNewFile();
+            	}
+            }
+            
+            Scanner scanFile = new Scanner(mainFile);
+            
+            while(scanFile.hasNextLine()) {
+            	String line = scanFile.nextLine();
+            	String[] tokens = line.split(",");
+            	
+            	saves.add(new SaveSlot(tokens[0], Integer.parseInt(tokens[1]), Integer.parseInt(tokens[2])));
+            }
+            
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+	}
+	
 	public static void newGame() {
 		Main.playMaxHP = 100;
 		Main.playCurrentHP = 100;
@@ -111,5 +168,74 @@ public class Savegame {
 		System.out.println("""
 				You start your adventure as one of the few surviving mages!!!
 				""");
+	}
+	
+	
+	
+	public static boolean chooseSave() {
+		int choice;
+		
+		System.out.println("Here are the saveslots available:\n");
+		
+		printSaves();
+		
+		System.out.println("Choose a saveslot to overwrite or 0 to exit");
+		choice = Commands.inputInt(0, 5);
+		
+		if(choice == 0) {
+			return false;
+		}
+		
+		activeSave = choice;
+		
+		
+		
+		return true;
+	}
+	
+	public static void printSaves() {
+		for(int i = 0; i < 5; i++) {
+			System.out.println((i+1) + ". " + saves.get(i) + " \n");
+		}
+	}
+	
+	public static void printMain() {
+		try {
+			FileWriter mainFileWriter = new FileWriter(mainFile);
+			PrintWriter pw = new PrintWriter(mainFileWriter);
+			
+			for(int i = 0; i < 5; i++) {
+				pw.println(saves.get(i).save());
+			}
+			
+			pw.close();
+		}
+		catch(IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	private static class SaveSlot{
+		String name;
+		int level;
+		int gold;
+		
+		SaveSlot(String name, int level, int gold){
+			this.name = name;
+			this.level = level;
+			this.gold = gold;
+		}
+		
+		public String save() {
+			return name + "," + level + "," + gold;
+		}
+		
+		public String toString() {
+			if(this.name.equals("Empty")) {
+				return "Empty Save Slot";
+			}
+			
+			return name + ", Level: " + level + ", Gold: " + gold;
+		}
 	}
 }
