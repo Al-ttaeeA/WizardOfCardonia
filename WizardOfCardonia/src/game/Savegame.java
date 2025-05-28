@@ -22,6 +22,10 @@ import data.*;
 import java.io.*;
 import java.util.*;
 
+import card.Card;
+import item.Item;
+import artifact.Artifact;
+
 public class Savegame {
 	private static File mainFolder;
 	private static File mainFile;
@@ -138,11 +142,28 @@ public class Savegame {
 		return true;
 	}
 	
-	public static void loadGame() {
-		System.out.println("This is a placeholder currently and there is no previous game sorry!");
-		Commands.pressEnter();
+	public static boolean loadGame() {
+		System.out.println("Save Slots:\n");
+		printSaves();
+		System.out.println("Choose a save slot to load or 0 to exit");
+		int choice  = Commands.inputInt(0, 5);
 		
-		newGame();
+		if(choice == 0) {
+			return false;
+		}
+		
+		if(saves.get(choice-1).isEmpty()) {
+			System.out.println("Save slot is empty!!!");
+			Commands.pressEnter();
+			
+			return false;
+		}
+		
+		activeSave = choice;
+		
+		load();
+		
+		return true;
 	}
 	
 	public static void story() {
@@ -231,6 +252,8 @@ public class Savegame {
 				pw.println(Main.artifacts.get(i).save());
 			}
 			
+			pw.println("---");
+			
 			pw.close();
 		}
 		catch(IOException e) {
@@ -239,7 +262,69 @@ public class Savegame {
 	}
 	
 	public static void load() {
-		
+		try {
+			String line;
+			String[] tokens = new String[10];
+			
+			Scanner scan = new Scanner(savefiles[activeSave - 1]);
+			
+			line = scan.nextLine();
+			tokens = line.split(",");
+			Main.playName = tokens[0];
+			Main.playMaxHP = Integer.parseInt(tokens[1]);
+			Main.playCurrentHP = Integer.parseInt(tokens[2]);
+			Main.gold = Integer.parseInt(tokens[3]);
+			Main.battleCount = Integer.parseInt(tokens[4]);
+			
+			line = scan.nextLine();
+			tokens = line.split(",");
+			Main.xpLevel = Integer.parseInt(tokens[0]);
+			Main.currentXp = Integer.parseInt(tokens[1]);
+			Main.maxXp = Integer.parseInt(tokens[2]);
+			Main.skillpoints = Integer.parseInt(tokens[3]);
+			
+			line = scan.nextLine();
+			tokens = line.split(",");
+			Main.intelligence = Integer.parseInt(tokens[0]);
+			Main.strength = Integer.parseInt(tokens[1]);
+			Main.arcana = Integer.parseInt(tokens[2]);
+			Main.corruptedness = Integer.parseInt(tokens[3]);
+			
+			line = scan.nextLine();
+			tokens = line.split(",");
+			Main.permMult = Double.parseDouble(tokens[0]);
+			Main.permIntMult = Double.parseDouble(tokens[1]);
+			Main.permStrMult = Double.parseDouble(tokens[2]);
+			Main.permCorMult = Double.parseDouble(tokens[3]);
+			Main.permShopSale = Double.parseDouble(tokens[4]);
+			
+			line = scan.nextLine();
+			tokens = line.split(",");
+			Main.permMaxMana = Integer.parseInt(tokens[0]);
+			Main.permHand = Integer.parseInt(tokens[1]);
+			Main.location = Integer.parseInt(tokens[2]);
+			
+			line = scan.nextLine();
+			while(!line.equals("---")) {
+				Main.deck.add(Card.loadCard(line));
+				line = scan.nextLine();
+			}
+			
+			line = scan.nextLine();
+			while(!line.equals("---")) {
+				Main.inventory.add(Item.loadItem(line));
+				line = scan.nextLine();
+			}
+			
+			line = scan.nextLine();
+			while(!line.equals("---")) {
+				Main.artifacts.add(Artifact.loadArtifact(line));
+				line = scan.nextLine();
+			}
+		}
+		catch(IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public static void printSaves() {
@@ -277,6 +362,13 @@ public class Savegame {
 		
 		public String save() {
 			return name + "," + level + "," + gold;
+		}
+		
+		public boolean isEmpty() {
+			if(this.name.equals("Empty")) {
+				return true;
+			}
+			return false;
 		}
 		
 		public String toString() {

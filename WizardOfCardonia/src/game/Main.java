@@ -109,9 +109,9 @@ public class Main {
 			}
 			
 			case 2:{
-				Savegame.loadGame();
-				
-				campsite();
+				if(Savegame.loadGame()) {
+					campsite();
+				}
 				
 				break;
 			}

@@ -7,8 +7,8 @@
 package artifact;
 
 public enum ArtifactType {
-	COMMON(0, "Common"),
-    ANCIENT(1, "Ancient");
+	COMMON(0, "COMMON"),
+    ANCIENT(1, "ANCIENT");
 
     private final int index;
     private final String name;

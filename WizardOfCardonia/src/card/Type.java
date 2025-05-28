@@ -7,9 +7,9 @@
 package card;
 
 public enum Type {
-	PHYSICAL(0, "Physical"),
-	MAGICAL(1, "Magical"),
-	CORRUPT(2, "Corrupt");
+	PHYSICAL(0, "PHYSICAL"),
+	MAGICAL(1, "MAGICAL"),
+	CORRUPT(2, "CORRUPT");
 	
 	private final int index;
 	private final String name;
