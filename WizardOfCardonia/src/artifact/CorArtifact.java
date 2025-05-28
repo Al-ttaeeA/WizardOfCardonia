@@ -34,4 +34,14 @@ public class CorArtifact extends Artifact{
 	public double getMult() {
 		return mult;
 	}
+	
+	public String save() {
+		String str = this.id + ",";
+		str += this.name + ",";
+		str += this.type + ",";
+		
+		str += this.mult;
+		
+		return str;
+	}
 }

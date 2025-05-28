@@ -30,4 +30,14 @@ public class HandArtifact extends Artifact{
 	public String toString() {
 		return name + " [" + type + "]\n\tIncreases cards in hand at the start of your turn by " + cards + " Card(s)\n";
 	}
+	
+	public String save() {
+		String str = this.id + ",";
+		str += this.name + ",";
+		str += this.type + ",";
+		
+		str += this.cards;
+		
+		return str;
+	}
 }

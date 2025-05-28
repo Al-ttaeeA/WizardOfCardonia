@@ -30,4 +30,14 @@ public class ManaArtifact extends Artifact{
 	public String toString() {
 		return name + " [" + type + "]\n\tIncreases Max Mana by " + mana + "MP permanently\n";
 	}
+	
+	public String save() {
+		String str = this.id + ",";
+		str += this.name + ",";
+		str += this.type + ",";
+		
+		str += this.mana;
+		
+		return str;
+	}
 }

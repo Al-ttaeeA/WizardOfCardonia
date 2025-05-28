@@ -62,4 +62,46 @@ public abstract class Artifact {
 			return 150;
 		}
 	}
+	
+	public abstract String save();
+	
+	public static Artifact loadArtifact(String line) {
+		String[] tokens = line.split(",");
+		
+		String name = tokens[1];
+		ArtifactType type = ArtifactType.valueOf(tokens[2]);
+		
+		switch(Integer.parseInt(tokens[0])) {
+		case 1:{
+			double mult = Double.parseDouble(tokens[3]);
+			return new AllArtifact(name, type, mult);
+		}
+		case 2:{
+			double mult = Double.parseDouble(tokens[3]);
+			return new CorArtifact(name, type, mult);
+		}
+		case 3:{
+			int cards = Integer.parseInt(tokens[3]);
+			return new HandArtifact(name, type, cards);
+		}
+		case 4:{
+			double mult = Double.parseDouble(tokens[3]);
+			return new IntArtifact(name, type, mult);
+		}
+		case 5:{
+			int mana = Integer.parseInt(tokens[3]);
+			return new ManaArtifact(name, type, mana);
+		}
+		case 6:{
+			double mult = Double.parseDouble(tokens[3]);
+			return new SaleArtifact(name, type, mult);
+		}
+		case 7:{
+			double mult = Double.parseDouble(tokens[3]);
+			return new StrArtifact(name, type, mult);
+		}
+		}
+		
+		return new AllArtifact();
+	}
 }
