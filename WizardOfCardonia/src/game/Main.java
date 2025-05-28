@@ -26,10 +26,6 @@ import enemy.*;
 import java.util.*;
 
 public class Main {
-	//Currently, these are all for testing
-	public static int testInt;
-	public static double testDouble;
-	
 	public static ArrayList<Card> deck = new ArrayList();
 	public static ArrayList<Item> inventory = new ArrayList();
 	public static ArrayList<Artifact> artifacts = new ArrayList();
@@ -59,15 +55,10 @@ public class Main {
 	
 	public static int permMaxMana = 3;
 	public static int permHand = 5;
-	
 	public static int location;
 	
 	public static void main(String[] args) {
 		Savegame.initiate();
-		
-		for(int i = 0; i < 5; i++) {
-			inventory.add(Data.getItem());
-		}
 		
 		Commands.clearScreen();
 		
@@ -110,9 +101,9 @@ public class Main {
 			
 			switch(mainMenuChoice) {
 			case 1:{
-				Savegame.newGame();
-				
-				campsite();
+				if(Savegame.newGame()) {
+					campsite();
+				}
 				
 				break;
 			}
@@ -410,7 +401,7 @@ public class Main {
 					
 					5. Proceed with your adventure
 					
-					6. Exit to main menu (Your data will be deleted do not exit to main menu)
+					6. Save and exit to main menu 
 					""");		
 					
 			campChoice = Commands.inputInt(1, 6);
@@ -443,14 +434,15 @@ public class Main {
 				break;
 			}
 			case 6:{
-				System.out.println("Are you sure you want to exit to the main menu?");
-				System.out.println("\nYou data will be completely wiped!\n");
+				System.out.println("Are you sure you want to exit to the main menu?\n");
 				System.out.println("1. Exit\n\n2. Go back DONT EXIT\n");
 				int exitChoice = Commands.inputInt(1, 2);
 				
 				if(exitChoice == 2) {
 					campChoice = 0;
 				}
+				
+				Savegame.save();
 			}
 			}
 		} while(campChoice != 6);

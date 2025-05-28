@@ -78,7 +78,18 @@ public class Savegame {
         }
 	}
 	
-	public static void newGame() {
+	public static boolean newGame() {
+		System.out.println("Save Slots:\n");
+		printSaves();
+		System.out.println("Choose a save slot to overwrite or 0 to exit");
+		int choice  = Commands.inputInt(0, 5);
+		
+		if(choice == 0) {
+			return false;
+		}
+		
+		activeSave = choice;
+		
 		Main.playMaxHP = 100;
 		Main.playCurrentHP = 100;
 		Main.gold = 0; //Change
@@ -106,9 +117,16 @@ public class Savegame {
 		
 		Main.location = 1;
 		
+		Main.deck.clear();
+		Main.inventory.clear();
+		Main.artifacts.clear();
+		
 		Data.initiateDeck();
 		Data.initiateArtifactList();
 		
+		for(int i = 0; i < 5; i++) {
+			Main.inventory.add(Data.getItem());
+		}
 		
 		System.out.println("New Game started!");
 		
@@ -116,6 +134,8 @@ public class Savegame {
 		Main.playName = Commands.inputString();
 		
 		story();
+		
+		return true;
 	}
 	
 	public static void loadGame() {
@@ -170,27 +190,56 @@ public class Savegame {
 				""");
 	}
 	
-	
-	
-	public static boolean chooseSave() {
-		int choice;
+	public static void save() {
+		saves.remove(activeSave-1);
+		saves.add(activeSave-1, new SaveSlot(Main.playName, Main.xpLevel, Main.gold));
+		printMain();
 		
-		System.out.println("Here are the saveslots available:\n");
-		
-		printSaves();
-		
-		System.out.println("Choose a saveslot to overwrite or 0 to exit");
-		choice = Commands.inputInt(0, 5);
-		
-		if(choice == 0) {
-			return false;
+		try {
+			FileWriter currentSave = new FileWriter(savefiles[activeSave - 1]);
+			PrintWriter pw = new PrintWriter(currentSave);
+			
+			pw.println(Main.playName + "," + Main.playMaxHP + "," + Main.playCurrentHP + "," + Main.gold + "," + Main.battleCount);
+			
+			pw.println(Main.xpLevel + "," + Main.currentXp + "," + Main.maxXp + "," + Main.skillpoints);
+			
+			pw.println(Main.intelligence + "," + Main.strength + "," + Main.arcana + "," + Main.corruptedness);
+			
+			pw.println(Main.permMult + "," + Main.permIntMult + "," + Main.permStrMult + "," + Main.permCorMult + "," + Main.permShopSale);
+			
+			pw.println(Main.permMaxMana + "," + Main.permHand + "," + Main.location);
+			
+			int size = Main.deck.size();
+			
+			for(int i = 0; i < size; i++) {
+				pw.println(Main.deck.get(i).save());
+			}
+			
+			pw.println("---");
+			
+			size = Main.inventory.size();
+			
+			for(int i = 0; i < size; i++) {
+				pw.println(Main.inventory.get(i).save());
+			}
+			
+			pw.println("---");
+			
+			size = Main.artifacts.size();
+			
+			for(int i = 0; i < size; i++) {
+				pw.println(Main.artifacts.get(i).save());
+			}
+			
+			pw.close();
 		}
+		catch(IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void load() {
 		
-		activeSave = choice;
-		
-		
-		
-		return true;
 	}
 	
 	public static void printSaves() {
