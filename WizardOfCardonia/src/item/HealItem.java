@@ -1,7 +1,7 @@
 package item;
 
 public class HealItem extends Item{
-private final double mult;
+	private final double mult;
 	
 	public HealItem(String name, ItemRarity rarity, int price, double mult) {
 		super(4, name, rarity, price);
@@ -28,5 +28,16 @@ private final double mult;
 	
 	public double getMult() {
 		return mult;
+	}
+	
+	public String save() {
+		String str = this.id + ",";
+		str += this.name + ",";
+		str += this.rarity + ",";
+		str += this.price + ",";
+		
+		str += this.mult;
+		
+		return str;
 	}
 }

@@ -35,4 +35,15 @@ public class ManaItem extends Item{
 	public int getMana() {
 		return mana;
 	}
+	
+	public String save() {
+		String str = this.id + ",";
+		str += this.name + ",";
+		str += this.rarity + ",";
+		str += this.price + ",";
+		
+		str += this.mana;
+		
+		return str;
+	}
 }

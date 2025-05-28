@@ -7,7 +7,7 @@
 package item;
 
 public class AllItem extends Item{
-private final double mult;
+	private final double mult;
 	
 	public AllItem(String name, ItemRarity rarity, int price, double mult) {
 		super(1, name, rarity, price);
@@ -34,5 +34,16 @@ private final double mult;
 	
 	public double getMult() {
 		return mult;
+	}
+	
+	public String save() {
+		String str = this.id + ",";
+		str += this.name + ",";
+		str += this.rarity + ",";
+		str += this.price + ",";
+		
+		str += this.mult;
+		
+		return str;
 	}
 }

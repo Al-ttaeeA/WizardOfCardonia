@@ -18,6 +18,7 @@
 
 package item;
 
+import card.Rarity;
 import game.*;
 
 public abstract class Item {
@@ -61,5 +62,40 @@ public abstract class Item {
 	
 	public int getPrice() {
 		return (int) (price * Main.permShopSale);
+	}
+	
+	public abstract String save();
+	
+	public static Item loadItem(String line) {
+		String[] tokens = line.split(",");
+		
+		String name = tokens[1];
+		ItemRarity rarity = ItemRarity.valueOf(tokens[2]);
+		int price = Integer.parseInt(tokens[3]);
+		
+		switch(Integer.parseInt(tokens[0])) {
+		case 1:{
+			double mult = Double.parseDouble(tokens[4]);
+			return new AllItem(name, rarity, price, mult);
+		}
+		case 2:{
+			double mult = Double.parseDouble(tokens[4]);
+			return new BlockItem(name, rarity, price, mult);
+		}
+		case 3:{
+			double mult = Double.parseDouble(tokens[4]);
+			return new DamageItem(name, rarity, price, mult);
+		}
+		case 4:{
+			double mult = Double.parseDouble(tokens[4]);
+			return new HealItem(name, rarity, price, mult);
+		}
+		case 5:{
+			int mana = Integer.parseInt(tokens[4]);
+			return new ManaItem(name, rarity, price, mana);
+		}
+		}
+		
+		return new BlockItem();
 	}
 }

@@ -35,4 +35,15 @@ public class DamageItem extends Item{
 	public double getMult() {
 		return mult;
 	}
+	
+	public String save() {
+		String str = this.id + ",";
+		str += this.name + ",";
+		str += this.rarity + ",";
+		str += this.price + ",";
+		
+		str += this.mult;
+		
+		return str;
+	}
 }
