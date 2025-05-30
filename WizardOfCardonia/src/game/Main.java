@@ -355,6 +355,7 @@ public class Main {
 		
 		do {
 			if(playIsDead) {
+				Savegame.delete();
 				return;
 			}
 			
@@ -424,6 +425,8 @@ public class Main {
 				break;
 			}
 			case 5:{
+				Savegame.save();
+				
 				Battle.Battle();
 				
 				if(playIsDead) {
@@ -431,6 +434,9 @@ public class Main {
 				}
 				
 				merchant();
+				
+				Savegame.save();
+				
 				break;
 			}
 			case 6:{

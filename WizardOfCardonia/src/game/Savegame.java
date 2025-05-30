@@ -327,6 +327,24 @@ public class Savegame {
 		}
 	}
 	
+	public static void delete() {
+		saves.remove(activeSave-1);
+		saves.add(activeSave-1, new SaveSlot());
+		printMain();
+		
+		try {
+			FileWriter currentSave = new FileWriter(savefiles[activeSave - 1]);
+			PrintWriter pw = new PrintWriter(currentSave);
+			
+			pw.println("");
+			
+			pw.close();
+		}
+		catch(IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
 	public static void printSaves() {
 		for(int i = 0; i < 5; i++) {
 			System.out.println((i+1) + ". " + saves.get(i) + " \n");
@@ -358,6 +376,12 @@ public class Savegame {
 			this.name = name;
 			this.level = level;
 			this.gold = gold;
+		}
+		
+		SaveSlot(){
+			this.name = "Empty";
+			this.level = 0;
+			this.gold = 0;
 		}
 		
 		public String save() {
