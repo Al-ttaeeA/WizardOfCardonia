@@ -22,13 +22,12 @@ import data.*;
 import card.*;
 import item.*;
 import artifact.*;
-import enemy.*;
 import java.util.*;
 
 public class Main {
-	public static ArrayList<Card> deck = new ArrayList();
-	public static ArrayList<Item> inventory = new ArrayList();
-	public static ArrayList<Artifact> artifacts = new ArrayList();
+	public static ArrayList<Card> deck = new ArrayList<Card>();
+	public static ArrayList<Item> inventory = new ArrayList<Item>();
+	public static ArrayList<Artifact> artifacts = new ArrayList<Artifact>();
 	
 	public static String playName;
 	public static int playMaxHP;

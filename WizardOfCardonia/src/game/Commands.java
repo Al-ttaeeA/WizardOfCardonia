@@ -52,6 +52,8 @@ public class Commands {
         scanS.nextLine();
         
         clearScreen();
+        
+        scanS.close();
     }
     
     
@@ -90,6 +92,8 @@ public class Commands {
         
         clearScreen();
         
+        scanN.close();
+        
         return input;
     }
     
@@ -106,6 +110,8 @@ public class Commands {
         String string = scanS.nextLine();
         
         clearScreen();
+        
+        scanS.close();
         
         return string;
     }

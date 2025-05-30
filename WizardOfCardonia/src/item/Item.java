@@ -18,7 +18,6 @@
 
 package item;
 
-import card.Rarity;
 import game.*;
 
 public abstract class Item {

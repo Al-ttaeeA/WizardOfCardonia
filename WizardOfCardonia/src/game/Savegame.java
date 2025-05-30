@@ -77,6 +77,7 @@ public class Savegame {
             	saves.add(new SaveSlot(tokens[0], Integer.parseInt(tokens[1]), Integer.parseInt(tokens[2])));
             }
             
+            scanFile.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -321,6 +322,8 @@ public class Savegame {
 				Main.artifacts.add(Artifact.loadArtifact(line));
 				line = scan.nextLine();
 			}
+			
+			scan.close();
 		}
 		catch(IOException e) {
 			e.printStackTrace();

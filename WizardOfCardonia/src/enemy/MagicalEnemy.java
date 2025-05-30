@@ -6,7 +6,6 @@
 
 package enemy;
 
-import game.Main;
 import game.Battle;
 
 public class MagicalEnemy extends Enemy{
