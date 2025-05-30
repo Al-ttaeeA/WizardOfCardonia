@@ -112,7 +112,13 @@ public abstract class Enemy {
     }
     
     public int getDamage() {
-    	return (int) ((damageConstant + game.Commands.getRandomInt(damageVariable)) * game.Battle.enemyDamageMult * damageModifier);
+    	int num = (damageConstant + game.Commands.getRandomInt(damageVariable));
+    	
+    	if(game.Battle.enemyDamageMult != 1) {
+    		System.out.println("The enemy's damage is weakened by " + (1-game.Battle.enemyDamageMult)*100 + "%!\n");
+    	}
+    	
+    	return (int) (num * game.Battle.enemyDamageMult * damageModifier);
     }
     
     public int getMinDamage() {

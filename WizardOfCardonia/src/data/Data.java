@@ -138,11 +138,11 @@ public class Data {
 		new DamageCard("Dark Shroud", 				Rarity.COMMON, 1, Type.CORRUPT, 8),
 		new DamageCard("Dark Bolt", 				Rarity.COMMON, 2, Type.CORRUPT, 12),
 		new BlockCard("Shield", 					Rarity.COMMON, 1, Type.PHYSICAL, 6),
-		new BlockCard("Iron Guard", 				Rarity.COMMON, 2, Type.PHYSICAL, 12),
+		new BlockCard("Iron Guard", 				Rarity.COMMON, 2, Type.PHYSICAL, 10),
 		new BlockCard("Spectral Shield", 			Rarity.COMMON, 1, Type.MAGICAL, 5),
-		new BlockCard("Arcane Barrier", 			Rarity.COMMON, 2, Type.MAGICAL, 10),
-		new BlockCard("Shadow Seal", 				Rarity.COMMON, 1, Type.CORRUPT, 9),
-		new BlockCard("Dark Pact Shield",			Rarity.COMMON, 2, Type.CORRUPT, 14),
+		new BlockCard("Arcane Barrier", 			Rarity.COMMON, 2, Type.MAGICAL, 8),
+		new BlockCard("Shadow Seal", 				Rarity.COMMON, 1, Type.CORRUPT, 7),
+		new BlockCard("Dark Pact Shield",			Rarity.COMMON, 2, Type.CORRUPT, 10),
 		new HealCard("Vital surge",					Rarity.COMMON, 1, Type.PHYSICAL, 4),
 		new HealCard("Healing Wave", 				Rarity.COMMON, 1, Type.MAGICAL, 5),
 		new HealCard("Blood Pact",					Rarity.COMMON, 1, Type.CORRUPT, 6)
@@ -150,9 +150,9 @@ public class Data {
 		new DamageBlockCard("Slash and Bash", 		Rarity.UNCOMMON, 2, Type.PHYSICAL, 7, 6),
 		new DamageBlockCard("Runic Counterblast", 	Rarity.UNCOMMON, 2, Type.MAGICAL, 8, 6),
 		new DamageBlockCard("Cursed Reflection", 	Rarity.UNCOMMON, 2, Type.CORRUPT, 8, 8),
-		new BlockHealCard("Fortified Recovery",		Rarity.UNCOMMON, 1, Type.PHYSICAL, 6, 4),
-		new BlockHealCard("Runic Restoration",		Rarity.UNCOMMON, 1, Type.MAGICAL, 6, 5),
-		new BlockHealCard("Dark Resurgence", 		Rarity.UNCOMMON, 1, Type.CORRUPT, 8, 6),
+		new BlockHealCard("Fortified Recovery",		Rarity.UNCOMMON, 1, Type.PHYSICAL, 5, 3),
+		new BlockHealCard("Runic Restoration",		Rarity.UNCOMMON, 1, Type.MAGICAL, 5, 4),
+		new BlockHealCard("Dark Resurgence", 		Rarity.UNCOMMON, 1, Type.CORRUPT, 6, 5),
 		new StatusCard("Leg Smash",					Rarity.UNCOMMON, 2, Type.PHYSICAL, 0.40),
 		new StatusCard("Ignite",					Rarity.UNCOMMON, 2, Type.MAGICAL, 0.50),
 		new StatusCard("Poisoned Dart", 			Rarity.UNCOMMON, 2, Type.CORRUPT, 0.50),
@@ -283,26 +283,26 @@ public class Data {
 	 * The array of all enemies, each row is a different type of enemy
 	 ******************************************/
 	private static final Enemy[][] enemies = {{
-		new HumanEnemy("Elite Guard", 	  80,  0,  5, 12,  7, 0.25),
-		new HumanEnemy("Royal Guard", 	  90,  0,  6, 10, 10, 0.30),
-		new HumanEnemy("Royal Archer", 	  60,  0,  4, 14, 10, 0.40),
-		new HumanEnemy("Lost Warrior", 	  70,  0,  5,  9, 12, 0.25),
+		new HumanEnemy("Elite Guard", 	  80,  0,  5,  9,  7, 0.25),
+		new HumanEnemy("Royal Guard", 	  90,  0,  6,  7, 10, 0.30),
+		new HumanEnemy("Royal Archer", 	  60,  0,  4, 10, 10, 0.40),
+		new HumanEnemy("Lost Warrior", 	  70,  0,  5,  8, 10, 0.25),
 		new HumanEnemy("Royal Brute",    120, 15,  6,  6,  6, 0.40),
-		new HumanEnemy("Bladed Bandit",	  60,  0,  4, 16,  6, 0.10),
-		new HumanEnemy("Lone Assassin",   80,  0,  5, 16,  4, 0.20)
+		new HumanEnemy("Bladed Bandit",	  60,  0,  4, 14,  6, 0.10),
+		new HumanEnemy("Lone Assassin",   80,  0,  5, 14,  4, 0.20)
 	},{
-		new UndeadEnemy("Zombie", 		  80,  0,  5,  9, 10, 0.15, 8),
-		new UndeadEnemy("Skeleton",       60,  0,  5, 14,  8, 0.10, 10),
+		new UndeadEnemy("Zombie", 		  80,  0,  5,  6, 10, 0.15, 8),
+		new UndeadEnemy("Skeleton",       60,  0,  5, 10,  8, 0.10, 10),
 		new UndeadEnemy("Zombie Rhino",  110, 10,  5,  7,  6, 0.30, 10),
-		new UndeadEnemy("Undead Husk",    70, 10,  6,  8, 16, 0.05, 15),
+		new UndeadEnemy("Undead Husk",    70, 10,  6,  8, 12, 0.05, 15),
 		new UndeadEnemy("Bone Goliath",  120, 10,  7,  7,  7, 0.20, 10),
-		new UndeadEnemy("Phantom", 		  90,  0,  8, 12,  8, 0.15, 10)
+		new UndeadEnemy("Phantom", 		  90,  0,  8, 10,  6, 0.15, 10)
 	},{
-		new MagicalEnemy("Fire Axolotl",  60,  0,  5, 12,  7, 0.15, 1),
-		new MagicalEnemy("Ice Sprite",    60,  0,  4,  9,  7, 0.30, 2),
+		new MagicalEnemy("Fire Axolotl",  60,  0,  5, 12,  8, 0.15, 1),
+		new MagicalEnemy("Ice Sprite",    60,  0,  4,  9,  9, 0.30, 2),
 		new MagicalEnemy("Wizard Spirit", 80,  0,  6, 11,  7, 0.10, 3),
 		new MagicalEnemy("Golem",  		 110, 10, 10,  7,  5, 0.20, 1),
-		new MagicalEnemy("Phoenix",  	  90,  0,  2, 12, 10, 0.15, 2),
+		new MagicalEnemy("Phoenix",  	  90,  0,  2, 12,  8, 0.15, 2),
 		new MagicalEnemy("Vile Serpent", 100,  0,  4, 10,  8, 0.30, 2)
 	}
 	};

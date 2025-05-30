@@ -84,14 +84,35 @@ public class Savegame {
 	}
 	
 	public static boolean newGame() {
-		System.out.println("Save Slots:\n");
-		printSaves();
-		System.out.println("Choose a save slot to overwrite or 0 to exit");
-		int choice  = Commands.inputInt(0, 5);
+		boolean isValid = false;
+		int choice;
 		
-		if(choice == 0) {
-			return false;
-		}
+		do {
+			System.out.println("Save Slots:\n");
+			printSaves();
+			System.out.println("Choose a save slot to overwrite or 0 to exit");
+			choice = Commands.inputInt(0, 5);
+			
+			if(choice == 0) {
+				return false;
+			}
+			
+			if(!saves.get(choice-1).isEmpty()) {
+				System.out.println("Are you sure you want to overwrite this slot?\n");
+				System.out.println("This save data will be lost forever\n");
+				System.out.println("1. Go back\n\n2. Overwrite");
+				choice = Commands.inputInt(1, 2);
+				
+				if(choice == 2) {
+					isValid = true;
+				}
+			}
+			else {
+				isValid = true;
+			}
+		} while(!isValid);
+		
+		
 		
 		activeSave = choice;
 		
@@ -144,25 +165,34 @@ public class Savegame {
 	}
 	
 	public static boolean loadGame() {
-		System.out.println("Save Slots:\n");
-		printSaves();
-		System.out.println("Choose a save slot to load or 0 to exit");
-		int choice  = Commands.inputInt(0, 5);
+		boolean isValid = false;
+		int choice;
 		
-		if(choice == 0) {
-			return false;
-		}
-		
-		if(saves.get(choice-1).isEmpty()) {
-			System.out.println("Save slot is empty!!!");
-			Commands.pressEnter();
+		do {
+			System.out.println("Save Slots:\n");
+			printSaves();
+			System.out.println("Choose a save slot to load or 0 to exit");
+			choice  = Commands.inputInt(0, 5);
 			
-			return false;
-		}
+			if(choice == 0) {
+				return false;
+			}
+			
+			if(saves.get(choice-1).isEmpty()) {
+				System.out.println("Save slot is empty!!!");
+				Commands.pressEnter();
+			}
+			else {
+				isValid = true;
+			}
+		} while(!isValid);
 		
 		activeSave = choice;
 		
 		load();
+		
+		System.out.println("Game loaded successfully! Welcome back " + Main.playName + "!!!");
+		Commands.pressEnter();
 		
 		return true;
 	}
@@ -174,7 +204,7 @@ public class Savegame {
 	            beasts, the world was a beautiful yet dangerous place.
 
 	            For centuries, humanity banded together, struggling to survive against
-	            nature’s magical fury. Until one fateful day, everything changed.
+	            nature's magical fury. Until one fateful day, everything changed.
 
 	            Three visionaries -Plensor, Mejashi, and Cruden- discovered a way to wield
 	            magic through enchanted cards and relics. With this newfound power, they
@@ -194,20 +224,11 @@ public class Savegame {
 	            To become the next legend.
 	            """;
 		
-		int delayMillis = 20;
-		
-		for (char c : text.toCharArray()) {
-            System.out.print(c);
-            try {
-                Thread.sleep(c == '.' || c == '\n' ? delayMillis * 10 : delayMillis);
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-            }
-        }
+		Commands.typeWriterEffect(text);
 		
 		Commands.pressEnter();
 		
-		System.out.println("""
+		Commands.typeWriterEffect("""
 				You start your adventure as one of the few surviving mages!!!
 				""");
 	}

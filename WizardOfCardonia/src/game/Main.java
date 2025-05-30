@@ -85,7 +85,7 @@ public class Main {
 					
 					1. New game 
 					
-					2. Load previous game (WIP Starts a new game)
+					2. Load game
 					
 					3. Tutorial
 					
