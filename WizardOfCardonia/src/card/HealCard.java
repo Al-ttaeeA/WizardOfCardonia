@@ -51,7 +51,7 @@ public class HealCard extends Card {
     }
     
     public String toString() {
-    	newHeal = game.Commands.skillMultiplier(heal, type);
+    	newHeal = heal;
     	newHeal = (int) (newHeal * game.Battle.battleMult);
     	newHeal = (int) (newHeal * game.Battle.healMult);
     	

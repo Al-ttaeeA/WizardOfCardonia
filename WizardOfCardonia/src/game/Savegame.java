@@ -86,6 +86,7 @@ public class Savegame {
 	public static boolean newGame() {
 		boolean isValid = false;
 		int choice;
+		int innerChoice;
 		
 		do {
 			System.out.println("Save Slots:\n");
@@ -101,9 +102,9 @@ public class Savegame {
 				System.out.println("Are you sure you want to overwrite this slot?\n");
 				System.out.println("This save data will be lost forever\n");
 				System.out.println("1. Go back\n\n2. Overwrite");
-				choice = Commands.inputInt(1, 2);
+				innerChoice = Commands.inputInt(1, 2);
 				
-				if(choice == 2) {
+				if(innerChoice == 2) {
 					isValid = true;
 				}
 			}
@@ -325,6 +326,10 @@ public class Savegame {
 			Main.permMaxMana = Integer.parseInt(tokens[0]);
 			Main.permHand = Integer.parseInt(tokens[1]);
 			Main.location = Integer.parseInt(tokens[2]);
+			
+			Main.deck.clear();
+			Main.inventory.clear();
+			Main.artifacts.clear();
 			
 			line = scan.nextLine();
 			while(!line.equals("---")) {
