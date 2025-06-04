@@ -309,9 +309,9 @@ public class Data {
 	
 	
 	public static Enemy[] bosses = {
-		new BossEnemy("Plensor", 		 150, 15, 6, 10, 10, 15, Type.PHYSICAL),
-		new BossEnemy("Mejashi",		 400, 25, 12, 20, 10, 30, Type.MAGICAL),
-		new BossEnemy("Cruden", 		 800, 50, 20, 30, 15, 40, Type.CORRUPT)
+		new BossEnemy("Plensor", 		 150, 15,  6, 10, 10,  8, Type.PHYSICAL),
+		new BossEnemy("Mejashi",		 400, 25, 12, 20, 10, 15, Type.MAGICAL),
+		new BossEnemy("Cruden", 		 800, 50, 20, 30, 15, 30, Type.CORRUPT)
 	};
 	
 	

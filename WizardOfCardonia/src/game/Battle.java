@@ -155,10 +155,10 @@ public class Battle {
 			currentEnemy = Data.bosses[boss - 1];
 			currentEnemy.initialize();
 			
-			battleCardCount = 4;
+			battleCardCount = Commands.getRandomInt(3) + 1;
 			
-			battleGold = 70 * Main.battleCount;
-			battleXp = (int) (battleGold * 0.60);
+			battleGold = 50 * Main.battleCount;
+			battleXp = (int) (battleGold * 0.50);
 			
 			switch(boss) {
 			case 1:{

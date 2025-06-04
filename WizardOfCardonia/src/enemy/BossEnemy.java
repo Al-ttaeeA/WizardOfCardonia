@@ -33,7 +33,7 @@ public class BossEnemy extends Enemy{
 	}
 	
 	public void initialize() {
-		double bossDiff = Math.pow(1.20, Battle.battleDifficulty);
+		double bossDiff = Math.pow(1.10, 1.5 * Battle.battleDifficulty);
 		
 		maxHealth *= bossDiff;
 		health *= bossDiff;

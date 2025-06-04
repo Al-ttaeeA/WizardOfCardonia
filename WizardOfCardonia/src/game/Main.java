@@ -838,7 +838,7 @@ public class Main {
 				}
 				
 				if(!buy(shopCardPrices[index])) {
-					System.out.println("You do not have enough gold to buy " + shopCards[shopChoice].getName());
+					System.out.println("You do not have enough gold to buy " + shopCards[index].getName());
 					break;
 				}
 				
@@ -881,7 +881,7 @@ public class Main {
 				}
 				
 				if(!buy(shopItemPrices[index])) {
-					System.out.println("You do not have enough gold to buy " + shopItems[shopChoice].getName());
+					System.out.println("You do not have enough gold to buy " + shopItems[index].getName());
 					break;
 				}
 				
@@ -921,7 +921,7 @@ public class Main {
 				}
 				
 				if(!buy(shopArtifactPrice)) {
-					System.out.println("You do not have enough gold to buy " + shopItems[shopChoice].getName());
+					System.out.println("You do not have enough gold to buy " + shopArtifact.getName());
 					break;
 				}
 				
