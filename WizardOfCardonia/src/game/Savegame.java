@@ -151,7 +151,7 @@ public class Savegame {
 		Data.initiateDeck();
 		Data.initiateArtifactList();
 		
-		for(int i = 0; i < 5; i++) {
+		for(int i = 0; i < 3; i++) {
 			Main.inventory.add(Data.getItem());
 		}
 		

@@ -251,7 +251,7 @@ public class Battle {
 			battleXp = (int) (battleXp * 0.80);
 		}
 		else if(Main.battleCount <= 9) {
-			battleDifficulty *= 1.30;
+			battleDifficulty *= 1.20;
 		}
 		else if(Main.battleCount <= 14) {
 			battleDifficulty *= 2;

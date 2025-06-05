@@ -21,15 +21,38 @@ public class DrawCard extends Card{
 		if(doMana()) {
 			innerUse();
 			
-			if(!game.Battle.draw()) {
-				return false;
+			if(cardCount == 1) {
+				if(!game.Battle.draw()) {
+					return false;
+				}
+				else {
+					System.out.println("You draw " + cardCount + " card(s) to your hand!");
+				}
+				
+	    		return true;
 			}
 			else {
-				System.out.println("You draw " + cardCount + " card(s) to your hand!");
+				int i = 0;
+				
+				for(i = 0; i < cardCount; i++) {
+					if(!game.Battle.draw()) {
+						break;
+					}
+				}
+				
+				if(i == 0) {
+					return false;
+				}
+				else if(i != cardCount) {
+					System.out.println("You draw " + i + " card(s) to your hand because your deck is empty!");
+					return true;
+				}
+				
+				System.out.println("You draw " + i + " card(s) to your hand!");
+				return true;
 			}
 			
-    		return true;
-    	}
+		}
     	
     	return false;
 	}
