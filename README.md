@@ -1,7 +1,7 @@
 # Wizard of Cardonia
 Text-based Roguelike Deck Builder RPG with a ton of strategy, complexity, and an engaging story!
 
-The game is still in Early Access and there is many work in progress features that are planned!
+The game officially released on June 10th 2025 and there is no more updates planned as of June 10th 2025.
 
 Feel free to give your feedback about the overall game, any bugs you encounter, or features you want to see added.
 
@@ -13,10 +13,16 @@ Enjoy these amazing features:
 - Turn based battle system that needs to be strategically played, plan the cards you will play beforehand to not mess up!
 - Many enemies each with unique abilities that may grant them a special attack, a heal, or even a complete buff to their damage and block!
 - Many items that give u battle buffs, and Artifacts that grant permanent buffs, to assist you against harder enemies!
+- Elaborate savegame feature that allows you to save upto 5 games at once, and you can load any one of them at anytime!
 
 ___________________________________________________________________________________________________________________________________________________________________
 
 ## Changelog
+
+### Official Release v1.0.0 
+- Added savegame features to save progress and load it back back after youre done
+- Balanced the game heavily changing many game mechanics along the way
+- Final bug fixes 
 
 ### Early Access v0.3.3-alpha
 - Added actual progression with story and bosses
