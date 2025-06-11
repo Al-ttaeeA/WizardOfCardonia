@@ -1,6 +1,8 @@
 # Wizard of Cardonia
 Text-based Roguelike Deck Builder RPG with a ton of strategy, complexity, and an engaging story!
 
+You can find the latest version in the releases tab of this repository, alongside installation instructions.
+
 The game officially released on June 10th 2025 and there is no more updates planned as of June 10th 2025.
 
 Feel free to give your feedback about the overall game, any bugs you encounter, or features you want to see added.
